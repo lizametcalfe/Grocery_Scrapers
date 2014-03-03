@@ -1,0 +1,48 @@
+,,,,,,
+,,,,,,
+,We have set out a series of COICOP classes that we are interested in scraping. And a ,,,,,
+,selection of items within the class which make a up a significant proportion of the weight ,,,,,
+,,,,,,
+,,,,,,
+,The next complexity is figuring out the key search words to scrape the chosen items ,,,,,
+,We have gone with the strategy of keeping the categories broad; hence capture a broad sample (say the first two/three pages?),,,,,
+,then filter the collected data (based on key words from the more detailed COICOP item description),,,,,
+,,,,,,
+,,Items in Red are of interest to current research projects ,,,,
+,item  number (weights book),Description (weights book),include ,Possible search term,Tesco category ,Research interest 
+bread and cereals,210111,"White Sliced Loaf, branded",1,White sliced loaf ,Groceries\bakery\whitebread,
+,210113,"Wholemeal Sliced Loaf, branded",1,Wholemeal sliced loaf,Groceries\bakery\brownbread,
+,210213,"Breakfast Cereal 1, sugar/chocolate coated",1,Cereal Kids ,Groceries\Food CupboardCereals\Childrens Cereals,
+,210214,"Breakfast Cereal 2, NOT sugar/chocolate coated",1,Cereal Healthy ,Groceries\FoodCupboardCereals\Healthy Cereals,
+,210302,Plain Biscuits (eg. Digestive),1,Biscuits ,Groceries\Food Cupboard\Biscuits\Sweet Biscuits,
+Vegetables including Potatoes and Tubers,212360,"Potatoes, old, white     ",1,Potatoes ,,1
+,212361,"Potatoes, baking  ",1,Potatoes ,,1
+,212399,"Potatoes, new, per kg",1,Potatoes ,,1
+,212515,"Fresh Veg, Tomatoes, per kg",1,Fresh Tomatoes ,,1
+,212519,"Fresh Veg, Onions, per kg",1,Onions ,,1
+Fruit,212717,"Apples, dessert, per kg",1,Apples ,,
+,212719,"Bananas, per kg",1,Bananas ,,1
+,212720,"Strawberries, per kg or per punnet",1,Strawberries ,,
+,212722,"Grapes, per kg",1,Grapes ,,
+Spirits,310401,"Whisky, bottle",1,whisky,,1
+,310403,"Vodka, bottle",1,vodka ,,1
+,310405,"Brandy, bottle",1,brandy ,,1
+,310427,"RUM, WHITE, BOTTLE",1,white rum ,,1
+Wine,310218,"Apple Cider, bottle, 4.5%-5.5% ABV",1, apple Cider ,,1
+,310419,"White Wine, European, bottle",1,white wine ,,1
+,310420,"White Wine, New World, bottle",1,white wine ,,1
+,310421,"Red Wine, European, bottle",1,red wine ,,1
+,310422,"Red Wine, New World, bottle",1,red wine ,,1
+Beer,310207,"Bitter, 4 cans, 3.4%-7.5% ABV",1,Bitter,,1
+,310215,"Lager, 4 bottles, 4.3%-7.5% ABV",1,lager bottles ,,1
+,310216,"Lager, 12-24 cans, 3.4%-4.2% ABV",1,lager cans,,1
+,310217,"Lager, 12-24 bottles, 4.3%-7.5% ABV",1,lager bottles ,,1
+"Milk, Cheese and Eggs",211501,"Cheese Cheddar, home produced, per kg",1,British Cheddar ,,
+,211709,"Shop Milk, whole milk",1,Milk whole milk ,"Groceries\Fresh Food\Milk, Butter & Eggs\Fresh Milk",
+,211710,"Shop Milk, semi-skimmed",1,Milk semi-skimmed ,"Groceries\Fresh Food\Milk, Butter & Eggs\Fresh Milk",
+,211807,Yoghurt/Fromage Frais,1,Fromage Frais ,,1
+,211814,"Yoghurt, small individual",1,Yoghurt ,,1
+"Mineral Waters, Soft Drinks and Juices",212006,"Fruit Juice, not orange, eg. apple",1,Fruit Juice ,,
+,212011,"Cola Flavoured Drink, bottle",1,Cola ,Groceries\DrinksSoft \Drinks\Sparkling Drinks,1
+,212016,"Fresh/Chilled Orange Juice, eg. Tropicana",1,Fresh orange juice ,,1
+,212017,Fizzy Bottled Drink,1,Sparkling Drinks,Groceries\DrinksSoft \Drinks\Sparkling Drinks,
