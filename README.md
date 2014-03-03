@@ -27,10 +27,10 @@ The following tools are optional, depending on whether you want to store your da
 
 ### Running Scrapy with our Tesco spider
 * The list of products to scrape is held in a CSV file:
->>>`scrapy_tesco/scrapy_tesco/data/tesco.csv`
+>>>`supermarket_scraper/input/tesco_input.csv`
 * You tell Scrapy the name of this input file at runtime:
->>>`scrapy crawl tesco -a csv_file=tesco.csv`
-* This file should exist in the data directory: `scrapy_tesco/scrapy_tesco/data`
+>>>`scrapy crawl tesco -a csv_file=tesco_input.csv`
+* This file should exist in the data directory: `supermarket_scraper/input`
 * If the filename is not provided at runtime, the program looks for a default file `tesco.csv`.
 * **Warning:** there have been some problems with character-sets if this file is generated from Excel or OpenOffice: **use a plain text editor instead!**
 
@@ -38,10 +38,10 @@ The following tools are optional, depending on whether you want to store your da
 * You can provide a relative path to the output directory at runtime:
 >>>`scrapy crawl tesco -a csv_file=tesco.csv -a output_dir=output`
 * This will write any output files to this directory (this is also the default value):
->>>`scrapy_tesco/output`
+>>>`supermarket_scraper/output`
 * The output formats are specified via the "pipeline" settings in `settings.py` (see "Outputs" below).
 
-Outputs - see `scrapy_tesco/settings.py`
+Outputs - see `supermarket_scraper/settings.py`
 --------------------------------------
 * Scrapy allows us to define ITEM_PIPELINES to send the items down a "pipe" for further processing.
 * We have implemented several pipelines:
