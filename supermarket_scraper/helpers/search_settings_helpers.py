@@ -16,6 +16,31 @@ class SearchSettings(object):
     product_name_xpath = ''
     raw_price_xpath = ''
     vol_price_xpath = ''
+    
+
+
+
+
+class AsdaSearchSettings(SearchSettings):
+    """Represents search paths for TESCO.
+       May want to load these at runtime from a CSV file."""
+    
+    def __init__(self):
+        super(TescoSearchSettings, self).__init__()
+        self.base_url = 'http://groceries.asda.com/asda-webstore/landing/home.shtml'
+        
+        self.sub1_xpath = '//*[@id="primary-nav-wrapper"]/ul/div[@class="primary-nav-items"/li/a'
+        
+        self.sub2_xpath = '//*[@id="superDeptItems"]/*/ul/li/a'
+        self.sub3_xpath = '//*[@id="deptNavItems"]/*/ul/li/a'
+        self.next_page_xpath = "//*[@class='next']/a"
+        self.products_xpath = "//*[@class='cf products line']/li"
+        self.product_name_xpath = "*[@class='desc']/*/a[contains(@class,'title')]/text()" 
+        self.raw_price_xpath = "*[@class='quantity']/div/p/span[@class='linePrice']/text()"
+        self.vol_price_xpath = "*[@class='quantity']/div/p/span[@class='linePriceAbbr']/text()"
+        self.promo_xpath = "*[@class='desc']/*[@class='descContent']/*[@class='promo']/a[contains(@class,'promoFlyout')]/@title"
+        self.offer_xpath = "*[@class='desc']/p[@class='limitedLife']/a/text()" 
+
 
 class TescoSearchSettings(SearchSettings):
     """Represents search paths for TESCO.
