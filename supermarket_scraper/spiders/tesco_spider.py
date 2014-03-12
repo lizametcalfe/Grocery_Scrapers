@@ -88,7 +88,7 @@ class TescoSpider(CrawlSpider):
         searches = self.get_searches()
         #Find first layer of subordinate data (via "flyout" nav links)
         #Process each navigation item to find required sub-category
-        sub_items = sel.xpath(self.settings.sub1_xpath)
+        sub_items = sel.xpath(self.settings.sub1_path)
         for item in sub_items:
             # Check each nav link for the required sub-category
             link_text = item.xpath('text()').extract()[0]
@@ -108,7 +108,7 @@ class TescoSpider(CrawlSpider):
            Yield new Request to fetch required sub-set of data."""
         sel = Selector(response)
         #Find required subordinate data (nav links)
-        sub_items = sel.xpath(self.settings.sub2_xpath)
+        sub_items = sel.xpath(self.settings.sub2_path)
         for item in sub_items:
             #Check each nav link for the required sub-category
             link_text = item.xpath('text()').extract()[0]
@@ -129,7 +129,7 @@ class TescoSpider(CrawlSpider):
            Yield new Request to fetch required sub-set of data."""
         sel = Selector(response)
         #Find required subordinate data (nav links)
-        sub_items = sel.xpath(self.settings.sub3_xpath)
+        sub_items = sel.xpath(self.settings.sub3_path)
         for item in sub_items:
             #Check each nav link for the required sub-category
             link_text = item.xpath('text()').extract()[0]

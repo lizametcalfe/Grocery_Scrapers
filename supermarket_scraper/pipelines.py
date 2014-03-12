@@ -70,6 +70,9 @@ class PostProcessingPipeline(object):
         elif unit == 'cl':
             std_unit = 'l'
             std_price = float(unit_price) * 100.0 / float(no_units)
+        elif unit == 'litre':
+            std_unit = 'l'
+            std_price = unit_price    
         elif unit in ['kg','l','each']:
             std_unit = unit
             std_price = unit_price    
@@ -96,12 +99,42 @@ class PostProcessingPipeline(object):
         item['search_matches'] = self.get_search_matches(item['search_string'],  item['product_name'])
             
         return item
+
+    def process_waitrose_item(self, item, spider):
+        """Apply Waitrose-specific post-processing to product line items"""
+        #Remove pound sign from price entry for Tesco and convert to float
+        if item['item_price_str']:
+            # Allow for e.g. "85p":
+            if 'p' in item['item_price_str']:
+                item['item_price_num'] = float(item['item_price_str'].strip('p'))/100.0
+            else:
+                item['item_price_num'] = 1.0 * float(item['item_price_str'].strip(self.pound_sign) )
+
+        #Strip blanks from around volume price
+        item['volume_price'] = (item['volume_price']).strip(' ()')
+        #Extract voume price
+        if item['volume_price']:            
+            vpx = self.extract_vol_price(item['volume_price'])
+            item['unit_price'] = vpx.get('price')
+            item['no_units'] = vpx.get('no_units')
+            item['units'] = vpx.get('units')
+            # Work out the standardised price per kg or litre 
+            (item['std_price'], item['std_unit']) = self.extract_std_price(vpx.get('price'), vpx.get('no_units'), vpx.get('units'))
+        #Check how many search terms match the product name
+        item['search_matches'] = self.get_search_matches(item['search_string'],  item['product_name'])
+            
+        return item
+
+
     
     def process_item(self, item, spider):
         """Apply post-processing to product line items"""
         if spider.name == 'tesco':
             #Apply specific processing for Tesco
             return self.process_tesco_item(item, spider)
+        elif spider.name == 'waitrose':
+            #Apply specific processing for Waitrose
+            return self.process_waitrose_item(item, spider)
         else:
             #Return item unchanged for processing elsewehre
             return item
