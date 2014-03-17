@@ -82,7 +82,6 @@ class WaitroseSpider(CrawlSpider):
             product_url = '/'.join([self.settings.base_url,s.store_sub1,
                     s.store_sub2,
                     s.store_sub3])
-            print "Product URL: ",product_url
             yield Request(url = product_url, meta=search_meta, callback=self.parse_base)                            
 
     def parse_base(self, response):

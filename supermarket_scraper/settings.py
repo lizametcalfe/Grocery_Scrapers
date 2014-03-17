@@ -38,7 +38,7 @@ USER_AGENT = 'ons_supermarket_scraper (+http://www.ons.gov.uk)'
 ITEM_PIPELINES = {
     'supermarket_scraper.pipelines.PostProcessingPipeline': 300,
     'supermarket_scraper.pipelines.CsvExportPipeline': 400,
-#    'scrapy_mongodb.MongoDBPipeline': 800,
+    'scrapy_mongodb.MongoDBPipeline': 800,
 }
 
 # Database settings for scrapy_mongodb.MongoDBPipeline

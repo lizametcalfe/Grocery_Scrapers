@@ -14,6 +14,8 @@ class PostProcessingPipeline(object):
        Main post-processing for Tesco product items.
        Format prices, check searcht erms etc.
        """
+       
+    # UTF makes pounds sign behave weirdly, so use this literal value   
     pound_sign = u'\xa3'
 
     def extract_vol_price(self,vp):
@@ -22,18 +24,56 @@ class PostProcessingPipeline(object):
            Any errors --> return dict with values = ''.
            """
         try:
-            vp_elems = re.split('/',vp)
+            #First break up the vol price string into individual elements
+            vp_elems = re.split('/', vp.strip(" ()"))
             # convert e.g. 1,234.00 to 1234.00
             p_str     = re.sub(r'\[^0-9.]|,', "", (vp_elems[0].strip(self.pound_sign)))
-            # now make it a number
-            price = 1.0 * float(p_str)
-            no_units = re.sub(r'\D', "", vp_elems[1])
-            if not no_units:
+            # now make it a number - watch out for penny prices e.g. "89p"
+            if 'p' in p_str:
+                # penny price --> pounds
+                price = float(p_str.strip('p'))/100.0
+            else:
+                price = 1.0 * float(p_str.strip(self.pound_sign) )
+                
+            # Extract no of units using regex
+            re_find_price = r'\d+(\.)?\d*'    
+            re_price = re.match(re_find_price,vp_elems[1])
+            if re_price:
+                #Get the number of units
+                no_units = re_price.group()
+            else:
                 no_units = 1.0
-            units = re.sub(r'\d', "", vp_elems[1])
-            return {'price':price,'no_units':no_units,'units':units}
+            # Now find actual units e.g. kg by removing number of units  
+            units = re.sub(re_find_price, "", vp_elems[1])
+    
+            return {'price':price,'no_units':no_units,'units':units}        
+            
         except:
+            #Just return dictionary
             return {'price':'','no_units':'','units':''}
+
+    def extract_std_price(self, unit_price, no_units, unit):
+        """Convert unit price to a standardised price per kg, litre or each"""
+        std_price = 0.0
+        std_unit = 'unknown'
+        if unit == 'g':
+            #Convert to price per kg
+            std_unit = 'kg'
+            std_price = float(unit_price) * 1000.0 / float(no_units)
+        elif unit == 'ml':
+            std_unit = 'l'
+            std_price = float(unit_price) * 1000.0 / float(no_units)
+        elif unit == 'cl':
+            std_unit = 'l'
+            std_price = float(unit_price) * 100.0 / float(no_units)
+        elif unit == 'litre':
+            std_unit = 'l'
+            std_price = float(unit_price) / float(no_units)   
+        elif unit in ['kg','l','each']:
+            std_unit = unit
+            std_price = float(unit_price) / float(no_units)   
+        
+        return (round(std_price,4), std_unit)
 
     def get_search_matches(self, search_terms, item_desc):
         """Count how many search terms match the given description and
@@ -56,53 +96,13 @@ class PostProcessingPipeline(object):
                         n_matches += 1.0
                 return round(n_matches/n_terms,2)
 
-    def extract_std_price(self, unit_price, no_units, unit):
-        """Convert unit price to a standardised price per kg, litre or each"""
-        std_price = 0.0
-        std_unit = 'unknown'
-        if unit == 'g':
-            #Convert to price per kg
-            std_unit = 'kg'
-            std_price = float(unit_price) * 1000.0 / float(no_units)
-        elif unit == 'ml':
-            std_unit = 'l'
-            std_price = float(unit_price) * 1000.0 / float(no_units)
-        elif unit == 'cl':
-            std_unit = 'l'
-            std_price = float(unit_price) * 100.0 / float(no_units)
-        elif unit == 'litre':
-            std_unit = 'l'
-            std_price = unit_price    
-        elif unit in ['kg','l','each']:
-            std_unit = unit
-            std_price = unit_price    
-        
-        return (round(std_price,2), std_unit)
+    #
+    # STORE-SPECIFIC PIPELINE PROCESSING
+    #
 
-    def process_tesco_item(self, item, spider):
-        """Apply Tesco-specific post-processing to product line items"""
-        #Remove pound sign from price entry for Tesco and convert to float
-        if item['item_price_str']:
-            item['item_price_num'] = 1.0 * float(item['item_price_str'].strip(self.pound_sign) )
-
-        #Strip blanks from around volume price
-        item['volume_price'] = (item['volume_price']).strip(' ()')
-        #Extract voume price
-        if item['volume_price']:            
-            vpx = self.extract_vol_price(item['volume_price'])
-            item['unit_price'] = vpx.get('price')
-            item['no_units'] = vpx.get('no_units')
-            item['units'] = vpx.get('units')
-            # Work out the standardised price per kg or litre 
-            (item['std_price'], item['std_unit']) = self.extract_std_price(vpx.get('price'), vpx.get('no_units'), vpx.get('units'))
-        #Check how many search terms match the product name
-        item['search_matches'] = self.get_search_matches(item['search_string'],  item['product_name'])
-            
-        return item
-
-    def process_waitrose_item(self, item, spider):
-        """Apply Waitrose-specific post-processing to product line items"""
-        #Remove pound sign from price entry for Tesco and convert to float
+    def common_process_item(self, item, spider):
+        """Apply aby common post-processing to product line items"""
+        #Remove pound sign from price entry and convert to float
         if item['item_price_str']:
             # Allow for e.g. "85p":
             if 'p' in item['item_price_str']:
@@ -110,9 +110,7 @@ class PostProcessingPipeline(object):
             else:
                 item['item_price_num'] = 1.0 * float(item['item_price_str'].strip(self.pound_sign) )
 
-        #Strip blanks from around volume price
-        item['volume_price'] = (item['volume_price']).strip(' ()')
-        #Extract voume price
+        #Extract volume price
         if item['volume_price']:            
             vpx = self.extract_vol_price(item['volume_price'])
             item['unit_price'] = vpx.get('price')
@@ -126,6 +124,21 @@ class PostProcessingPipeline(object):
         return item
 
 
+    def process_tesco_item(self, item, spider):
+        """Apply Tesco-specific post-processing (if any) to product line items"""
+        
+        # Currently we can use common processing for both supermarkets
+        return self.common_process_item(item, spider)
+
+    def process_waitrose_item(self, item, spider):
+        """Apply Waitrose-specific post-processing to product line items"""
+        
+        # Currently we can use common processing for both supermarkets
+        return self.common_process_item(item, spider)
+
+    #
+    # MAIN STORE ITEM PROCESSOR
+    #
     
     def process_item(self, item, spider):
         """Apply post-processing to product line items"""
@@ -136,9 +149,12 @@ class PostProcessingPipeline(object):
             #Apply specific processing for Waitrose
             return self.process_waitrose_item(item, spider)
         else:
-            #Return item unchanged for processing elsewehre
+            #Return item unchanged for processing elsewhere
             return item
-            
+
+#
+# CSV PIPELINE
+#            
 
 class CsvExportPipeline(object):
     """CsvExportPipeline
