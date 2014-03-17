@@ -19,7 +19,7 @@ The following are needed to run the basic web-scraping process (on Linux):
 > `sudo pip install Scrapy`
 * Git (source code management) client to access code in remote repository (BitBucket) e.g.
 > `sudo apt-get install git`
-* You can then install the application code via Git `clone` from your BitBucket account.
+* You can then install the application code via Git `clone` from your BitBucket account (see below).
 
 ### Optional
 The following tools are optional, depending on whether you want to store your data in MongoDB, use Git version control, etc.
@@ -38,9 +38,9 @@ The following tools are optional, depending on whether you want to store your da
 > `sudo apt-get install gedit`
 * Robomongo GUI client for MongoDB.  Download .DEB package and install using package manager.
 
-### Get the application code
+### Get the application code from BitBucket using the Linux Git client
 * You need a free account on BitBucket.
-* Request access from the developers for your BitBucket user e.g. "onsfred".
+* Ask the developers to enable access to the repository for your BitBucket user e.g. "onsfred".
 * Once they've granted access, you should be able to clone the repository to create a local copy on your machine as follows.
 * Open a Linux terminal and navigate to where you want to create the project files e.g.:
 > `cd ~/myprojects`
@@ -52,6 +52,10 @@ The following tools are optional, depending on whether you want to store your da
 * Copy this command and run it from the Linux command line.
 * You will be prompted to enter your BitBucket password, then let Git download the code.
 * Once this process has completed, you should have a local copy of the code in the `supermarket_scraper` directory.
+* If you need to refresh your copy of the code to include later changes, you can do a Git "pull" within the project:
+> * `cd ~/myprojects/supermarket_scraper`
+> * `git pull`
+* You will be prompted for your BitBucket password, then Git will update your copy of the code with any changes.
 
 Inputs: see `supermarket_scraper/input`
 -------------------------------------
