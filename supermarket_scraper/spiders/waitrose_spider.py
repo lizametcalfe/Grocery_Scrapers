@@ -88,7 +88,7 @@ class WaitroseSpider(CrawlSpider):
         """Parse responses from base URL:
            Overrides Scrapy parser to parse each crawled response.
            Wasitrose apaprently serves all products in a single list so we
-           just extract teh product items and yield them for processing."""
+           just extract the product items and yield them for processing."""
         sel = Selector(response)
         metadata = response.meta
         #Finds product lines
@@ -109,9 +109,16 @@ class WaitroseSpider(CrawlSpider):
             item['product_name'] = (product.xpath(self.settings.product_name_xpath).extract()[0]).upper()   
             # Save price string and convert it to number later
             item['item_price_str'] = product.xpath(self.settings.raw_price_xpath).extract()[0].strip()
-            # Volume price not always provided, so we try using volume and item price instead
+            # Waitrose volume price not always provided, so if it is not there, 
+            # we try using volume and item price instead.                        
             vol_price = product.xpath(self.settings.vol_price_xpath).extract()
-            item['volume_price'] = item['item_price_str'] + "/" + vol_price[0].strip()                
+            if vol_price:
+                #Allow for e.g. "1.25 per litre" instead of "1.25/litre"
+                item['volume_price'] = (vol_price[0].strip()).replace("per","/")
+            else:
+                volume = product.xpath(self.settings.volume_xpath).extract()
+                item['volume_price'] = item['item_price_str'] + "/" + volume[0].strip()                
+
             # Add timestamp
             item['timestamp'] = datetime.datetime.now()
             # Get promotion text (if any)

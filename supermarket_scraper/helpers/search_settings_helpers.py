@@ -16,6 +16,7 @@ class SearchSettings(object):
     product_name_xpath = ''
     raw_price_xpath = ''
     vol_price_xpath = ''    
+    volume_xpath = ''    
 
 class WaitroseSearchSettings(SearchSettings):
     """Represents search paths for TESCO.
@@ -34,8 +35,8 @@ class WaitroseSearchSettings(SearchSettings):
         self.products_xpath = '//*/div[contains(@class,"m-product ")]'  #"//*/div[@class='m-product-details-container']"
         self.product_name_xpath = '*/div[@class="m-product-details-container"]/*/a/text()' 
         self.raw_price_xpath = '*/div[@class="m-product-price-container"]/span[@class="price"]/text()'
-        self.vol_price_xpath = '*/div/div/div[@class="m-product-volume"]/text()'
-        # OR: '*/div[@class="m-product-price-container"]/span[@class="fine-print"]/text()'
+        self.volume_xpath = '*/div/div/div[@class="m-product-volume"]/text()'
+        self.vol_price_xpath = '*/div[@class="m-product-price-container"]/span[@class="fine-print"]/text()'
         
         self.promo_xpath = "*[@class='desc']/*[@class='descContent']/*[@class='promo']/a[contains(@class,'promoFlyout')]/@title"
         self.offer_xpath = "*[@class='desc']/p[@class='limitedLife']/a/text()" 
