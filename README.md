@@ -38,6 +38,21 @@ The following tools are optional, depending on whether you want to store your da
 > `sudo apt-get install gedit`
 * Robomongo GUI client for MongoDB.  Download .DEB package and install using package manager.
 
+### Get the application code
+* You need a free account on BitBucket.
+* Request access from the developers for your BitBucket user e.g. "onsfred".
+* Once they've granted access, you should be able to clone the repository to create a local copy on your machine as follows.
+* Open a Linux terminal and navigate to where you want to create the project files e.g.:
+> `cd ~/myprojects`
+* Check your BitBucket account home page and click on the entry for "supermarket_scraper" under "Repositories" (lower right).
+* You should now see a repository page, with a "Clone" dropdown button near the top right.
+* Click on this "Clone" dropdown, and select "HTTPS".
+* This should display a Git command like this (assuming your BitBucket user is "onsfred"):
+> `git clone https://onsfred@bitbucket.org/cmhwebster/supermarket_scraper.git`
+* Copy this command and run it from the Linux command line.
+* You will be prompted to enter your BitBucket password, then let Git download the code.
+* Once this process has completed, you should have a local copy of the code in the `supermarket_scraper` directory.
+
 Inputs: see `supermarket_scraper/input`
 -------------------------------------
 * The list of products to scrape is held in a CSV file in the `supermarket_scraper/input` directory e.g.:
@@ -49,7 +64,7 @@ Inputs: see `supermarket_scraper/input`
 * If the filename is not provided at runtime, the program looks for a default file e.g. `tesco_input.csv` in the default location `supermarket_scraper/input`.
 
 Outputs - see `supermarket_scraper/output`
---------------------------------------------
+------------------------------------------
 * Scrapy allows us to define ITEM_PIPELINES to send the items down a "pipe" for further processing.
 * These are enabled via `supermarket_scraper/settings.py`.
 * We have implemented several pipelines:
