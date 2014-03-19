@@ -10,6 +10,7 @@ import datetime
 import os
 
 # Scrapy-based classes
+from scrapy import log
 from scrapy.contrib.spiders import CrawlSpider
 from scrapy.selector import Selector
 from scrapy.http import Request
@@ -67,7 +68,7 @@ class TescoSpider(CrawlSpider):
     def get_searches(self):
         """Returns a tree of searches."""
         if self.csv_file:
-            print "Fetching searches from ", self.csv_file
+            log.msg("Spider: Fetching searches from " + self.csv_file, level=log.DEBUG)            
             return self.search_factory.get_csv_search_tree(self.settings.base_url)
         else:
             #Use soem other source for target URLs - database?
@@ -114,7 +115,7 @@ class TescoSpider(CrawlSpider):
             link_text = item.xpath('text()').extract()[0]
             # Check search tree i.e. children of this node will be sub2 entries
             for s in response.meta['children']:
-                if (link_text == s['name']):
+                if (link_text.encode('utf-8') == s['name'].encode('utf-8')):
                     search_meta = s
                     link_ref = item.xpath('@href').extract()[0]
                     url = link_ref              
@@ -135,7 +136,7 @@ class TescoSpider(CrawlSpider):
             link_text = item.xpath('text()').extract()[0]
             # Check search tree i.e. children of this node will be sub3 entries
             for s in response.meta['children']:
-                if (link_text == s['name']):
+                if (link_text.encode('utf-8') == s['name'].encode('utf-8')):
                     search_meta = s
                     link_ref = item.xpath('@href').extract()[0]
                     url = link_ref              

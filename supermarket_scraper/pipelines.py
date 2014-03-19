@@ -15,21 +15,21 @@ class PostProcessingPipeline(object):
        Format prices, check search terms etc.
        """
        
-    # UTF makes pounds sign behave weirdly, so use this literal value   
+    # UTF makes pound sign behave weirdly, so use this literal value   
     pound_sign = u'\xa3'
 
     def extract_multipack_volume(self, vp_in):
         """Convert vp_in from multipack volume e.g. 10x440ml to e.g. 4400 ml"""
         # Watch out for multi-pack volumes e.g. 10x440ml
-        re_find_vol = r'\d+(x)\d+'   # looks for e.g. "10x440" 
+        re_find_vol = r'\d+(x)\d+'   # RE looks for e.g. "10x440" 
         re_vol = re.match(re_find_vol,vp_in)
         if re_vol:    
-            #Re-format multipack volume e.g. 10x440 --> 4400
+            #Re-format multipack volume e.g. 10x440 --> [10 440] --> 4400
             vs = re_vol.group().split('x')
             tmp_vol = str(float(vs[0]) * float(vs[1]))
-            # Get units as well
+            # Get units as well (by dropping numbers)
             tmp_units = re.sub(re_find_vol, "", vp_in)
-            # Re-build vol using these values
+            # Re-build vol using these values e.g. '4400 ml'
             return (tmp_vol + ' ' + tmp_units)
         else:
             return vp_in
@@ -111,12 +111,13 @@ class PostProcessingPipeline(object):
             return 1.0
         else:
             # Excludes blank search terms
-            terms = [t.strip() for t in search_terms.split(" ") if t.strip()]
+            terms = [t.strip() for t in search_terms.split(' ') if t.strip()]
             n_terms = len(terms)
             if n_terms == 0:
                 return 1.0
             else:
-                desc = item_desc.split()
+                # split description on '-' or blank:
+                desc = item_desc.replace('-',' ').split()
                 # If no search terms, let matches = 1.0
                 n_matches = 0.0
                 for term in terms:
@@ -145,7 +146,7 @@ class PostProcessingPipeline(object):
             item['unit_price'] = vpx.get('price')
             item['no_units'] = vpx.get('no_units')
             item['units'] = vpx.get('units')
-            # Work out the standardised price per kg or litre 
+            # Now work out the standardised price per kg or litre or each
             (item['std_price'], item['std_unit']) = self.extract_std_price(
                                                     vpx.get('price'), 
                                                     vpx.get('no_units'), 
@@ -173,7 +174,8 @@ class PostProcessingPipeline(object):
     #
     
     def process_item(self, item, spider):
-        """Apply post-processing to product line items"""
+        """Apply post-processing to product line items.
+           Must return an Item for subsequent processing."""
         if spider.name == 'tesco':
             #Apply specific processing for Tesco
             return self.process_tesco_item(item, spider)
@@ -191,9 +193,10 @@ class PostProcessingPipeline(object):
 class CsvExportPipeline(object):
     """CsvExportPipeline
        =================
-       TescoSpider includes output_dir attribute provided at runtime.
+       Spider includes output_dir attribute provided at runtime.
        We specify the fields_to_export in the CsvItemExporter to make sure the 
        fields are written to the CSV file in the correct order.
+       Must return an Item for subsequent processing.
     """
     def __init__(self):
         #super(CsvExportPipeline, self).__init__()  
@@ -237,6 +240,8 @@ class CsvExportPipeline(object):
         file.close()
 
     def process_item(self, item, spider):
+        """Export item to CSV.
+           Must also return item for subsequent processing."""
         self.exporter.export_item(item)
         return item
 

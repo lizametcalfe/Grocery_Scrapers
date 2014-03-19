@@ -26,11 +26,7 @@ class WaitroseSearchSettings(SearchSettings):
         super(WaitroseSearchSettings, self).__init__()
         self.base_url = 'http://www.waitrose.com/shop/Browse/Groceries'
         # Waitrose website uses REST-like URLs so we do not need to hunt for
-        # navigation links for sub-categories.        
-        self.sub1_path = ''        
-        self.sub2_path = ''
-        self.sub3_path = ''
-        self.next_page_xpath = ''
+        # navigation links for sub-categories via sub1_path etc.        
 
         # Exclude offer block above main product listings
         self.products_xpath = '//*/div[@class="products-row"]/*[not(contains(@id,"caro-"))]/div[contains(@class,"m-product-cell")]/div[contains(@class,"m-product ")]'
@@ -38,6 +34,7 @@ class WaitroseSearchSettings(SearchSettings):
         self.raw_price_xpath = '*/div[@class="m-product-price-container"]/span[@class="price"]/text()'
         self.volume_xpath = '*/div/div/div[@class="m-product-volume"]/text()'
         self.vol_price_xpath = '*/div[@class="m-product-price-container"]/span[@class="fine-print"]/text()'        
+
         self.promo_xpath = ''
         self.offer_xpath = ''        
 

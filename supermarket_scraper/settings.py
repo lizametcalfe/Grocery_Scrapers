@@ -6,6 +6,8 @@
 #     http://doc.scrapy.org/en/latest/topics/settings.html
 #
 
+import datetime
+
 BOT_NAME = 'supermarket_scraper'
 SPIDER_MODULES = ['supermarket_scraper.spiders']
 NEWSPIDER_MODULE = 'supermarket_scraper.spiders'
@@ -14,11 +16,18 @@ NEWSPIDER_MODULE = 'supermarket_scraper.spiders'
 USER_AGENT = 'ons_supermarket_scraper (+http://www.ons.gov.uk)'
 
 # OUR CUSTOM SETTINGS:
+
 LOG_LEVEL = 'ERROR'  # use 'ERROR' to suppress non-error log messages
-LOG_FILE = 'scrapy.log' # could include timestamp in log file name?
-# Switch off caching because we get mixed up request/response data
+# Use this option if you want to include the timestamp in the log file name
+#logfile = BOT_NAME + datetime.datetime.now().strftime("%Y%m%d%H%M%S") + ".log"
+logfile = BOT_NAME + ".log"
+LOG_FILE = logfile
+
+# Switch off DNS caching because we get mixed up request/response data.
+# May not be relevant to the problem, but seems to work OK if set to False.
 DNSCACHE_ENABLED = False
-# Try increasing CONCURRENT_REQUESTS so we can handle all requests concurrently, 
+
+# Try increasing CONCURRENT_REQUESTS to handle all requests concurrently, 
 # as this seems to help prevent the request/response mix-ups.
 # Might hit memory problems here?
 CONCURRENT_REQUESTS = 100
@@ -27,13 +36,12 @@ CONCURRENT_REQUESTS = 100
 # =========
 # Pipelines are used for extra processing of each item after scraping.
 #
-# * PostProcessingPipeline cleans up price entry (Tesco). ALWAYS RUN THIS.
+# * PostProcessingPipeline cleans up price entry. ALWAYS RUN THIS.
 #
-# * MongoDB pipeline writes item to MongoDB database if required.
-#   Use MongoDB pipeline to write results straight to MongoDB database
+# * Use MongoDB pipeline to write results straight to MongoDB database
 #   (requires scrapy-mongodb https://github.com/sebdah/scrapy-mongodb).
 #   Uncomment the line for scrapy_mongodb.MongoDBPipeline in ITEM_PIPELINES
-#   below and confirm the DB settings below if you want to do this.
+#   below and also confirm the DB settings below if you want to do this.
 #
 # * CsvExportPipeline writes data to a CSV file in the output directory.
 #
@@ -50,11 +58,11 @@ ITEM_PIPELINES = {
     'scrapy_mongodb.MongoDBPipeline': 800,
 }
 
-# Database settings for scrapy_mongodb.MongoDBPipeline
-# (can put user/pwd in DB URL 'mongodb://ons:ons123@localhost:27017'):
+# MongoDB database settings for scrapy_mongodb.MongoDBPipeline
+# (can put user/pwd in DB URL e.g. 'mongodb://ons:ons123@localhost:27017'):
 MONGODB_URI = 'mongodb://localhost:27017'  
 MONGODB_DATABASE = 'scrapy'
 MONGODB_COLLECTION = 'item_prices'
-# This would add a timestamp as {scrapy-mongodb:{ts:...}}
+# This would add a timestamp as a nested field {scrapy-mongodb:{ts:...}}
 # MONGODB_ADD_TIMESTAMP = True
 

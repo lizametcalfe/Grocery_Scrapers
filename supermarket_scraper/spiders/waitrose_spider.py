@@ -66,7 +66,9 @@ class WaitroseSpider(CrawlSpider):
             self.output_dir = output_dir                            
         
     def get_searches(self):
-        """Returns a LIST of searches."""
+        """Returns a LIST of searches. We don't need to nest searches here
+           because Waitrose website allows us to construct URLs directly,
+           instead of having to navigate through several layers of menus."""
         if self.csv_file:
             log.msg("Spider: Fetching searches from " + self.csv_file, level=log.DEBUG)            
             return self.search_factory.get_csv_searches()            
@@ -75,7 +77,7 @@ class WaitroseSpider(CrawlSpider):
             raise WaitroseSpiderError("Cannot find input file " + self.csv_file)
 
     def start_requests(self):
-        """Generates crawler requests for given base URL and parse results."""
+        """Generates crawler requests for given base URL and parses results."""
         search_list = self.get_searches()
         # Build URLs based on base URL + sub-categories
         for s in search_list:
@@ -90,21 +92,21 @@ class WaitroseSpider(CrawlSpider):
             yield Request(url = product_url, meta=search_meta)
 
     def parse_start_url(self, response):
-        """Parse responses from base URL:
-           Overrides Scrapy parser to parse each crawled response.
-           Waitrose apparently serves all products in a single list so we
-           just extract the product items and yield them for processing."""
+        """Default function to parse responses from base URL:
+           Waitrose serves products in a single list, but we cannot scroll
+           through them and there is no 'Next page' link, so we just extract
+           the first set of up to 24 product items and yield them for processing."""
            
-        sel = Selector(response)
+        # Get details of current search (passed in via response meta data)
         metadata = response.meta
-        #Finds product lines
+        #Find product lines
+        sel = Selector(response)
         products = sel.xpath(self.settings.products_xpath) 
         #Process each product line
         log.msg("Spider: parsing response for URL: " +
                 response.url + 
                 " for ONS item " + 
                 metadata['ons_item_name'], level=log.DEBUG)
-        # Get details of current search (passed in via response meta data)
         for product in products:
             # Create an item for each entry
             item = ProductItem()
@@ -125,6 +127,11 @@ class WaitroseSpider(CrawlSpider):
             item['search_matches'] = 1.0
             # Save price string and convert it to number later
             item['item_price_str'] = product.xpath(self.settings.raw_price_xpath).extract()[0].strip()
+            # Try getting the volume and putting it on the end of the product name
+            volume = product.xpath(self.settings.volume_xpath).extract()
+            if volume:
+                item['product_name'] = item['product_name'] + " " + volume[0].strip().upper()
+                
             # Waitrose volume price not always provided, so if it is not there, 
             # we try using volume and item price instead. 
             item['volume_price'] = ''                       
@@ -133,18 +140,17 @@ class WaitroseSpider(CrawlSpider):
                 #Allow for e.g. "1.25 per litre" instead of "1.25/litre"
                 item['volume_price'] = (vol_price[0].strip()).replace("per","/")
             else:
-                volume = product.xpath(self.settings.volume_xpath).extract()
-                item['volume_price'] = item['item_price_str'] + "/" + volume[0].strip()                
+                item['volume_price'] = item['item_price_str'] + "/" + volume[0].strip()
 
             # Add timestamp
             item['timestamp'] = datetime.datetime.now()
-            # Get promotion text (if any)
+            # Get promotion text (if any) NOT YET IMPLEMENTED
             item['promo'] = ''
             if self.settings.promo_xpath:
                 promo = product.xpath(self.settings.promo_xpath).extract() #TODO
                 if promo:
                     item['promo'] = promo[0]
-            # Get short term offer (if any)
+            # Get short term offer (if any) NOT YET IMPLEMENTED
             item['offer'] = ''
             if self.settings.offer_xpath:
                 offer = product.xpath(self.settings.offer_xpath).extract() #TODO
