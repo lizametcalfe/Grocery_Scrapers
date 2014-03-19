@@ -10,6 +10,7 @@ import datetime
 import os
 
 # Scrapy-based classes
+from scrapy import log
 from scrapy.contrib.spiders import CrawlSpider
 from scrapy.selector import Selector
 from scrapy.http import Request
@@ -67,10 +68,10 @@ class WaitroseSpider(CrawlSpider):
     def get_searches(self):
         """Returns a LIST of searches."""
         if self.csv_file:
-            print "Fetching searches from ", self.csv_file
+            log.msg("Spider: Fetching searches from " + self.csv_file, level=log.DEBUG)            
             return self.search_factory.get_csv_searches()            
         else:
-            #Use soem other source for target URLs - database?
+            #Use some other source for target URLs - database?
             raise WaitroseSpiderError("Cannot find input file " + self.csv_file)
 
     def start_requests(self):
@@ -78,26 +79,43 @@ class WaitroseSpider(CrawlSpider):
         search_list = self.get_searches()
         # Build URLs based on base URL + sub-categories
         for s in search_list:
+            search_meta = {}
+            product_url = ''
             search_meta = s.get_meta_map()
-            product_url = '/'.join([self.settings.base_url,s.store_sub1,
-                    s.store_sub2,
-                    s.store_sub3])
-            yield Request(url = product_url, meta=search_meta, callback=self.parse_base)                            
+            product_url = '/'.join([self.settings.base_url,
+                                    s.store_sub1,
+                                    s.store_sub2,
+                                    s.store_sub3])+'/'
+            log.msg("Spider: start_requests() yielding URL: "+product_url, level=log.DEBUG)
+            yield Request(url = product_url, meta=search_meta)
 
-    def parse_base(self, response):
+    def parse_start_url(self, response):
         """Parse responses from base URL:
            Overrides Scrapy parser to parse each crawled response.
-           Wasitrose apaprently serves all products in a single list so we
+           Waitrose apparently serves all products in a single list so we
            just extract the product items and yield them for processing."""
+           
         sel = Selector(response)
         metadata = response.meta
         #Finds product lines
         products = sel.xpath(self.settings.products_xpath) 
         #Process each product line
+        log.msg("Spider: parsing response for URL: " +
+                response.url + 
+                " for ONS item " + 
+                metadata['ons_item_name'], level=log.DEBUG)
         # Get details of current search (passed in via response meta data)
         for product in products:
             # Create an item for each entry
             item = ProductItem()
+            #UPPER case product name for storage to make searching easier
+            item['product_name'] = (product.xpath(self.settings.product_name_xpath).extract()[0]).upper()
+
+            log.msg("Spider: Response for URL: " +
+                response.url + 
+                " found " + item['product_name'].encode('utf-8') 
+                , level=log.DEBUG)
+
             item['store'] = self.store
             item['ons_item_no'] =  metadata['ons_item_no']
             item['ons_item_name'] =  metadata['ons_item_name']
@@ -105,12 +123,11 @@ class WaitroseSpider(CrawlSpider):
             item['search_string'] = metadata['search_terms']
             #Default matches to 1.0 and modify later            
             item['search_matches'] = 1.0
-            #UPPER case product name for storage to make searching easier
-            item['product_name'] = (product.xpath(self.settings.product_name_xpath).extract()[0]).upper()   
             # Save price string and convert it to number later
             item['item_price_str'] = product.xpath(self.settings.raw_price_xpath).extract()[0].strip()
             # Waitrose volume price not always provided, so if it is not there, 
-            # we try using volume and item price instead.                        
+            # we try using volume and item price instead. 
+            item['volume_price'] = ''                       
             vol_price = product.xpath(self.settings.vol_price_xpath).extract()
             if vol_price:
                 #Allow for e.g. "1.25 per litre" instead of "1.25/litre"
@@ -122,16 +139,19 @@ class WaitroseSpider(CrawlSpider):
             # Add timestamp
             item['timestamp'] = datetime.datetime.now()
             # Get promotion text (if any)
-            promo = product.xpath(self.settings.promo_xpath).extract() #TODO
-            if promo:
-                item['promo'] = promo[0]
-            else:
-                item['promo'] = ''
+            item['promo'] = ''
+            if self.settings.promo_xpath:
+                promo = product.xpath(self.settings.promo_xpath).extract() #TODO
+                if promo:
+                    item['promo'] = promo[0]
             # Get short term offer (if any)
-            offer = product.xpath(self.settings.offer_xpath).extract() #TODO
-            if offer:
-                item['offer'] = offer[0]
-            else:
-                item['offer'] = ''
+            item['offer'] = ''
+            if self.settings.offer_xpath:
+                offer = product.xpath(self.settings.offer_xpath).extract() #TODO
+                if offer:
+                    item['offer'] = offer[0]
             #Pass the item back
             yield item
+
+
+

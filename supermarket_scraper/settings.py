@@ -9,10 +9,19 @@
 BOT_NAME = 'supermarket_scraper'
 SPIDER_MODULES = ['supermarket_scraper.spiders']
 NEWSPIDER_MODULE = 'supermarket_scraper.spiders'
-LOG_LEVEL = 'ERROR'  # use 'ERROR' to suppress non-error log messages
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 USER_AGENT = 'ons_supermarket_scraper (+http://www.ons.gov.uk)'
+
+# OUR CUSTOM SETTINGS:
+LOG_LEVEL = 'ERROR'  # use 'ERROR' to suppress non-error log messages
+LOG_FILE = 'scrapy.log' # could include timestamp in log file name?
+# Switch off caching because we get mixed up request/response data
+DNSCACHE_ENABLED = False
+# Try increasing CONCURRENT_REQUESTS so we can handle all requests concurrently, 
+# as this seems to help prevent the request/response mix-ups.
+# Might hit memory problems here?
+CONCURRENT_REQUESTS = 100
 
 # PIPELINES
 # =========
@@ -38,7 +47,7 @@ USER_AGENT = 'ons_supermarket_scraper (+http://www.ons.gov.uk)'
 ITEM_PIPELINES = {
     'supermarket_scraper.pipelines.PostProcessingPipeline': 300,
     'supermarket_scraper.pipelines.CsvExportPipeline': 400,
-#    'scrapy_mongodb.MongoDBPipeline': 800,
+    'scrapy_mongodb.MongoDBPipeline': 800,
 }
 
 # Database settings for scrapy_mongodb.MongoDBPipeline

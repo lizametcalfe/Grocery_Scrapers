@@ -19,7 +19,7 @@ class SearchSettings(object):
     volume_xpath = ''    
 
 class WaitroseSearchSettings(SearchSettings):
-    """Represents search paths for TESCO.
+    """Represents search paths for WAITROSE.
        May want to load these at runtime from a CSV file."""
     
     def __init__(self):
@@ -31,15 +31,15 @@ class WaitroseSearchSettings(SearchSettings):
         self.sub2_path = ''
         self.sub3_path = ''
         self.next_page_xpath = ''
-        
-        self.products_xpath = '//*/div[contains(@class,"m-product ")]'  #"//*/div[@class='m-product-details-container']"
-        self.product_name_xpath = '*/div[@class="m-product-details-container"]/*/a/text()' 
+
+        # Exclude offer block above main product listings
+        self.products_xpath = '//*/div[@class="products-row"]/*[not(contains(@id,"caro-"))]/div[contains(@class,"m-product-cell")]/div[contains(@class,"m-product ")]'
+        self.product_name_xpath = '*/div[@class="m-product-details-container"]/*/a/text()'         
         self.raw_price_xpath = '*/div[@class="m-product-price-container"]/span[@class="price"]/text()'
         self.volume_xpath = '*/div/div/div[@class="m-product-volume"]/text()'
-        self.vol_price_xpath = '*/div[@class="m-product-price-container"]/span[@class="fine-print"]/text()'
-        
-        self.promo_xpath = "*[@class='desc']/*[@class='descContent']/*[@class='promo']/a[contains(@class,'promoFlyout')]/@title"
-        self.offer_xpath = "*[@class='desc']/p[@class='limitedLife']/a/text()" 
+        self.vol_price_xpath = '*/div[@class="m-product-price-container"]/span[@class="fine-print"]/text()'        
+        self.promo_xpath = ''
+        self.offer_xpath = ''        
 
 
 class TescoSearchSettings(SearchSettings):

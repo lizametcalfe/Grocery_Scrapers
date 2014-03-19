@@ -44,7 +44,8 @@ class PostProcessingPipeline(object):
             vp_in = vp.strip(" ()").replace("each","/each")
             vp_elems = re.split('/', vp_in)
             # convert e.g. 1,234.00 to 1234.00
-            p_str     = re.sub(r'\[^0-9.]|,', "", (vp_elems[0].strip(' '+self.pound_sign)))
+            p_str     = re.sub(r'\[^0-9.]|,', "", 
+                               (vp_elems[0].strip(' '+self.pound_sign)))
             # now make it a number - watch out for penny prices e.g. "89p"
             if 'p' in p_str:
                 # penny price --> pounds
@@ -52,14 +53,13 @@ class PostProcessingPipeline(object):
             else:
                 price = 1.0 * float(p_str.strip(' '+self.pound_sign) )
         
-            # Extract no of units using regex
+            # Now look for no of units
             vol = vp_elems[1].strip()
             # Watch out for multi-pack volumes e.g. 10x440ml --> 4400 ml
-            vol = self.extract_multipack_volume(vol)
-                
+            vol = self.extract_multipack_volume(vol)                
             # Extract no of units using regex
             re_find_price = r'\d+(\.)?\d*'    
-            re_price = re.match(re_find_price,vol)
+            re_price = re.match(re_find_price, vol)
             if re_price:
                 #Get the number of units
                 no_units = re_price.group()
@@ -110,7 +110,8 @@ class PostProcessingPipeline(object):
         if not search_terms:
             return 1.0
         else:
-            terms = search_terms.split(" ")
+            # Excludes blank search terms
+            terms = [t.strip() for t in search_terms.split(" ") if t.strip()]
             n_terms = len(terms)
             if n_terms == 0:
                 return 1.0
@@ -145,22 +146,25 @@ class PostProcessingPipeline(object):
             item['no_units'] = vpx.get('no_units')
             item['units'] = vpx.get('units')
             # Work out the standardised price per kg or litre 
-            (item['std_price'], item['std_unit']) = self.extract_std_price(vpx.get('price'), vpx.get('no_units'), vpx.get('units'))
+            (item['std_price'], item['std_unit']) = self.extract_std_price(
+                                                    vpx.get('price'), 
+                                                    vpx.get('no_units'), 
+                                                    vpx.get('units'))
         #Check how many search terms match the product name
-        item['search_matches'] = self.get_search_matches(item['search_string'],  item['product_name'])
+        item['search_matches'] = self.get_search_matches(
+                                    item['search_string'],  
+                                    item['product_name'])
             
         return item
 
 
     def process_tesco_item(self, item, spider):
-        """Apply Tesco-specific post-processing (if any) to product line items"""
-        
+        """Apply Tesco-specific post-processing (if any) to product line items"""        
         # Currently we can use common processing for both supermarkets
         return self.common_process_item(item, spider)
 
     def process_waitrose_item(self, item, spider):
-        """Apply Waitrose-specific post-processing to product line items"""
-        
+        """Apply Waitrose-specific post-processing to product line items"""        
         # Currently we can use common processing for both supermarkets
         return self.common_process_item(item, spider)
 
