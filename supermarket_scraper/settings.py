@@ -55,7 +55,7 @@ CONCURRENT_REQUESTS = 100
 ITEM_PIPELINES = {
     'supermarket_scraper.pipelines.PostProcessingPipeline': 300,
     'supermarket_scraper.pipelines.CsvExportPipeline': 400,
-    'scrapy_mongodb.MongoDBPipeline': 800,
+#    'scrapy_mongodb.MongoDBPipeline': 800,
 }
 
 # MongoDB database settings for scrapy_mongodb.MongoDBPipeline
