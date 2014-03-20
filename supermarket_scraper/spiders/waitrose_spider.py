@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """
 Created on Mon Feb  3 13:15:41 2014
 
@@ -115,7 +114,7 @@ class WaitroseSpider(CrawlSpider):
 
             log.msg("Spider: Response for URL: " +
                 response.url + 
-                " found " + item['product_name'].encode('utf-8') 
+                " found " + item['product_name'].encode('utf-16') 
                 , level=log.DEBUG)
 
             item['store'] = self.store

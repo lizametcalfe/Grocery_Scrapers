@@ -17,8 +17,8 @@ config = {
     'download_url': 'Where to download it.',
     'author_email': 'christopher.webster@ons.gov.uk',
     'version': '0.1',
-    'install_requires': ['nose'],
-    'packages': ['supermarket_scraper'],
+    'install_requires': ['nose','Scrapy','pymongo','scrapy-mongodb','PyDrive'],
+    'packages': ['supermarket_scraper','gdrive_upload'],
     'scripts': [],
     'name': 'supermarket_scraper'
 }

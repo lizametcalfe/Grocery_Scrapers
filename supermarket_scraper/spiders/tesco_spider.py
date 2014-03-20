@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """
 Created on Mon Feb  3 13:15:41 2014
 
@@ -115,7 +114,7 @@ class TescoSpider(CrawlSpider):
             link_text = item.xpath('text()').extract()[0]
             # Check search tree i.e. children of this node will be sub2 entries
             for s in response.meta['children']:
-                if (link_text.encode('utf-8') == s['name'].encode('utf-8')):
+                if (link_text.encode('utf-16') == s['name'].encode('utf-16')):
                     search_meta = s
                     link_ref = item.xpath('@href').extract()[0]
                     url = link_ref              
@@ -135,8 +134,8 @@ class TescoSpider(CrawlSpider):
             #Check each nav link for the required sub-category
             link_text = item.xpath('text()').extract()[0]
             # Check search tree i.e. children of this node will be sub3 entries
-            for s in response.meta['children']:
-                if (link_text.encode('utf-8') == s['name'].encode('utf-8')):
+            for s in response.meta['children']:                        
+                if (link_text.encode('utf-16') == s['name'].encode('utf-16')):
                     search_meta = s
                     link_ref = item.xpath('@href').extract()[0]
                     url = link_ref              
