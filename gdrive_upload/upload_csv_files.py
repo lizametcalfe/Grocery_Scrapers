@@ -11,16 +11,20 @@ from pydrive.drive import GoogleDrive
 
 def get_authenticated_drive():
     """Connects to GDrive using the pre-installed credentials.
+    
        Credentials must first be created online for the Google application via
-       the Google console at https://console.developers.google.com/project
+       the Google console at https://console.developers.google.com/project.
+       
        This should be done using the relevant Google user account.
+       
        Then copy the ID and secret into settings.yaml where PyDrive can pick it
        up for processing first time.
+       
        First time the process runs, you will need to confirm access is
        allowed, and then the credentials will be saved to credentials.json.
-       Subsequently, no further interaction is required."""
+       Subsequently, no further interaction should be needed."""
     gauth = GoogleAuth()
-    gauth.LocalWebserverAuth() # Creates local webserver and auto handles authentication
+    gauth.LocalWebserverAuth() # Creates local webserver to handle authentication
     drive = GoogleDrive(gauth)
     return drive
 
@@ -44,6 +48,11 @@ def process_files():
        filename.csv.uploaded so it is not picked up next time.
        If an error occurs while uploading the CSV file to GDrive, the error is 
        written to a file called filename.csv.error for later investigation."""
+    # Make sure we are in the gdrive_upload directory so that PyDrive can
+    # find the settings.yaml and credentials.json files for authentication.
+    path = os.path.abspath(__file__)
+    dir_path = os.path.dirname(path)
+    os.chdir(dir_path)
     #Get an authenticated connection to GDrive
     drive = get_authenticated_drive()
     #Switch to source directory so we know that all files are in the right place
@@ -64,8 +73,10 @@ def process_files():
             f.close()
     
 def main():
-    """Main function."""
+    """Main function."""    
+    startdir = os.getcwd()
     process_files()
+    os.chdir(startdir)
 
 # Runs main() if program called from command line
 if __name__ == "__main__":
