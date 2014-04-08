@@ -22,7 +22,7 @@ The following are needed to run the basic web-scraping process (on Linux):
 * You can then install the application code via Git `clone` from your BitBucket account (see below).
 
 ### Optional
-The following tools are optional, depending on whether you want to store your data in MongoDB, use Git version control, etc.
+The following tools are optional, depending on whether you want to store your data in MongoDB or Google Drive, use Git version control, etc.
 
 * Nose - testing framework for Python e.g.
 > `sudo pip install nose`
@@ -36,7 +36,8 @@ The following tools are optional, depending on whether you want to store your da
 > `sudo pip install scrapy-mongodb`
 * Gedit text-editor with Markdown plugin e.g.
 > `sudo apt-get install gedit`
-* Robomongo GUI client for MongoDB.  Download .DEB package and install using package manager.
+* PyDrive client API for Google Drive
+> `sudo pip install PyDrive`
 
 ### Get the application code from BitBucket using the Linux Git client
 * You need a free account on BitBucket.
@@ -73,10 +74,12 @@ Outputs - see `supermarket_scraper/output`
 * These are enabled via `supermarket_scraper/settings.py`.
 * We have implemented several pipelines:
 > * Price pipeline cleans up price entry. **ALWAYS RUN THIS**.
-> * CSV pipeline writes data to a CSV file in the `supermarket_scraper/output` directory.
+> * CSV pipeline writes data to a CSV file in the `supermarket_scraper/output/[spider]` directory.
 > * MongoDB pipeline writes item to MongoDB database if required.
 * CSV output file names include a timestamp.  For example:
 > `tesco_products_20140302132432.csv`
+* CSV output files are written to the `supermarket_scraper/output/[spider]` directory. For example:
+> `supermarket_scraper/output/tesco/tesco_products_20140302132432.csv`
 
 Usage
 -----
@@ -90,37 +93,13 @@ Usage
 * You can also tell Scrapy the name of this product list input file at runtime:
 >`scrapy crawl tesco -a csv_file=tesco_input.csv`
 * If the filename is not provided at runtime, the program looks for the default file `tesco_input.csv` in the default location `supermarket_scraper/input`.
-
-* You can also provide a relative path to the output directory (which **must exist**) at runtime:
->`scrapy crawl tesco -a csv_file=tesco_input.csv -a output_dir=output`
-* This will write any output files to this directory (the default directory name is `output`):
->`supermarket_scraper/output`
 * The output formats (CSV and/or MongoDB currently) are specified via the "pipeline" settings in `settings.py` (see "Outputs" above).
+* The CSV output file will be in `supermarket_scraper/output/tesco`.
 ### Running Scrapy with the Waitrose spider
 * As above, but use the spider name `waitrose` instead:
 >`scrapy crawl waitrose`
-* The input/output files will be in the same default directories and format as for the Tesco spider.
+* The input file will be in the same default directory and format as for the Tesco spider.
 * However, the detailed URLs and sub-categories will be different as these are specific to each website.
+* The CSV output files will be in `supermarket_scraper/output/waitrose`, and the data will be in the same format as for the Tesco spider.
 
-Functionality
--------------
-### Current
-* Scrapes data for a number of products from Tesco or Waitrose website.
-* **No validation** on data currently e.g. to check price is really numeric.
-* Data can be extracted and written to CSV output file.
-* Data can be extracted and written to MongoDB collection.
-* Searches supermarket site by navigating 3 levels of (nested) menus then executing a product search.
-* **All products are retrieved** for a given search i.e. no further filtering is applied at this stage.
-* Handles paging through results.
-* Looks for search terms e.g. "white sliced 800g" in the product description.
-* Matching search terms are indicated via a simple metric e.g. if 1 term out of 2 matches the product description, then the search value is set to 0.5.
-* Extracts and formats volume price where possible e.g. "£1.23/100g", "£10.00/10x440ml", "89p each".
-* Calculates a standardised price per kg, litre or item.
-
-### TO DO
-* Fix bugs!
-* Expand list of products.
-* Look at how to run multiple web-scraping tasks in a single session e.g. command-line API?
-* Improve robustness/reliability of price extraction/formatting?
-* Start looking at how to feed daily/weekly scraped data to business (volumes?).
 

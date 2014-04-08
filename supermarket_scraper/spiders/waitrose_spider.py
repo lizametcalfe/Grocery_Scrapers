@@ -31,10 +31,11 @@ class WaitroseSpider(CrawlSpider):
        """
     name = 'waitrose' 
     store = "WAITROSE"
+    output_dir = None
     settings = WaitroseSearchSettings()
 
-    def __init__(self, csv_file=None, output_dir='output', *args, **kwargs):
-        """Provide name of CSV file at runtime e.g.:
+    def __init__(self, csv_file=None, *args, **kwargs):
+        """Can provide name of input CSV file at runtime e.g.:
         
            scrapy crawl waitrose -a csv_file=waitrose_input.csv
            
@@ -42,11 +43,11 @@ class WaitroseSpider(CrawlSpider):
            If CSV file not specified, defaults to {name}_input.csv 
            e.g. waitrose_input.csv.
            
-           Can also provide an output directory name:
+           Output files are written to:
            
-           scrapy crawl waitrose -a csv_file=waitrose.csv -a output_dir=output
+           supermarket_scraper/output/[spider name]
            
-           Directory MUST EXIST!
+           Output directory MUST EXIST!
         """
         super(WaitroseSpider, self).__init__(*args, **kwargs)   
         
@@ -59,10 +60,10 @@ class WaitroseSpider(CrawlSpider):
         self.settings = SearchSettingsFactory.get_settings(self.store)
         # Get search parameters as tree
         self.search_factory = SearchTreeFactory(self.store, self.csv_file)            
-        if not (os.path.isdir(output_dir)):
-            raise WaitroseSpiderError("Invalid output directory: " + output_dir)
-        else:
-            self.output_dir = output_dir                            
+        # Set and check output directory
+        self.output_dir = os.path.join('output',self.name)        
+        if not (os.path.isdir(self.output_dir)):
+            raise WaitroseSpiderError("Invalid output directory: " + self.output_dir)
         
     def get_searches(self):
         """Returns a LIST of searches. We don't need to nest searches here

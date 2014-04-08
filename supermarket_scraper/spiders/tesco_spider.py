@@ -32,21 +32,22 @@ class TescoSpider(CrawlSpider):
     name = 'tesco' 
     store = "TESCO"
     settings = TescoSearchSettings()
+    output_dir = None
 
-    def __init__(self, csv_file=None, output_dir='output', *args, **kwargs):
-        """Provide name of CSV file at runtime e.g.:
+    def __init__(self, csv_file=None, *args, **kwargs):
+        """Can provide name of input CSV file at runtime e.g.:
         
            scrapy crawl tesco -a csv_file=tesco_input.csv
            
-           Input CSV file should be in scrapy_tesco/data directory. 
+           Input CSV file should be in supermarket_scraper/input directory. 
            If CSV file not specified, defaults to {name}_input.csv 
            e.g. tesco_input.csv.
            
-           Can also provide an output directory name:
+           Output files are written to:
            
-           scrapy crawl tesco -a csv_file=tesco.csv -a output_dir=output
+           supermarket_scraper/output/[spider name]
            
-           Directory MUST EXIST!
+           Output directory MUST EXIST!
         """
         super(TescoSpider, self).__init__(*args, **kwargs)   
         
@@ -58,11 +59,11 @@ class TescoSpider(CrawlSpider):
         # Get URL and XPath settings
         self.settings = SearchSettingsFactory.get_settings(self.store)
         # Get search parameters as tree
-        self.search_factory = SearchTreeFactory(self.store, self.csv_file)            
-        if not (os.path.isdir(output_dir)):
-            raise TescoSpiderError("Invalid output directory: " + output_dir)
-        else:
-            self.output_dir = output_dir                            
+        self.search_factory = SearchTreeFactory(self.store, self.csv_file) 
+        # Set and check output directory
+        self.output_dir = os.path.join('output',self.name)        
+        if not (os.path.isdir(self.output_dir)):
+            raise TescoSpiderError("Invalid output directory: " + self.output_dir)
         
     def get_searches(self):
         """Returns a tree of searches."""

@@ -6,76 +6,55 @@ Created on Thu Mar 20 11:38:36 2014
 """
 import settings
 import os
-from pydrive.auth import GoogleAuth
-from pydrive.drive import GoogleDrive
+import gdrive_utils
 
-def get_authenticated_drive():
-    """Connects to GDrive using the pre-installed credentials.
-    
-       Credentials must first be created online for the Google application via
-       the Google console at https://console.developers.google.com/project.
-       
-       This should be done using the relevant Google user account.
-       
-       Then copy the ID and secret into settings.yaml where PyDrive can pick it
-       up for processing first time.
-       
-       First time the process runs, you will need to confirm access is
-       allowed, and then the credentials will be saved to credentials.json.
-       Subsequently, no further interaction should be needed."""
-    gauth = GoogleAuth()
-    gauth.LocalWebserverAuth() # Creates local webserver to handle authentication
-    drive = GoogleDrive(gauth)
-    return drive
+def process_dir(drive, local_path, foldername, parent):
+    """Process each file in this directory:
+         Upload each CSV file to target folder.
+         If successful, rename local file as filename.uploaded.
+         If an error occurs, write error to filename.error.
+    """
+    #Get target folder ID on Google Drive (create if not already there)
+    tgt_folder_id = gdrive_utils.get_folder(drive,foldername,parent)
+    #Now find the CSV files we need to process in the local directory
+    for fname in os.listdir(local_path):
+        if fname.endswith(".csv"):
+            try:
+                local_file = os.path.join(local_path,fname)
+                gdrive_utils.upload_file_as_csv(drive, local_file, fname, tgt_folder_id)
+                os.rename(local_file, local_file+'.uploaded')
+            except Exception as ex:
+                f = open(local_file+'.error', 'w')
+                f.write('Exception type:\n'+type(ex))
+                f.write('Exception message:\n'+ex.message)
+                f.write('Exception args:\n'+ex.args)
 
-def upload_file_as_csv(fname, drive):
-    """Copies given CSV file to given GDrive."""
-    gfile = drive.CreateFile({'title':fname, 'mimeType':'text/csv'})
-    gfile.SetContentFile(fname) # Read file and set it as a content of this instance.
-    gfile.Upload() # Upload it
-
-def get_file_list():
-    """Get list of CSV files from CSV source directory (see settings.py)."""
-    files = []
-    for file in os.listdir(settings.CSV_SOURCE_DIR):
-        if file.endswith(".csv"):
-            files.append(file)
-    return files
-
-def process_files():
-    """Copies all .csv files in CSV source directory into GDrive account.
+def process_outputs():
+    """Copies all .csv files from CSV source directories into GDrive account.
        After each CSV file has been copied, the local copy is renamed as
        filename.csv.uploaded so it is not picked up next time.
        If an error occurs while uploading the CSV file to GDrive, the error is 
        written to a file called filename.csv.error for later investigation."""
-    # Make sure we are in the gdrive_upload directory so that PyDrive can
-    # find the settings.yaml and credentials.json files for authentication.
+    # Start in right directory to get OAuth settings
     path = os.path.abspath(__file__)
     dir_path = os.path.dirname(path)
     os.chdir(dir_path)
-    #Get an authenticated connection to GDrive
-    drive = get_authenticated_drive()
-    #Switch to source directory so we know that all files are in the right place
-    files = get_file_list()
+    #Get GDrive base folder (creates it in GDrive root folder if not already present)
+    drive = gdrive_utils.get_authenticated_drive()
+    base_folder_id = gdrive_utils.get_folder(drive,settings.GDRIVE_TARGET_DIR,'root')
+    #
+    # Find spider-specific folders inside local source folder
+    #
     os.chdir(settings.CSV_SOURCE_DIR)
-    # Try uploading each file in turn.
-    #   Success --> rename file as "file.csv.uploaded"
-    #   Error --> write any errors to "file.csv.error"
-    for fname in files:  
-        try:
-            upload_file_as_csv(fname, drive)
-            os.rename(fname, fname+'.uploaded')
-        except Exception as ex:
-            f = open(fname+'.error', 'w')
-            f.write('Exception type:\n'+type(ex))
-            f.write('Exception message:\n'+ex.message)
-            f.write('Exception args:\n'+ex.args)
-            f.close()
+    for d in os.listdir(os.curdir):
+        if os.path.isdir(d):
+            local_path = os.path.abspath(d)
+            process_dir(drive, local_path, d, base_folder_id)
     
 def main():
     """Main function."""    
     startdir = os.getcwd()
-    process_files()
+    process_outputs()
     os.chdir(startdir)
 
 # Runs main() if program called from command line
