@@ -15,6 +15,8 @@ The following are needed to run the basic web-scraping process (on Linux):
 * Python 2.7.x (should already be installed on any modern Linux system)
 * Python PIP package installer e.g. on Ubuntu/Debian run:  
 > `sudo apt-get install python-pip`
+* Python dependencies for Scrapy and PyMongo:
+> `sudo apt-get install build-essential python-dev`
 * Scrapy web-scraping framework e.g. 
 > `sudo pip install Scrapy`
 * Git (source code management) client to access code in remote repository (BitBucket) e.g.
@@ -28,8 +30,6 @@ The following tools are optional, depending on whether you want to store your da
 > `sudo pip install nose`
 * MongoDB database e.g.
 > `sudo apt-get install mongodb`
-* Python dependencies for PyMongo:
-> `sudo apt-get install build-essential python-dev`
 * PyMongo database driver e.g.
 > `sudo pip install pymongo`
 * scrapy-mongodb add-on to write Scrapy output straight to MongoDB e.g.
