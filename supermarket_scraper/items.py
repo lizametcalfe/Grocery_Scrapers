@@ -6,7 +6,7 @@
 from scrapy.item import Item, Field
 
 class ProductItem(Item):
-    """Price item for Tesco."""
+    """Price item for supermarket product."""
     store = Field()
     ons_item_no = Field()
     ons_item_name = Field()

@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # Scrapy settings for scrapy_tesco project
 #
 # For simplicity, this file contains only the most important settings by
@@ -8,6 +9,8 @@
 
 import datetime
 
+COOKIES_ENABLED=True
+COOKIES_DEBUG=True
 BOT_NAME = 'supermarket_scraper'
 SPIDER_MODULES = ['supermarket_scraper.spiders']
 NEWSPIDER_MODULE = 'supermarket_scraper.spiders'
@@ -17,7 +20,7 @@ USER_AGENT = 'ons_supermarket_scraper (+http://www.ons.gov.uk)'
 
 # OUR CUSTOM SETTINGS:
 
-LOG_LEVEL = 'ERROR'  # use 'ERROR' to suppress non-error log messages
+LOG_LEVEL = 'DEBUG'  # use 'ERROR' to suppress non-error log messages
 # Use this option if you want to include the timestamp in the log file name
 #logfile = BOT_NAME + datetime.datetime.now().strftime("%Y%m%d%H%M%S") + ".log"
 logfile = BOT_NAME + ".log"
@@ -55,7 +58,7 @@ CONCURRENT_REQUESTS = 100
 ITEM_PIPELINES = {
     'supermarket_scraper.pipelines.PostProcessingPipeline': 300,
     'supermarket_scraper.pipelines.CsvExportPipeline': 400,
-#    'scrapy_mongodb.MongoDBPipeline': 800,
+    'scrapy_mongodb.MongoDBPipeline': 800,
 }
 
 # MongoDB database settings for scrapy_mongodb.MongoDBPipeline

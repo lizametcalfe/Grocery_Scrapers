@@ -16,7 +16,8 @@ class SearchSettings(object):
     product_name_xpath = ''
     raw_price_xpath = ''
     vol_price_xpath = ''    
-    volume_xpath = ''    
+    volume_xpath = ''   
+    cookies = {}
 
 class WaitroseSearchSettings(SearchSettings):
     """Represents search paths for WAITROSE.
@@ -50,6 +51,7 @@ class TescoSearchSettings(SearchSettings):
         self.sub2_path = '//*[@id="superDeptItems"]/*/ul/li/a'
         self.sub3_path = '//*[@id="deptNavItems"]/*/ul/li/a'
         self.next_page_xpath = "//*[@class='next']/a"
+        
         self.products_xpath = "//*[@class='cf products line']/li"
         self.product_name_xpath = "*[@class='desc']/*/a[contains(@class,'title')]/text()" 
         self.raw_price_xpath = "*[@class='quantity']/div/p/span[@class='linePrice']/text()"
@@ -57,6 +59,30 @@ class TescoSearchSettings(SearchSettings):
         self.promo_xpath = "*[@class='desc']/*[@class='descContent']/*[@class='promo']/a[contains(@class,'promoFlyout')]/@title"
         self.offer_xpath = "*[@class='desc']/p[@class='limitedLife']/a/text()" 
             
+class SainsburySearchSettings(SearchSettings):
+    """Represents search paths for SAINSBURY.
+       May want to load these at runtime from a CSV file.
+       WARNING:
+       Sainsburys page format is a world of pain, and we have had to put some
+       XPath in the spider class to cope with this.
+       Be VERY careful about changing ANY of this stuff."""
+    
+    def __init__(self):
+        super(SainsburySearchSettings, self).__init__()
+        self.base_url = 'http://www.sainsburys.co.uk/shop/gb/groceries/'        
+        self.next_page_xpath = "//*[@class='next']/a"
+        self.products_xpath = "//*/li[contains(@class,'gridItem')]/div[contains(@class,'product ')]"        
+        self.product_name_xpath = "*[@class='productInfo']/*/h3/a/text()" 
+        
+        
+        self.raw_price_xpath = "*[@class='pricingReviews']/*/p" #//text()"
+        
+        self.vol_price_xpath = "*[@class='quantity']/div/p/span[@class='linePriceAbbr']/text()"
+        self.promo_xpath = "*[@class='desc']/*[@class='descContent']/*[@class='promo']/a[contains(@class,'promoFlyout')]/@title"
+        self.offer_xpath = "*[@class='desc']/p[@class='limitedLife']/a/text()" 
+        # Sainsburys requires us to accept cookies before we can navigate the store
+        self.cookies = {}
+        self.cookies['SESSION_COOKIEACCEPT']='true'
         
 class SearchSettingsFactory(object):
     """Returns path settings (URLs etc) for product searches at a given store.
@@ -70,6 +96,8 @@ class SearchSettingsFactory(object):
             return TescoSearchSettings()
         elif store == "WAITROSE":            
             return WaitroseSearchSettings()
+        elif store == "SAINSBURY":            
+            return SainsburySearchSettings()
         else:
             # Fail safe by returning empty settings
             return SearchSettings()
