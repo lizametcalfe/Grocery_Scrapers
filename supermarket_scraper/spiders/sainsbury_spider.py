@@ -100,7 +100,16 @@ class SainsburySpider(CrawlSpider):
         # Get details of current search (passed in via response meta data)
         metadata = response.meta
         #Find product lines
-        sel = Selector(response)
+        sel = Selector(response)        
+        sb_cookies = self.settings.cookies
+        #Find any "next" links for paging and yield Request to next page
+        next_page = sel.xpath(self.settings.next_page_xpath)
+        for page in next_page:
+            #Check each nav link for the required sub-category
+            next_link_ref = page.xpath('@href').extract()[0]
+            log.msg("Spider: found NEXT page link: " + next_link_ref, level=log.DEBUG)
+            yield Request(next_link_ref, cookies=sb_cookies, meta=response.meta, callback=self.parse_base)
+        
         #Process each product line
         log.msg("Spider: parsing response for URL: " +
                 response.url + 
