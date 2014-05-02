@@ -70,11 +70,10 @@ class SainsburySearchSettings(SearchSettings):
     def __init__(self):
         super(SainsburySearchSettings, self).__init__()
         self.base_url = 'http://www.sainsburys.co.uk/shop/gb/groceries/'        
-        self.next_page_xpath = "//*[@class='next']/a"
         self.products_xpath = "//*/li[contains(@class,'gridItem')]/div[contains(@class,'product ')]"        
         self.product_name_xpath = "*[@class='productInfo']/*/h3/a/text()" 
         
-        
+        self.next_page_xpath = "//*[@id='productLister']/div[@class='pagination']/ul[@class='pages']/li[@class='next']/a"
         self.raw_price_xpath = "*[@class='pricingReviews']/*/p" #//text()"
         
         self.vol_price_xpath = "*[@class='quantity']/div/p/span[@class='linePriceAbbr']/text()"
