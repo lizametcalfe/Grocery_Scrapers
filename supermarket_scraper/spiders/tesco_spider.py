@@ -158,14 +158,14 @@ class TescoSpider(CrawlSpider):
         sel = Selector(response)
         
         #Find any "next" links for paging and yield Request to next page
-        """
+        
         next_page = sel.xpath(self.settings.next_page_xpath)
         for page in next_page:
             #Check each nav link for the required sub-category
             next_link_ref = page.xpath('@href').extract()[0]
             #print "Found nav link link: ", url
             yield Request(next_link_ref, meta=response.meta, callback=self.parse_sub3)
-            """
+            
             
         #Finds product lines
         products = sel.xpath(self.settings.products_xpath) 
