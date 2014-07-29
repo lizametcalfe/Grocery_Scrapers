@@ -47,15 +47,16 @@ class TescoSearchSettings(SearchSettings):
     def __init__(self):
         super(TescoSearchSettings, self).__init__()
         self.base_url = 'http://www.tesco.com/groceries'
-        self.sub1_path = '//*[@id="secondaryNav"]/ul/li/a[@class="flyout"]'
+        self.sub1_path = '//*[@id="secondaryNav"]/ul/li/a[@class="yui3-menu-label level2"]'
         self.sub2_path = '//*[@id="superDeptItems"]/*/ul/li/a'
         self.sub3_path = '//*[@id="deptNavItems"]/*/ul/li/a'
         self.next_page_xpath = "//*[@class='next']/a"
         
-        self.products_xpath = "//*[@class='cf products line']/li"
-        self.product_name_xpath = "*[@class='desc']/*/a[contains(@class,'title')]/text()" 
-        self.raw_price_xpath = "*[@class='quantity']/div/p/span[@class='linePrice']/text()"
-        self.vol_price_xpath = "*[@class='quantity']/div/p/span[@class='linePriceAbbr']/text()"
+        self.products_xpath = "//*/li[contains(@class,'product clearfix')]"
+        
+        self.product_name_xpath = "*[@class='desc']/h2/a/span[@data-title='true']/text()"
+        self.raw_price_xpath = "*[@class='quantityWrapper']/div/p/span[@class='linePrice']/text()"
+        self.vol_price_xpath = "*[@class='quantityWrapper']/div/p/span[@class='linePriceAbbr']/text()"
         self.promo_xpath = "*[@class='desc']/*[@class='descContent']/*[@class='promo']/a[contains(@class,'promoFlyout')]/@title"
         self.offer_xpath = "*[@class='desc']/p[@class='limitedLife']/a/text()" 
             

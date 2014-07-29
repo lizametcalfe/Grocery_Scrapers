@@ -7,6 +7,7 @@ Created on Mon Feb  3 13:15:41 2014
 # Standard Python classes
 import datetime
 import os
+import re
 
 # Scrapy-based classes
 from scrapy import log
@@ -71,7 +72,7 @@ class TescoSpider(CrawlSpider):
             log.msg("Spider: Fetching searches from " + self.csv_file, level=log.DEBUG)            
             return self.search_factory.get_csv_search_tree(self.settings.base_url)
         else:
-            #Use soem other source for target URLs - database?
+            #Use some other source for target URLs - database?
             raise TescoSpiderError("Cannot find input file " + self.csv_file)
 
     def start_requests(self):
@@ -87,18 +88,20 @@ class TescoSpider(CrawlSpider):
         sel = Selector(response)
         #Get list of searches as a NESTED TREE
         searches = self.get_searches()
-        #Find first layer of subordinate data (via "flyout" nav links)
+        #Find first layer of subordinate data (via nav links)
         #Process each navigation item to find required sub-category
         sub_items = sel.xpath(self.settings.sub1_path)
         for item in sub_items:
             # Check each nav link for the required sub-category
-            link_text = item.xpath('text()').extract()[0]
+			# Text is returned as a list of strings so join it into a single string
+            link_text =  ' '.join(item.xpath('text()').extract())
             # Check search tree i.e. children of top node will be sub1 entries
             for s in searches.children:
                 if (link_text == s.name):
                     search_meta = s.as_dict()
                     link_ref = item.xpath('@href').extract()[0]
-                    url = link_ref              
+                    url = link_ref    
+                    #print("parse_base: Text matches so use URL:",url)          
                     yield Request(url, meta=search_meta, callback=self.parse_sub1)
 
     def parse_sub1(self, response):
@@ -112,14 +115,15 @@ class TescoSpider(CrawlSpider):
         sub_items = sel.xpath(self.settings.sub2_path)
         for item in sub_items:
             #Check each nav link for the required sub-category
-            link_text = item.xpath('text()').extract()[0]
+            link_text = ' '.join(item.xpath('text()').extract())
             # Check search tree i.e. children of this node will be sub2 entries
             for s in response.meta['children']:
+                #print("Sub 2: Checking link text:", link_text, "against", s['name'])
                 if (link_text.encode('utf-16') == s['name'].encode('utf-16')):
                     search_meta = s
                     link_ref = item.xpath('@href').extract()[0]
                     url = link_ref              
-                    #print "Found nav link link: ", url
+                    #print "parse_sub1: Found nav link link: ", url
                     yield Request(url, meta=search_meta, callback=self.parse_sub2)
 
     def parse_sub2(self, response):
@@ -133,13 +137,15 @@ class TescoSpider(CrawlSpider):
         sub_items = sel.xpath(self.settings.sub3_path)
         for item in sub_items:
             #Check each nav link for the required sub-category
-            link_text = item.xpath('text()').extract()[0]
+            link_text =  ' '.join(item.xpath('text()').extract())
             # Check search tree i.e. children of this node will be sub3 entries
             for s in response.meta['children']:                        
+                #print("Sub 3: Checking link text:", link_text, "against", s['name'])
                 if (link_text.encode('utf-16') == s['name'].encode('utf-16')):
                     search_meta = s
                     link_ref = item.xpath('@href').extract()[0]
                     url = link_ref              
+                    #print "parse_sub2: Found nav link link: ", url
                     yield Request(url, meta=search_meta, callback=self.parse_sub3)
 
     def parse_sub3(self, response):
@@ -152,12 +158,14 @@ class TescoSpider(CrawlSpider):
         sel = Selector(response)
         
         #Find any "next" links for paging and yield Request to next page
+        """
         next_page = sel.xpath(self.settings.next_page_xpath)
         for page in next_page:
             #Check each nav link for the required sub-category
             next_link_ref = page.xpath('@href').extract()[0]
             #print "Found nav link link: ", url
             yield Request(next_link_ref, meta=response.meta, callback=self.parse_sub3)
+            """
             
         #Finds product lines
         products = sel.xpath(self.settings.products_xpath) 
