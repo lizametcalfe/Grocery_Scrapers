@@ -57,9 +57,9 @@ class TescoSearchSettings(SearchSettings):
         self.product_name_xpath = "*[@class='desc']/h2/a/span[@data-title='true']/text()"
         self.raw_price_xpath = "*[@class='quantityWrapper']/div/p/span[@class='linePrice']/text()"
         self.vol_price_xpath = "*[@class='quantityWrapper']/div/p/span[@class='linePriceAbbr']/text()"
-        self.promo_xpath = "*[@class='desc']/*[@class='descContent']/*[@class='promo']/a[contains(@class,'promoFlyout')]/@title"
-        self.offer_xpath = "*[@class='desc']/p[@class='limitedLife']/a/text()" 
-            
+        self.promo_xpath = "*[@class='desc']/*[@class='descContentGrid']/*[@class='promo']/a[contains(@class,'promotionAlternatives')]/@title"
+        self.offer_xpath = "*[@class='desc']/*[@class='descContentGrid']/*[@class='promo']/a[contains(@class,'promotionAlternatives')]/em/text()"
+  
 class SainsburySearchSettings(SearchSettings):
     """Represents search paths for SAINSBURY.
        May want to load these at runtime from a CSV file.
