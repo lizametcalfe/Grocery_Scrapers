@@ -19,6 +19,8 @@ The following are needed to run the basic web-scraping process (on Linux):
 > `sudo apt-get install build-essential python-dev`
 * Scrapy web-scraping framework e.g. 
 > `sudo pip install Scrapy`
+* Additional requirement for Scrapy:
+> `sudo pip install service_identity`
 * Git (source code management) client to access code in remote repository (BitBucket) e.g.
 > `sudo apt-get install git`
 * You can then install the application code via Git `clone` from your BitBucket account (see below).
