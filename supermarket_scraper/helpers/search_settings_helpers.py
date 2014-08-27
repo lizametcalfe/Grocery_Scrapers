@@ -36,8 +36,8 @@ class WaitroseSearchSettings(SearchSettings):
         self.volume_xpath = '*/div/div/div[@class="m-product-volume"]/text()'
         self.vol_price_xpath = '*/div[@class="m-product-price-container"]/span[@class="fine-print"]/text()'        
 
-        self.promo_xpath = ''
-        self.offer_xpath = ''        
+        self.promo_xpath = '*/div[@class="m-product-details-container"]/a/text()'
+        self.offer_xpath = '*/div[@class="m-product-details-container"]/a/text()'        
 
 
 class TescoSearchSettings(SearchSettings):
@@ -78,9 +78,12 @@ class SainsburySearchSettings(SearchSettings):
         self.raw_price_xpath = "*[@class='pricingReviews']/*/p" #//text()"
         
         self.vol_price_xpath = "*[@class='quantity']/div/p/span[@class='linePriceAbbr']/text()"
-        self.promo_xpath = "*[@class='desc']/*[@class='descContent']/*[@class='promo']/a[contains(@class,'promoFlyout')]/@title"
-        self.offer_xpath = "*[@class='desc']/p[@class='limitedLife']/a/text()" 
+        self.promo_xpath = "*[@class='promotion']/p/a/text()"
+        self.offer_xpath = "*[@class='pricingReviews']/*/p"
         # Sainsburys requires us to accept cookies before we can navigate the store
+        '''self.promo_xpath = "*[@class='desc']/*[@class='descContent']/*[@class='promo']/a[contains(@class,'promoFlyout')]/@title"
+        self.offer_xpath = "*[@class='desc']/p[@class='limitedLife']/a/text()" 
+        '''
         self.cookies = {}
         self.cookies['SESSION_COOKIEACCEPT']='true'
         
