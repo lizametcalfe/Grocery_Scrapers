@@ -78,11 +78,14 @@ class SainsburySearchSettings(SearchSettings):
         self.raw_price_xpath = "*[@class='pricingReviews']/*/p" #//text()"
         
         self.vol_price_xpath = "*[@class='quantity']/div/p/span[@class='linePriceAbbr']/text()"
-        self.promo_xpath = "*[@class='promotion']/p/a/text()"
-        self.offer_xpath = "*[@class='pricingReviews']/*/p"
+        self.promo_xpath = "*[@class='productInfo']/*/div[@class='promotion']/p/a/text()"
+        self.offer_xpath = "*[@class='productInfo']/*/div[@class='promotion']/p/a/text()"
         # Sainsburys requires us to accept cookies before we can navigate the store
         '''self.promo_xpath = "*[@class='desc']/*[@class='descContent']/*[@class='promo']/a[contains(@class,'promoFlyout')]/@title"
         self.offer_xpath = "*[@class='desc']/p[@class='limitedLife']/a/text()" 
+        "*[@class='pricingReviews']/*/p"
+        rb latest 
+        "//*[@class='productInfo']/*/div[@class='promotion']/p/a/text()"
         '''
         self.cookies = {}
         self.cookies['SESSION_COOKIEACCEPT']='true'

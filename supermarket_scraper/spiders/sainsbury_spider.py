@@ -165,8 +165,8 @@ class SainsburySpider(CrawlSpider):
                 item['timestamp'] = datetime.datetime.now()
     
                 #Ignore promos/offers
-                item['promo'] = ''
-                item['offer'] = ''
+                item['promo'] = product.xpath(self.settings.promo_xpath).extract()
+                item['offer'] = product.xpath(self.settings.offer_xpath).extract()
                 
                 #Pass the item back
                 yield item
