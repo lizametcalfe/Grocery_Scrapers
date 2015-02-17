@@ -52,10 +52,13 @@ class TescoSearchSettings(SearchSettings):
         self.sub3_path = '//*[@id="deptNavItems"]/*/ul/li/a'
         self.next_page_xpath = "//*[@class='next']/a"
         
+        #working 
         self.products_xpath = "//*/li[contains(@class,'product clearfix')]"
-        
+        #working 
         self.product_name_xpath = "*[@class='desc']/h2/a/span[@data-title='true']/text()"
+        #working
         self.raw_price_xpath = "*[@class='quantityWrapper']/div/p/span[@class='linePrice']/text()"
+        #working
         self.vol_price_xpath = "*[@class='quantityWrapper']/div/p/span[@class='linePriceAbbr']/text()"
         self.promo_xpath = "*[@class='desc']/*[@class='descContentGrid']/*[@class='promo']/a[contains(@class,'promotionAlternatives')]/@title"
         self.offer_xpath = "*[@class='desc']/*[@class='descContentGrid']/*[@class='promo']/a[contains(@class,'promotionAlternatives')]/em/text()"

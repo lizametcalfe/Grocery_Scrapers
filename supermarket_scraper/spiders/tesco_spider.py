@@ -173,6 +173,8 @@ class TescoSpider(CrawlSpider):
         # Get details of current search (passed in via response meta data)
         metadata = response.meta['data']
         for product in products:
+            #print('**in the item loop**')
+            #print(product.xpath(self.settings.raw_price_xpath).extract()[0])
             # Create an item for each entry
             item = ProductItem()
             item['store'] = self.store
@@ -185,9 +187,16 @@ class TescoSpider(CrawlSpider):
             #UPPER case product name for storage to make searching easier
             item['product_name'] = (product.xpath(self.settings.product_name_xpath).extract()[0]).upper()   
             # Save price string and convert it to number later
-            item['item_price_str'] = product.xpath(self.settings.raw_price_xpath).extract()[0] 
+            # need to account for parsing error 
+            try:
+                item['item_price_str'] = product.xpath(self.settings.raw_price_xpath).extract()[0] 
+            except:
+            	continue
             # Extract raw price by weight or volume
-            item['volume_price'] = product.xpath(self.settings.vol_price_xpath).extract()[0] 
+            try:
+            	item['volume_price'] = product.xpath(self.settings.vol_price_xpath).extract()[0] 
+            except:
+            	continue
             # Add timestamp
             item['timestamp'] = datetime.datetime.now()
             # Get promotion text (if any)
