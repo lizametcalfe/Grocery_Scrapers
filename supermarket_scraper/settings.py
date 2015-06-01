@@ -58,14 +58,14 @@ CONCURRENT_REQUESTS = 100
 ITEM_PIPELINES = {
     'supermarket_scraper.pipelines.PostProcessingPipeline': 300,
     'supermarket_scraper.pipelines.CsvExportPipeline': 400,
-#    'scrapy_mongodb.MongoDBPipeline': 800,
+    'scrapy_mongodb.MongoDBPipeline': 800,
 }
 
 # MongoDB database settings for scrapy_mongodb.MongoDBPipeline
 # (can put user/pwd in DB URL e.g. 'mongodb://ons:ons123@localhost:27017'):
 MONGODB_URI = 'mongodb://localhost:27017'  
 MONGODB_DATABASE = 'scrapy'
-MONGODB_COLLECTION = 'item_prices'
+MONGODB_COLLECTION = 'combined'
 # This would add a timestamp as a nested field {scrapy-mongodb:{ts:...}}
 # MONGODB_ADD_TIMESTAMP = True
 

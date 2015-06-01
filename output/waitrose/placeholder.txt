@@ -1,1 +1,0 @@
-Dummy file to ensure folder gets maintained via Git.
