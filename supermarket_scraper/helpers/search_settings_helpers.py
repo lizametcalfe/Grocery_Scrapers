@@ -78,9 +78,21 @@ class SainsburySearchSettings(SearchSettings):
         self.product_name_xpath = "*[@class='productInfo']/*/h3/a/text()" 
         
         self.next_page_xpath = "//*[@id='productLister']/div[@class='pagination']/ul[@class='pages']/li[@class='next']/a"
-        self.raw_price_xpath = "*[@class='pricingReviews']/*/p" #//text()"
-        
-        self.vol_price_xpath = "*[@class='quantity']/div/p/span[@class='linePriceAbbr']/text()"
+        #this is not working 
+        self.raw_price_xpath = "..//*[@class='pricing']/p"
+        # "*[@id='productLister']/ul/li/div/div[3]/div[1]/div[1]/div[1]/div[1]/p[1]"
+        #"*[@class='pricing']/*/[@class='pricePerUnit']"
+        #"//*[@class='pricePerUnit']" #//text()"
+        #"*[@class='pricingReviews']/*/p" #//text()
+
+        # sort of working 
+        #"//*[@class='pricePerUnit']"
+        # rb test "//*[@class='pricing']/p/text()"
+        # this is not working
+        self.vol_price_xpath = "..//*[@class='pricing']/p[2]/text()"
+        self.vol_unit = "..//*[@class='pricing']/p[2]/abbr[2]/span/text()"
+        # unit measure "//*[@class='pricePerMeasureMeasure']/text()"
+        #"*[@class='quantity']/div/p/span[@class='linePriceAbbr']/text()"
         self.promo_xpath = "*[@class='productInfo']/*/div[@class='promotion']/p/a/text()"
         self.offer_xpath = "*[@class='productInfo']/*/div[@class='promotion']/p/a/text()"
         # Sainsburys requires us to accept cookies before we can navigate the store

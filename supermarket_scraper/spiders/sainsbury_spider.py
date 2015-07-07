@@ -80,6 +80,8 @@ class SainsburySpider(CrawlSpider):
     def start_requests(self):
         """Generates crawler requests for given base URL and parses results."""
         search_list = self.get_searches()
+        a = str(search_list)
+        #print('gets urls and parses the repsonse objects to form a list: ', a)
         sb_cookies = self.settings.cookies
         # Build URLs based on base URL + sub-categories
         for s in search_list:
@@ -88,6 +90,8 @@ class SainsburySpider(CrawlSpider):
             search_meta = s.get_meta_map()
             search_meta['cookiejar'] = 1
             product_url = s.store_sub3
+            # print urls 
+            #print('product:' ,product_url)
             log.msg("Spider: start_requests() yielding URL: "+product_url, level=log.DEBUG)
             yield Request(url = product_url, cookies=sb_cookies, meta=search_meta, callback=self.parse_base)                            
 
@@ -100,7 +104,9 @@ class SainsburySpider(CrawlSpider):
         # Get details of current search (passed in via response meta data)
         metadata = response.meta
         #Find product lines
-        sel = Selector(response)        
+        sel = Selector(response) 
+        # rb test, only collecting three item (object) responses 
+        #print('test reponse objects from spider: ',sel)       
         sb_cookies = self.settings.cookies
         #Find any "next" links for paging and yield Request to next page
         next_page = sel.xpath(self.settings.next_page_xpath)
@@ -121,6 +127,7 @@ class SainsburySpider(CrawlSpider):
             # Create an item for each entry
             item = ProductItem()
             item['store'] = self.store
+            #print('store field of item object', item['store'])
             item['ons_item_no'] =  metadata['ons_item_no']
             item['ons_item_name'] =  metadata['ons_item_name']
             item['product_type'] =  metadata['store_sub3']
@@ -132,7 +139,7 @@ class SainsburySpider(CrawlSpider):
             prodname = product.xpath(self.settings.product_name_xpath).extract()
             if len(prodname)>0:
                 item['product_name'] = prodname[0].upper().strip()
-                
+                #print('individual item product names: ', item['product_name'])
                 # WARNING:  Prices format is much more complicated on Sainsburys
                 # pages, so we have to do multiple layers of extraction here to
                 # get the prices while we still have access to the XPaths etc.
@@ -140,14 +147,19 @@ class SainsburySpider(CrawlSpider):
                 price_block = product.xpath(self.settings.raw_price_xpath)
                 raw_price_block = price_block[0]
                 vol_price_block = price_block[1]
+                #price_block[0]
+                #price_block[1]
+                #print('individual item prices ', raw_price_block)
+                #print('individual volume item prices ', vol_price_block)
                 #Extract a raw price
                 ppu_price = raw_price_block.xpath('text()')[0]
                 ppu_unit = raw_price_block.xpath('*/span[@class="pricePerUnitUnit"]/text()')[0]
                 item['item_price_str'] = ppu_price.extract().strip() + '/' + ppu_unit.extract().strip()
-                
+                #print('individual item prices processed', item['item_price_str'])
                 #Extract the components of the volume price e.g. 1.50 per 100g
                 #THIS WILL BREAK IF PRICE FORMAT ON PAGE CHANGES!
                 vol_abbr = vol_price_block.xpath('text()').extract()
+                #print('volume_unit_raw', vol_abbr )
                 if vol_abbr[0].strip():
                     vol_price = vol_abbr[0].strip()
                 if vol_abbr[1].strip():
@@ -156,11 +168,14 @@ class SainsburySpider(CrawlSpider):
                     #default std quantity to 1
                     vol_price = vol_price +' / 1 '
                 #Get the volume units as well    
-                vol_unit = vol_price_block.xpath('*/span[@class="pricePerMeasureMeasure"]/text()')[0]    
+                vol_unit = product.xpath(self.settings.vol_unit)[2]
+                #print('vol_unit', vol_unit)
+                #print('vol _nunit', vol_unit)
+                #vol_price_block.xpath("*/span[@class='pricePerMeasureMeasure']/text()")  
                 #Construct the vol price in known format and save it to the item
-                vol_price = vol_price + vol_unit.extract().strip()       
+                vol_price = vol_price + vol_unit.extract().strip()  
                 item['volume_price'] = vol_price
-                
+                #print('vol _nunit',  item['volume_price'])
                 # Add timestamp
                 item['timestamp'] = datetime.datetime.now()
     
