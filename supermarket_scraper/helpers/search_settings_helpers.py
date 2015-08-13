@@ -32,9 +32,9 @@ class WaitroseSearchSettings(SearchSettings):
         # Exclude offer block above main product listings
         self.products_xpath = '//*/div[@class="products-row"]/*[not(contains(@id,"caro-"))]/div[contains(@class,"m-product-cell")]/div[contains(@class,"m-product ")]'
         self.product_name_xpath = '*/div[@class="m-product-details-container"]/*/a/text()'         
-        self.raw_price_xpath = '*/div[@class="m-product-price-container"]/span[@class="price"]/text()'
+        self.raw_price_xpath = '*/div[@class="m-product-price-container"]/span[1]/text()'
         self.volume_xpath = '*/div/div/div[@class="m-product-volume"]/text()'
-        self.vol_price_xpath = '*/div[@class="m-product-price-container"]/span[@class="fine-print"]/text()'        
+        self.vol_price_xpath = '*/div[@class="m-product-price-container"]/span[2]/text()'        
 
         self.promo_xpath = '*/div[@class="m-product-details-container"]/a/text()'
         self.offer_xpath = '*/div[@class="m-product-details-container"]/a/text()'        

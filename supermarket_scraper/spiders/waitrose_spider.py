@@ -111,51 +111,74 @@ class WaitroseSpider(CrawlSpider):
             # Create an item for each entry
             item = ProductItem()
             #UPPER case product name for storage to make searching easier
-            item['product_name'] = (product.xpath(self.settings.product_name_xpath).extract()[0]).upper()
+            try:
+                item['product_name'] = (product.xpath(self.settings.product_name_xpath).extract()[0]).upper()
+            except:
+                continue
 
             log.msg("Spider: Response for URL: " +
                 response.url + 
                 " found " + item['product_name'].encode('utf-16') 
                 , level=log.DEBUG)
+            try: 
+                item['store'] = self.store
+                item['ons_item_no'] =  metadata['ons_item_no']
+                item['ons_item_name'] =  metadata['ons_item_name']
+                item['product_type'] =  metadata['store_sub3']
+                item['search_string'] = metadata['search_terms']
 
-            item['store'] = self.store
-            item['ons_item_no'] =  metadata['ons_item_no']
-            item['ons_item_name'] =  metadata['ons_item_name']
-            item['product_type'] =  metadata['store_sub3']
-            item['search_string'] = metadata['search_terms']
-            #Default matches to 1.0 and modify later            
-            item['search_matches'] = 1.0
+            except:
+                continue
+            #Default matches to 1.0 and modify later    
+
+            try:        
+                item['search_matches'] = 1.0
             # Save price string and convert it to number later
-            item['item_price_str'] = product.xpath(self.settings.raw_price_xpath).extract()[0].strip()
+            	item['item_price_str'] = product.xpath(self.settings.raw_price_xpath).extract()[0].strip()
+            	x = item['item_price_str'][0] 
+            	print('test', x)
+                #pos = item['item_price_str'].index('\xc2')
+                	#item['item_price_str'] = item['item_price_str'][:].strip()
+                	#print(item['item_price_str'][4])
+                if item['item_price_str'][0] == 'N':
+                	item['item_price_str'] = item['item_price_str'][3:].strip()
+                else:
+                	item['item_price_str'] = item['item_price_str'][:].strip()            
+
             # Try getting the volume and putting it on the end of the product name
-            volume = product.xpath(self.settings.volume_xpath).extract()
-            if volume:
-                item['product_name'] = item['product_name'] + " " + volume[0].strip().upper()
+                volume = product.xpath(self.settings.volume_xpath).extract()
+                if volume:
+                    item['product_name'] = item['product_name'] + " " + volume[0].strip().upper()
+            except:
+                continue
                 
             # Waitrose volume price not always provided, so if it is not there, 
             # we try using volume and item price instead. 
-            item['volume_price'] = ''                       
-            vol_price = product.xpath(self.settings.vol_price_xpath).extract()
-            if vol_price:
-                #Allow for e.g. "1.25 per litre" instead of "1.25/litre"
-                item['volume_price'] = (vol_price[0].strip()).replace("per","/")
-            else:
-                item['volume_price'] = item['item_price_str'] + "/" + volume[0].strip()
+            try:
+                item['volume_price'] = ''                       
+                vol_price = product.xpath(self.settings.vol_price_xpath).extract()
+                if vol_price:
+                    #Allow for e.g. "1.25 per litre" instead of "1.25/litre"
+                    item['volume_price'] = (vol_price[0].strip()).replace("per","/")
+                else:
+                    item['volume_price'] = item['item_price_str'] + "/" + volume[0].strip()
 
-            # Add timestamp
-            item['timestamp'] = datetime.datetime.now()
-            # Get promotion text (if any) NOT YET IMPLEMENTED
-            item['promo'] = ''
-            if self.settings.promo_xpath:
-                promo = product.xpath(self.settings.promo_xpath).extract() #TODO
-                if promo:
-                    item['promo'] = promo[0]
-            # Get short term offer (if any) NOT YET IMPLEMENTED
-            item['offer'] = ''
-            if self.settings.offer_xpath:
-                offer = product.xpath(self.settings.offer_xpath).extract() #TODO
-                if offer:
-                    item['offer'] = offer[0]
+                # Add timestamp
+                item['timestamp'] = datetime.datetime.now()
+                # Get promotion text (if any) NOT YET IMPLEMENTED
+                item['promo'] = ''
+                if self.settings.promo_xpath:
+                    promo = product.xpath(self.settings.promo_xpath).extract() #TODO
+                    if promo:
+                        item['promo'] = promo[0]
+                # Get short term offer (if any) NOT YET IMPLEMENTED
+                item['offer'] = ''
+                if self.settings.offer_xpath:
+                    offer = product.xpath(self.settings.offer_xpath).extract() #TODO
+                    if offer:
+                        item['offer'] = offer[0]
+            except:
+                continue
             #Pass the item back
             yield item
 
