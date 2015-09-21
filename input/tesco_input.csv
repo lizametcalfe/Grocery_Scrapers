@@ -7,11 +7,11 @@
 5,TESCO,210213,"Breakfast Cereal 1, sugar/chocolate coated",http://www.tesco.com/groceries,Groceries,Food Cupboard,Cereals,Childrens Cereals,nan
 6,TESCO,210214,"Breakfast Cereal 2, NOT sugar/chocolate coated",http://www.tesco.com/groceries,Groceries,Food Cupboard,Cereals,Healthier Cereal,nan
 7,TESCO,211501,"Cheese Cheddar, home produced, per kg",http://www.tesco.com/groceries,Groceries,Fresh Food,Cheese,Cheddar Cheese,british cheddar
-8,TESCO,212011,"Cola Flavoured Drink, bottle",http://www.tesco.com/groceries,Groceries,Drinks,Soft Drinks,Cola,nan
+8,TESCO,212011,"Cola Flavoured Drink, bottle",http://www.tesco.com/groceries,Groceries,Drinks,Fizzy Drinks & Cola,Cola,nan
 9,TESCO,210204,"Dry Spaghetti or pasta, 500g",http://www.tesco.com/groceries,Groceries,Food Cupboard,"Dried Pasta, Rice, Noodles & Cous Cous",Pasta & Spaghetti,500g
 10,TESCO,212519,"Fresh Veg, Onions, per kg",http://www.tesco.com/groceries,Groceries,Fresh Food,Fresh Vegetables,Onions & Shallots,onions
 11,TESCO,212515,"Fresh Veg, Tomatoes, per kg",http://www.tesco.com/groceries,Groceries,Fresh Food,Fresh Salad Vegetables,Tomatoes,nan
-12,TESCO,212016,"Fresh/Chilled Orange Juice, eg. Tropicana",http://www.tesco.com/groceries,Groceries,Drinks,Chilled Fruit Juice & Smoothies,Chilled Orange Juice,fresh orange juice
+12,TESCO,212016,"Fresh/Chilled Orange Juice, eg. Tropicana",http://www.tesco.com/groceries,Groceries,Drinks,Juices & Smoothies,Chilled Juice,fresh orange juice
 13,TESCO,212722,"Grapes, per kg",http://www.tesco.com/groceries,Groceries,Fresh Food,Fresh Fruit,Grapes,grapes
 14,TESCO,310215,"Lager, 4 bottles, 4.3%-7.5% ABV",http://www.tesco.com/groceries,Groceries,Drinks,Beer & Cider,Beer - Lager,lager bottles
 15,TESCO,210302,Plain Biscuits (eg. Digestive),http://www.tesco.com/groceries,Groceries,Food Cupboard,Biscuits,Sweet Biscuits,digestives
@@ -30,5 +30,5 @@
 28,TESCO,210113,"Wholemeal Sliced Loaf, branded",http://www.tesco.com/groceries,Groceries,Bakery,Bread,Brown Bread,
 29,TESCO,211814,"Yoghurt, small individual",http://www.tesco.com/groceries,Groceries,Fresh Food,Yoghurt,Yoghurts,yogurt single
 30,TESCO,211807,Yoghurt/Fromage Frais,http://www.tesco.com/groceries,Groceries,Fresh Food,Yoghurt,Yoghurts,fromage frais
-31,TESCO,212006,"Fruit Juice, not orange, eg. apple",http://www.tesco.com/groceries,Groceries,Drinks,Chilled Fruit Juice & Smoothies,Chilled Apple Juice,apple juice
-32,TESCO,212017,Fizzy bottled drink,http://www.tesco.com/groceries,Groceries,Drinks,Soft Drinks,Sparkling Drinks,bottle
+31,TESCO,212006,"Fruit Juice, not orange, eg. apple",http://www.tesco.com/groceries,Groceries,Drinks,Juices & Smoothies,Chilled Juice,apple juice
+32,TESCO,212017,"Fizzy bottled drink",http://www.tesco.com/groceries,Groceries,Drinks,Fizzy Drinks & Cola,Fizzy Drinks,bottle
