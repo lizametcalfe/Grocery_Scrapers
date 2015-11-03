@@ -136,7 +136,7 @@ class WaitroseSpider(CrawlSpider):
             # Save price string and convert it to number later
             	item['item_price_str'] = product.xpath(self.settings.raw_price_xpath).extract()[0].strip()
             	x = item['item_price_str'][0] 
-            	print('test', x)
+            	#print('test', x)
                 #pos = item['item_price_str'].index('\xc2')
                 	#item['item_price_str'] = item['item_price_str'][:].strip()
                 	#print(item['item_price_str'][4])
