@@ -1,0 +1,42 @@
+Wed Nov  4 10:06:01 GMT 2015 Started Running Scrapy to crawl Tesco Web Site
+Scrapy 0.24.0 - no active project
+
+Unknown command: crawl
+
+Use "scrapy" to see available commands
+Wed Nov  4 10:06:03 GMT 2015 Finished Running Scrapy to crawl Tesco Web Site
+Wed Nov  4 10:06:03 GMT 2015 Started Running Scrapy to crawl waitrose Web Site
+Scrapy 0.24.0 - no active project
+
+Unknown command: crawl
+
+Use "scrapy" to see available commands
+Wed Nov  4 10:06:04 GMT 2015 Finished Running Scrapy to crawl waitrose Web Site
+Wed Nov  4 10:06:04 GMT 2015 Started Running Scrapy to crawl sainsbury Web Site
+Scrapy 0.24.0 - no active project
+
+Unknown command: crawl
+
+Use "scrapy" to see available commands
+Wed Nov  4 10:06:05 GMT 2015 Finished Running Scrapy to crawl sainsbury Web Site
+Wed Nov  4 10:26:01 GMT 2015 Started Running Scrapy to crawl Tesco Web Site
+Scrapy 0.24.0 - no active project
+
+Unknown command: crawl
+
+Use "scrapy" to see available commands
+Wed Nov  4 10:26:03 GMT 2015 Finished Running Scrapy to crawl Tesco Web Site
+Wed Nov  4 10:26:03 GMT 2015 Started Running Scrapy to crawl waitrose Web Site
+Scrapy 0.24.0 - no active project
+
+Unknown command: crawl
+
+Use "scrapy" to see available commands
+Wed Nov  4 10:26:04 GMT 2015 Finished Running Scrapy to crawl waitrose Web Site
+Wed Nov  4 10:26:04 GMT 2015 Started Running Scrapy to crawl sainsbury Web Site
+Scrapy 0.24.0 - no active project
+
+Unknown command: crawl
+
+Use "scrapy" to see available commands
+Wed Nov  4 10:26:05 GMT 2015 Finished Running Scrapy to crawl sainsbury Web Site

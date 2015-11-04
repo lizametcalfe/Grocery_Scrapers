@@ -1,0 +1,59 @@
+#!/bin/bash
+
+#   RUN SCRAPER
+#   Ben Clapperton and Leone Wardman
+#   16th April 2014
+#   Automatically schedule the scraper for Tesco Sainsbury and Waitrose
+
+
+
+
+echo $PATH
+SUPERMARKET_HOME=/home/mint/my-data/supermarket_scraper
+
+SCRAPER_INPUTS=$SUPERMARKET_HOME/input
+SCRAPER_OUTPUTS=$SUPERMARKET_HOME/output
+
+TESCO_INPUT_FILE=$SCRAPER_INPUTS/tesco_input.csv
+TESCO_OUTPUT_DIR=$SCRAPER_OUTPUTS/tesco
+
+echo $SCRAPER_INPUTS
+echo $SCRAPER_OUTPUTS
+
+cd $SUPERMARKET_HOME
+
+echo "$(date) Started Running Scrapy to crawl Tesco Web Site"
+
+scrapy crawl tesco 
+#-a output_dir=$TESCO_OUTPUT_DIR
+
+echo "$(date) Finished Running Scrapy to crawl Tesco Web Site"
+
+echo " "
+
+
+WAITROSE_INPUT_FILE=$SCRAPER_INPUTS/waitrose_input.csv
+WAITROSE_OUTPUT_DIR=$SCRAPER_OUTPUTS/waitrose
+
+echo "$(date) Started Running Scrapy to crawl Waitrose Web Site"
+
+scrapy crawl waitrose 
+#-a output_dir=$WAITROSE_OUTPUT_DIR
+
+echo "$(date) Finished Running Scrapy to crawl Waitrose Web Site"
+
+echo " "
+
+
+
+SAINSBURY_INPUT_FILE=$SCRAPER_INPUTS/sainsbury_input.csv
+SAINSBURY_OUTPUT_DIR=$SCRAPER_OUTPUTS/sainsbury
+
+echo "$(date) Started Running Scrapy to crawl Sainsbury Web Site"
+
+scrapy crawl sainsbury 
+#-a output_dir=$SAINSBURY_OUTPUT_DIR
+
+echo "$(date) Finished Running Scrapy to crawl Sainsbury Web Site"
+
+echo " "
