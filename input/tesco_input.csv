@@ -2,7 +2,7 @@
 0,TESCO,310218,"Apple Cider, bottle, 4.5%-5.5% ABV",http://www.tesco.com/groceries,Groceries,Drinks,Beer & Cider,Cider,apple cider
 1,TESCO,212717,"Apples, dessert, per kg",http://www.tesco.com/groceries,Groceries,Fresh Food,Fresh Fruit,"Apples, Pears & Rhubarb",apples
 2,TESCO,212719,"Bananas, per kg",http://www.tesco.com/groceries,Groceries,Fresh Food,Fresh Fruit,Bananas,bananas
-3,TESCO,310207,"Bitter, 4 cans, 3.4%-7.5% ABV",http://www.tesco.com/groceries,Groceries,Drinks,Beer & Cider,"Beer - Bitter, Ale & Stout",bitter
+3,TESCO,310207,"Bitter, 4 cans, 3.4%-7.5% ABV",http://www.tesco.com/groceries,Groceries,Drinks,Beer & Cider,"Beer - Ale & Bitter",bitter
 4,TESCO,310405,"Brandy, bottle",http://www.tesco.com/groceries,Groceries,Drinks,Spirits,Brandy & Cognac,brandy
 5,TESCO,210213,"Breakfast Cereal 1, sugar/chocolate coated",http://www.tesco.com/groceries,Groceries,Food Cupboard,Cereals,Childrens Cereals,nan
 6,TESCO,210214,"Breakfast Cereal 2, NOT sugar/chocolate coated",http://www.tesco.com/groceries,Groceries,Food Cupboard,Cereals,Healthier Cereal,nan
@@ -28,7 +28,7 @@
 26,TESCO,210111,"White Sliced Loaf, branded",http://www.tesco.com/groceries,Groceries,Bakery,Bread,White Bread,sliced
 27,TESCO,310419,"White Wine, European, bottle",http://www.tesco.com/groceries,Groceries,Drinks,Wine,White Wine,white wine
 28,TESCO,210113,"Wholemeal Sliced Loaf, branded",http://www.tesco.com/groceries,Groceries,Bakery,Bread,Brown Bread,
-29,TESCO,211814,"Yoghurt, small individual",http://www.tesco.com/groceries,Groceries,Fresh Food,Yoghurt,Yoghurts,yogurt single
-30,TESCO,211807,Yoghurt/Fromage Frais,http://www.tesco.com/groceries,Groceries,Fresh Food,Yoghurt,Yoghurts,fromage frais
+29,TESCO,211814,"Yoghurt, small individual",http://www.tesco.com/groceries,Groceries,Fresh Food,All Yoghurts,Yoghurts,yogurt single
+30,TESCO,211807,Yoghurt/Fromage Frais,http://www.tesco.com/groceries,Groceries,Fresh Food,Yoghurts,,fromage frais
 31,TESCO,212006,"Fruit Juice, not orange, eg. apple",http://www.tesco.com/groceries,Groceries,Drinks,Juices & Smoothies,Chilled Juice,apple juice
 32,TESCO,212017,"Fizzy bottled drink",http://www.tesco.com/groceries,Groceries,Drinks,Fizzy Drinks & Cola,Fizzy Drinks,bottle
