@@ -1,0 +1,5 @@
+Date,Supermarket,Problem,Fix,Implications
+5/11/15,Tesco,"Yoghurt not collecting, this is due to all yoghurt categories being placed at level 3 whereas scrapy goes down to level 4 to collect",Collect for each yoghurt type separately under the same category (seems to work). Also as there should be to two category's of yoghurt I've split the categories approriately,Increased number of routes to maintain. A try and except for the third layer would be better( but more complicated than I am able to do at the moment)
+09/11/15,Tesco,"Biscuits not collection, change in the names of the levels in the website","Change level 3 to biscuits and cereal bars, and level four to everyday biscuits",
+20/11/15,All,Internet down so scrapers did not run (ran at 16.55 instead),Reset the internet connection,
+24/11/15,Sainsbury's,Chilled orange juice did not collect,"After running the scraper it did collect, unknown why this is the case",
