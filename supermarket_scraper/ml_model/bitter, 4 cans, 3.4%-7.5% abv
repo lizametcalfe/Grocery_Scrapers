@@ -1,0 +1,4049 @@
+ccopy_reg
+_reconstructor
+p0
+(csklearn.pipeline
+Pipeline
+p1
+c__builtin__
+object
+p2
+Ntp3
+Rp4
+(dp5
+S'steps'
+p6
+(lp7
+(S'vect'
+p8
+g0
+(csklearn.feature_extraction.text
+CountVectorizer
+p9
+g2
+Ntp10
+Rp11
+(dp12
+S'decode_error'
+p13
+Vstrict
+p14
+sS'lowercase'
+p15
+I01
+sS'stop_words'
+p16
+S'english'
+p17
+sS'vocabulary'
+p18
+NsS'tokenizer'
+p19
+NsS'encoding'
+p20
+Vutf-8
+p21
+sS'token_pattern'
+p22
+V(?u)\u005cb\u005cw\u005cw+\u005cb
+p23
+sS'max_df'
+p24
+F0.99
+sS'fixed_vocabulary_'
+p25
+I00
+sS'analyzer'
+p26
+Vword
+p27
+sS'vocabulary_'
+p28
+(dp29
+Vlate red
+p30
+cnumpy.core.multiarray
+scalar
+p31
+(cnumpy
+dtype
+p32
+(S'i8'
+p33
+I0
+I1
+tp34
+Rp35
+(I3
+S'<'
+p36
+NNNI-1
+I-1
+I0
+tp37
+bS'\xb9\x00\x00\x00\x00\x00\x00\x00'
+p38
+tp39
+Rp40
+sVale
+p41
+g31
+(g35
+S'\x1b\x00\x00\x00\x00\x00\x00\x00'
+p42
+tp43
+Rp44
+sVstrong ale
+p45
+g31
+(g35
+S'\x0e\x01\x00\x00\x00\x00\x00\x00'
+p46
+tp47
+Rp48
+sVadnams southwold
+p49
+g31
+(g35
+S'\x18\x00\x00\x00\x00\x00\x00\x00'
+p50
+tp51
+Rp52
+sVextra smooth
+p53
+g31
+(g35
+S'q\x00\x00\x00\x00\x00\x00\x00'
+p54
+tp55
+Rp56
+sVfree 330ml
+p57
+g31
+(g35
+S'x\x00\x00\x00\x00\x00\x00\x00'
+p58
+tp59
+Rp60
+sVpride
+p61
+g31
+(g35
+S'\xe1\x00\x00\x00\x00\x00\x00\x00'
+p62
+tp63
+Rp64
+sVbrown
+p65
+g31
+(g35
+S'M\x00\x00\x00\x00\x00\x00\x00'
+p66
+tp67
+Rp68
+sVpremium
+p69
+g31
+(g35
+S'\xdf\x00\x00\x00\x00\x00\x00\x00'
+p70
+tp71
+Rp72
+sVcrafty hen
+p73
+g31
+(g35
+S'\\\x00\x00\x00\x00\x00\x00\x00'
+p74
+tp75
+Rp76
+sV4x500ml cans
+p77
+g31
+(g35
+S'\x0c\x00\x00\x00\x00\x00\x00\x00'
+p78
+tp79
+Rp80
+sV10x440ml
+p81
+g31
+(g35
+S'\x00\x00\x00\x00\x00\x00\x00\x00'
+p82
+tp83
+Rp84
+sVdifference
+p85
+g31
+(g35
+S'`\x00\x00\x00\x00\x00\x00\x00'
+p86
+tp87
+Rp88
+sVfinger
+p89
+g31
+(g35
+S'u\x00\x00\x00\x00\x00\x00\x00'
+p90
+tp91
+Rp92
+sVlondon pride
+p93
+g31
+(g35
+S'\xbd\x00\x00\x00\x00\x00\x00\x00'
+p94
+tp95
+Rp96
+sV330ml
+p97
+g31
+(g35
+S'\x06\x00\x00\x00\x00\x00\x00\x00'
+p98
+tp99
+Rp100
+sVadnams ghost
+p101
+g31
+(g35
+S'\x17\x00\x00\x00\x00\x00\x00\x00'
+p102
+tp103
+Rp104
+sVbadger blandford
+p105
+g31
+(g35
+S'(\x00\x00\x00\x00\x00\x00\x00'
+p106
+tp107
+Rp108
+sVbeer 4x500ml
+p109
+g31
+(g35
+S'3\x00\x00\x00\x00\x00\x00\x00'
+p110
+tp111
+Rp112
+sVtetleys smoothflow
+p113
+g31
+(g35
+S'\x18\x01\x00\x00\x00\x00\x00\x00'
+p114
+tp115
+Rp116
+sVhare 500ml
+p117
+g31
+(g35
+S'\x98\x00\x00\x00\x00\x00\x00\x00'
+p118
+tp119
+Rp120
+sVabv
+p121
+g31
+(g35
+S'\x15\x00\x00\x00\x00\x00\x00\x00'
+p122
+tp123
+Rp124
+sVbitter 500ml
+p125
+g31
+(g35
+S'8\x00\x00\x00\x00\x00\x00\x00'
+p126
+tp127
+Rp128
+sVsmith extra
+p129
+g31
+(g35
+S'\xfb\x00\x00\x00\x00\x00\x00\x00'
+p130
+tp131
+Rp132
+sVhobgoblin gold
+p133
+g31
+(g35
+S'\x9e\x00\x00\x00\x00\x00\x00\x00'
+p134
+tp135
+Rp136
+sVales mixed
+p137
+g31
+(g35
+S'#\x00\x00\x00\x00\x00\x00\x00'
+p138
+tp139
+Rp140
+sVvale
+p141
+g31
+(g35
+S'\x1e\x01\x00\x00\x00\x00\x00\x00'
+p142
+tp143
+Rp144
+sVtetleys original
+p145
+g31
+(g35
+S'\x17\x01\x00\x00\x00\x00\x00\x00'
+p146
+tp147
+Rp148
+sVstrong
+p149
+g31
+(g35
+S'\r\x01\x00\x00\x00\x00\x00\x00'
+p150
+tp151
+Rp152
+sVsouthwold bitter
+p153
+g31
+(g35
+S'\x03\x01\x00\x00\x00\x00\x00\x00'
+p154
+tp155
+Rp156
+sVales 6x500ml
+p157
+g31
+(g35
+S'"\x00\x00\x00\x00\x00\x00\x00'
+p158
+tp159
+Rp160
+sV500ml
+p161
+g31
+(g35
+S'\r\x00\x00\x00\x00\x00\x00\x00'
+p162
+tp163
+Rp164
+sVtesco revisionist
+p165
+g31
+(g35
+S'\x15\x01\x00\x00\x00\x00\x00\x00'
+p166
+tp167
+Rp168
+sVgolden
+p169
+g31
+(g35
+S'\x89\x00\x00\x00\x00\x00\x00\x00'
+p170
+tp171
+Rp172
+sVipa
+p173
+g31
+(g35
+S'\xa5\x00\x00\x00\x00\x00\x00\x00'
+p174
+tp175
+Rp176
+sVextra
+p177
+g31
+(g35
+S'p\x00\x00\x00\x00\x00\x00\x00'
+p178
+tp179
+Rp180
+sVcounty
+p181
+g31
+(g35
+S'T\x00\x00\x00\x00\x00\x00\x00'
+p182
+tp183
+Rp184
+sVguinness draught
+p185
+g31
+(g35
+S'\x94\x00\x00\x00\x00\x00\x00\x00'
+p186
+tp187
+Rp188
+sVhobgoblin
+p189
+g31
+(g35
+S'\x9c\x00\x00\x00\x00\x00\x00\x00'
+p190
+tp191
+Rp192
+sVhen ale
+p193
+g31
+(g35
+S'\x9b\x00\x00\x00\x00\x00\x00\x00'
+p194
+tp195
+Rp196
+sV18x440ml cans
+p197
+g31
+(g35
+S'\x05\x00\x00\x00\x00\x00\x00\x00'
+p198
+tp199
+Rp200
+sVsmiths extra
+p201
+g31
+(g35
+S'\xfd\x00\x00\x00\x00\x00\x00\x00'
+p202
+tp203
+Rp204
+sVdraught bitter
+p205
+g31
+(g35
+S'j\x00\x00\x00\x00\x00\x00\x00'
+p206
+tp207
+Rp208
+sVbrewdog
+p209
+g31
+(g35
+S'I\x00\x00\x00\x00\x00\x00\x00'
+p210
+tp211
+Rp212
+sVgreene king
+p213
+g31
+(g35
+S'\x92\x00\x00\x00\x00\x00\x00\x00'
+p214
+tp215
+Rp216
+sVwychwood hobgoblin
+p217
+g31
+(g35
+S'!\x01\x00\x00\x00\x00\x00\x00'
+p218
+tp219
+Rp220
+sVchocolate
+p221
+g31
+(g35
+S'R\x00\x00\x00\x00\x00\x00\x00'
+p222
+tp223
+Rp224
+sVinnis
+p225
+g31
+(g35
+S'\xa3\x00\x00\x00\x00\x00\x00\x00'
+p226
+tp227
+Rp228
+sVchampion ale
+p229
+g31
+(g35
+S'Q\x00\x00\x00\x00\x00\x00\x00'
+p230
+tp231
+Rp232
+sVdoom
+p233
+g31
+(g35
+S'd\x00\x00\x00\x00\x00\x00\x00'
+p234
+tp235
+Rp236
+sVrevisionist
+p237
+g31
+(g35
+S'\xec\x00\x00\x00\x00\x00\x00\x00'
+p238
+tp239
+Rp240
+sVspeckled hen
+p241
+g31
+(g35
+S'\x05\x01\x00\x00\x00\x00\x00\x00'
+p242
+tp243
+Rp244
+sVml
+p245
+g31
+(g35
+S'\xc5\x00\x00\x00\x00\x00\x00\x00'
+p246
+tp247
+Rp248
+sVthumper
+p249
+g31
+(g35
+S'\x19\x01\x00\x00\x00\x00\x00\x00'
+p250
+tp251
+Rp252
+sVdew
+p253
+g31
+(g35
+S'_\x00\x00\x00\x00\x00\x00\x00'
+p254
+tp255
+Rp256
+sVold golden
+p257
+g31
+(g35
+S'\xcf\x00\x00\x00\x00\x00\x00\x00'
+p258
+tp259
+Rp260
+sVdraught 10x440ml
+p261
+g31
+(g35
+S'h\x00\x00\x00\x00\x00\x00\x00'
+p262
+tp263
+Rp264
+sVghost ship
+p265
+g31
+(g35
+S'\x80\x00\x00\x00\x00\x00\x00\x00'
+p266
+tp267
+Rp268
+sVkentish
+p269
+g31
+(g35
+S'\xb1\x00\x00\x00\x00\x00\x00\x00'
+p270
+tp271
+Rp272
+sVenglish beer
+p273
+g31
+(g35
+S'o\x00\x00\x00\x00\x00\x00\x00'
+p274
+tp275
+Rp276
+sV500ml abv
+p277
+g31
+(g35
+S'\x0e\x00\x00\x00\x00\x00\x00\x00'
+p278
+tp279
+Rp280
+sVhoney
+p281
+g31
+(g35
+S'\x9f\x00\x00\x00\x00\x00\x00\x00'
+p282
+tp283
+Rp284
+sVipa reserve
+p285
+g31
+(g35
+S'\xaa\x00\x00\x00\x00\x00\x00\x00'
+p286
+tp287
+Rp288
+sVsmooth 12x440ml
+p289
+g31
+(g35
+S'\xff\x00\x00\x00\x00\x00\x00\x00'
+p290
+tp291
+Rp292
+sVlitre
+p293
+g31
+(g35
+S'\xba\x00\x00\x00\x00\x00\x00\x00'
+p294
+tp295
+Rp296
+sVlondon porter
+p297
+g31
+(g35
+S'\xbc\x00\x00\x00\x00\x00\x00\x00'
+p298
+tp299
+Rp300
+sV18x440ml
+p301
+g31
+(g35
+S'\x04\x00\x00\x00\x00\x00\x00\x00'
+p302
+tp303
+Rp304
+sV4x440ml
+p305
+g31
+(g35
+S'\t\x00\x00\x00\x00\x00\x00\x00'
+p306
+tp307
+Rp308
+sVoriginal stout
+p309
+g31
+(g35
+S'\xd5\x00\x00\x00\x00\x00\x00\x00'
+p310
+tp311
+Rp312
+sVmixed
+p313
+g31
+(g35
+S'\xc3\x00\x00\x00\x00\x00\x00\x00'
+p314
+tp315
+Rp316
+sVgolden glory
+p317
+g31
+(g35
+S'\x8d\x00\x00\x00\x00\x00\x00\x00'
+p318
+tp319
+Rp320
+sVst
+p321
+g31
+(g35
+S'\x08\x01\x00\x00\x00\x00\x00\x00'
+p322
+tp323
+Rp324
+sVgreen
+p325
+g31
+(g35
+S'\x90\x00\x00\x00\x00\x00\x00\x00'
+p326
+tp327
+Rp328
+sVale taste
+p329
+g31
+(g35
+S' \x00\x00\x00\x00\x00\x00\x00'
+p330
+tp331
+Rp332
+sVcrafty
+p333
+g31
+(g35
+S'[\x00\x00\x00\x00\x00\x00\x00'
+p334
+tp335
+Rp336
+sVbombardier english
+p337
+g31
+(g35
+S'B\x00\x00\x00\x00\x00\x00\x00'
+p338
+tp339
+Rp340
+sVbath ales
+p341
+g31
+(g35
+S'1\x00\x00\x00\x00\x00\x00\x00'
+p342
+tp343
+Rp344
+sVyoungs
+p345
+g31
+(g35
+S'"\x01\x00\x00\x00\x00\x00\x00'
+p346
+tp347
+Rp348
+sVfinest
+p349
+g31
+(g35
+S't\x00\x00\x00\x00\x00\x00\x00'
+p350
+tp351
+Rp352
+sVlondon
+p353
+g31
+(g35
+S'\xbb\x00\x00\x00\x00\x00\x00\x00'
+p354
+tp355
+Rp356
+sVbadger
+p357
+g31
+(g35
+S'&\x00\x00\x00\x00\x00\x00\x00'
+p358
+tp359
+Rp360
+sVgluten free
+p361
+g31
+(g35
+S'\x85\x00\x00\x00\x00\x00\x00\x00'
+p362
+tp363
+Rp364
+sVneame late
+p365
+g31
+(g35
+S'\xc8\x00\x00\x00\x00\x00\x00\x00'
+p366
+tp367
+Rp368
+sVlate
+p369
+g31
+(g35
+S'\xb8\x00\x00\x00\x00\x00\x00\x00'
+p370
+tp371
+Rp372
+sVblack sheep
+p373
+g31
+(g35
+S':\x00\x00\x00\x00\x00\x00\x00'
+p374
+tp375
+Rp376
+sVipa 4x500ml
+p377
+g31
+(g35
+S'\xa7\x00\x00\x00\x00\x00\x00\x00'
+p378
+tp379
+Rp380
+sVhoney dew
+p381
+g31
+(g35
+S'\xa0\x00\x00\x00\x00\x00\x00\x00'
+p382
+tp383
+Rp384
+sVoxford
+p385
+g31
+(g35
+S'\xd6\x00\x00\x00\x00\x00\x00\x00'
+p386
+tp387
+Rp388
+sVbath
+p389
+g31
+(g35
+S'0\x00\x00\x00\x00\x00\x00\x00'
+p390
+tp391
+Rp392
+sV15x440ml
+p393
+g31
+(g35
+S'\x02\x00\x00\x00\x00\x00\x00\x00'
+p394
+tp395
+Rp396
+sVjames
+p397
+g31
+(g35
+S'\xab\x00\x00\x00\x00\x00\x00\x00'
+p398
+tp399
+Rp400
+sVgolden sheep
+p401
+g31
+(g35
+S'\x8f\x00\x00\x00\x00\x00\x00\x00'
+p402
+tp403
+Rp404
+sVales
+p405
+g31
+(g35
+S'!\x00\x00\x00\x00\x00\x00\x00'
+p406
+tp407
+Rp408
+sVale 550ml
+p409
+g31
+(g35
+S'\x1f\x00\x00\x00\x00\x00\x00\x00'
+p410
+tp411
+Rp412
+sV660ml
+p413
+g31
+(g35
+S'\x10\x00\x00\x00\x00\x00\x00\x00'
+p414
+tp415
+Rp416
+sVale 500ml
+p417
+g31
+(g35
+S'\x1e\x00\x00\x00\x00\x00\x00\x00'
+p418
+tp419
+Rp420
+sVengland
+p421
+g31
+(g35
+S'l\x00\x00\x00\x00\x00\x00\x00'
+p422
+tp423
+Rp424
+sVbrakspear
+p425
+g31
+(g35
+S'G\x00\x00\x00\x00\x00\x00\x00'
+p426
+tp427
+Rp428
+sVhare
+p429
+g31
+(g35
+S'\x97\x00\x00\x00\x00\x00\x00\x00'
+p430
+tp431
+Rp432
+sVst peter
+p433
+g31
+(g35
+S'\n\x01\x00\x00\x00\x00\x00\x00'
+p434
+tp435
+Rp436
+sVipa 330ml
+p437
+g31
+(g35
+S'\xa6\x00\x00\x00\x00\x00\x00\x00'
+p438
+tp439
+Rp440
+sVfuller london
+p441
+g31
+(g35
+S'z\x00\x00\x00\x00\x00\x00\x00'
+p442
+tp443
+Rp444
+sVrobinsons
+p445
+g31
+(g35
+S'\xed\x00\x00\x00\x00\x00\x00\x00'
+p446
+tp447
+Rp448
+sVreverend
+p449
+g31
+(g35
+S'\xea\x00\x00\x00\x00\x00\x00\x00'
+p450
+tp451
+Rp452
+sVsheep ale
+p453
+g31
+(g35
+S'\xf6\x00\x00\x00\x00\x00\x00\x00'
+p454
+tp455
+Rp456
+sVbrewers
+p457
+g31
+(g35
+S'K\x00\x00\x00\x00\x00\x00\x00'
+p458
+tp459
+Rp460
+sVwainwright
+p461
+g31
+(g35
+S'\x1f\x01\x00\x00\x00\x00\x00\x00'
+p462
+tp463
+Rp464
+sVbrewery
+p465
+g31
+(g35
+S'L\x00\x00\x00\x00\x00\x00\x00'
+p466
+tp467
+Rp468
+sVred
+p469
+g31
+(g35
+S'\xe6\x00\x00\x00\x00\x00\x00\x00'
+p470
+tp471
+Rp472
+sVbass
+p473
+g31
+(g35
+S'/\x00\x00\x00\x00\x00\x00\x00'
+p474
+tp475
+Rp476
+sVfursty
+p477
+g31
+(g35
+S'}\x00\x00\x00\x00\x00\x00\x00'
+p478
+tp479
+Rp480
+sVfree
+p481
+g31
+(g35
+S'w\x00\x00\x00\x00\x00\x00\x00'
+p482
+tp483
+Rp484
+sVflyer
+p485
+g31
+(g35
+S'v\x00\x00\x00\x00\x00\x00\x00'
+p486
+tp487
+Rp488
+sVorganic
+p489
+g31
+(g35
+S'\xd2\x00\x00\x00\x00\x00\x00\x00'
+p490
+tp491
+Rp492
+sVtetleys
+p493
+g31
+(g35
+S'\x16\x01\x00\x00\x00\x00\x00\x00'
+p494
+tp495
+Rp496
+sVst austell
+p497
+g31
+(g35
+S'\t\x01\x00\x00\x00\x00\x00\x00'
+p498
+tp499
+Rp500
+sVpunk
+p501
+g31
+(g35
+S'\xe3\x00\x00\x00\x00\x00\x00\x00'
+p502
+tp503
+Rp504
+sVsainsbury
+p505
+g31
+(g35
+S'\xf0\x00\x00\x00\x00\x00\x00\x00'
+p506
+tp507
+Rp508
+sVamerican
+p509
+g31
+(g35
+S'$\x00\x00\x00\x00\x00\x00\x00'
+p510
+tp511
+Rp512
+sVbrakspear oxford
+p513
+g31
+(g35
+S'H\x00\x00\x00\x00\x00\x00\x00'
+p514
+tp515
+Rp516
+sVtaste difference
+p517
+g31
+(g35
+S'\x13\x01\x00\x00\x00\x00\x00\x00'
+p518
+tp519
+Rp520
+sVsheep
+p521
+g31
+(g35
+S'\xf5\x00\x00\x00\x00\x00\x00\x00'
+p522
+tp523
+Rp524
+sVtimothy
+p525
+g31
+(g35
+S'\x1c\x01\x00\x00\x00\x00\x00\x00'
+p526
+tp527
+Rp528
+sVfuller
+p529
+g31
+(g35
+S'y\x00\x00\x00\x00\x00\x00\x00'
+p530
+tp531
+Rp532
+sVguinness
+p533
+g31
+(g35
+S'\x93\x00\x00\x00\x00\x00\x00\x00'
+p534
+tp535
+Rp536
+sVabbot ale
+p537
+g31
+(g35
+S'\x14\x00\x00\x00\x00\x00\x00\x00'
+p538
+tp539
+Rp540
+sVbadger 500ml
+p541
+g31
+(g35
+S"'\x00\x00\x00\x00\x00\x00\x00"
+p542
+tp543
+Rp544
+sVgold 500ml
+p545
+g31
+(g35
+S'\x88\x00\x00\x00\x00\x00\x00\x00'
+p546
+tp547
+Rp548
+sVbitter
+p549
+g31
+(g35
+S'5\x00\x00\x00\x00\x00\x00\x00'
+p550
+tp551
+Rp552
+sV8x500ml
+p553
+g31
+(g35
+S'\x12\x00\x00\x00\x00\x00\x00\x00'
+p554
+tp555
+Rp556
+sVhobgoblin 4x440ml
+p557
+g31
+(g35
+S'\x9d\x00\x00\x00\x00\x00\x00\x00'
+p558
+tp559
+Rp560
+sVpremium ale
+p561
+g31
+(g35
+S'\xe0\x00\x00\x00\x00\x00\x00\x00'
+p562
+tp563
+Rp564
+sVbrains
+p565
+g31
+(g35
+S'E\x00\x00\x00\x00\x00\x00\x00'
+p566
+tp567
+Rp568
+sVgoblin
+p569
+g31
+(g35
+S'\x86\x00\x00\x00\x00\x00\x00\x00'
+p570
+tp571
+Rp572
+sVking
+p573
+g31
+(g35
+S'\xb3\x00\x00\x00\x00\x00\x00\x00'
+p574
+tp575
+Rp576
+sV4x330ml
+p577
+g31
+(g35
+S'\x08\x00\x00\x00\x00\x00\x00\x00'
+p578
+tp579
+Rp580
+sVjohn
+p581
+g31
+(g35
+S'\xac\x00\x00\x00\x00\x00\x00\x00'
+p582
+tp583
+Rp584
+sVraspberry
+p585
+g31
+(g35
+S'\xe5\x00\x00\x00\x00\x00\x00\x00'
+p586
+tp587
+Rp588
+sVdouble
+p589
+g31
+(g35
+S'f\x00\x00\x00\x00\x00\x00\x00'
+p590
+tp591
+Rp592
+sVboddingtons
+p593
+g31
+(g35
+S'?\x00\x00\x00\x00\x00\x00\x00'
+p594
+tp595
+Rp596
+sVtanglefoot ale
+p597
+g31
+(g35
+S'\x11\x01\x00\x00\x00\x00\x00\x00'
+p598
+tp599
+Rp600
+sVabbot
+p601
+g31
+(g35
+S'\x13\x00\x00\x00\x00\x00\x00\x00'
+p602
+tp603
+Rp604
+sVmini
+p605
+g31
+(g35
+S'\xc1\x00\x00\x00\x00\x00\x00\x00'
+p606
+tp607
+Rp608
+sVkeg litre
+p609
+g31
+(g35
+S'\xb0\x00\x00\x00\x00\x00\x00\x00'
+p610
+tp611
+Rp612
+sVginger
+p613
+g31
+(g35
+S'\x81\x00\x00\x00\x00\x00\x00\x00'
+p614
+tp615
+Rp616
+sVreserve 500ml
+p617
+g31
+(g35
+S'\xe9\x00\x00\x00\x00\x00\x00\x00'
+p618
+tp619
+Rp620
+sVreverend james
+p621
+g31
+(g35
+S'\xeb\x00\x00\x00\x00\x00\x00\x00'
+p622
+tp623
+Rp624
+sVgluten
+p625
+g31
+(g35
+S'\x84\x00\x00\x00\x00\x00\x00\x00'
+p626
+tp627
+Rp628
+sVguinness original
+p629
+g31
+(g35
+S'\x95\x00\x00\x00\x00\x00\x00\x00'
+p630
+tp631
+Rp632
+sVwychwood
+p633
+g31
+(g35
+S' \x01\x00\x00\x00\x00\x00\x00'
+p634
+tp635
+Rp636
+sV4x500ml
+p637
+g31
+(g35
+S'\x0b\x00\x00\x00\x00\x00\x00\x00'
+p638
+tp639
+Rp640
+sVenglish
+p641
+g31
+(g35
+S'n\x00\x00\x00\x00\x00\x00\x00'
+p642
+tp643
+Rp644
+sVcrabbies
+p645
+g31
+(g35
+S'W\x00\x00\x00\x00\x00\x00\x00'
+p646
+tp647
+Rp648
+sVbombardier
+p649
+g31
+(g35
+S'A\x00\x00\x00\x00\x00\x00\x00'
+p650
+tp651
+Rp652
+sVdoom bar
+p653
+g31
+(g35
+S'e\x00\x00\x00\x00\x00\x00\x00'
+p654
+tp655
+Rp656
+sVtraditional
+p657
+g31
+(g35
+S'\x1d\x01\x00\x00\x00\x00\x00\x00'
+p658
+tp659
+Rp660
+sVblonde ale
+p661
+g31
+(g35
+S'>\x00\x00\x00\x00\x00\x00\x00'
+p662
+tp663
+Rp664
+sVreserve
+p665
+g31
+(g35
+S'\xe8\x00\x00\x00\x00\x00\x00\x00'
+p666
+tp667
+Rp668
+sVseasonal
+p669
+g31
+(g35
+S'\xf1\x00\x00\x00\x00\x00\x00\x00'
+p670
+tp671
+Rp672
+sVgold
+p673
+g31
+(g35
+S'\x87\x00\x00\x00\x00\x00\x00\x00'
+p674
+tp675
+Rp676
+sV12x440ml
+p677
+g31
+(g35
+S'\x01\x00\x00\x00\x00\x00\x00\x00'
+p678
+tp679
+Rp680
+sVstout 500ml
+p681
+g31
+(g35
+S'\x0c\x01\x00\x00\x00\x00\x00\x00'
+p682
+tp683
+Rp684
+sVneame
+p685
+g31
+(g35
+S'\xc7\x00\x00\x00\x00\x00\x00\x00'
+p686
+tp687
+Rp688
+sVkentish ale
+p689
+g31
+(g35
+S'\xb2\x00\x00\x00\x00\x00\x00\x00'
+p690
+tp691
+Rp692
+sVselection 6x500ml
+p693
+g31
+(g35
+S'\xf3\x00\x00\x00\x00\x00\x00\x00'
+p694
+tp695
+Rp696
+sVblack
+p697
+g31
+(g35
+S'9\x00\x00\x00\x00\x00\x00\x00'
+p698
+tp699
+Rp700
+sVaustell
+p701
+g31
+(g35
+S'%\x00\x00\x00\x00\x00\x00\x00'
+p702
+tp703
+Rp704
+sVshepherd
+p705
+g31
+(g35
+S'\xf7\x00\x00\x00\x00\x00\x00\x00'
+p706
+tp707
+Rp708
+sVspeckled
+p709
+g31
+(g35
+S'\x04\x01\x00\x00\x00\x00\x00\x00'
+p710
+tp711
+Rp712
+sVferret
+p713
+g31
+(g35
+S'r\x00\x00\x00\x00\x00\x00\x00'
+p714
+tp715
+Rp716
+sVcourage
+p717
+g31
+(g35
+S'U\x00\x00\x00\x00\x00\x00\x00'
+p718
+tp719
+Rp720
+sVbrewdog punk
+p721
+g31
+(g35
+S'J\x00\x00\x00\x00\x00\x00\x00'
+p722
+tp723
+Rp724
+sVbar
+p725
+g31
+(g35
+S'.\x00\x00\x00\x00\x00\x00\x00'
+p726
+tp727
+Rp728
+sVtanglefoot
+p729
+g31
+(g35
+S'\x10\x01\x00\x00\x00\x00\x00\x00'
+p730
+tp731
+Rp732
+sVgreene
+p733
+g31
+(g35
+S'\x91\x00\x00\x00\x00\x00\x00\x00'
+p734
+tp735
+Rp736
+sVlandlord
+p737
+g31
+(g35
+S'\xb7\x00\x00\x00\x00\x00\x00\x00'
+p738
+tp739
+Rp740
+sVsouthwold
+p741
+g31
+(g35
+S'\x02\x01\x00\x00\x00\x00\x00\x00'
+p742
+tp743
+Rp744
+sVmarston
+p745
+g31
+(g35
+S'\xbe\x00\x00\x00\x00\x00\x00\x00'
+p746
+tp747
+Rp748
+sV355ml
+p749
+g31
+(g35
+S'\x07\x00\x00\x00\x00\x00\x00\x00'
+p750
+tp751
+Rp752
+sVale 4x500ml
+p753
+g31
+(g35
+S'\x1d\x00\x00\x00\x00\x00\x00\x00'
+p754
+tp755
+Rp756
+sVcrouch
+p757
+g31
+(g35
+S']\x00\x00\x00\x00\x00\x00\x00'
+p758
+tp759
+Rp760
+sVjohn smiths
+p761
+g31
+(g35
+S'\xae\x00\x00\x00\x00\x00\x00\x00'
+p762
+tp763
+Rp764
+sVpedigree
+p765
+g31
+(g35
+S'\xdb\x00\x00\x00\x00\x00\x00\x00'
+p766
+tp767
+Rp768
+sVipa gold
+p769
+g31
+(g35
+S'\xa9\x00\x00\x00\x00\x00\x00\x00'
+p770
+tp771
+Rp772
+sVhopping hare
+p773
+g31
+(g35
+S'\xa2\x00\x00\x00\x00\x00\x00\x00'
+p774
+tp775
+Rp776
+sVpride 500ml
+p777
+g31
+(g35
+S'\xe2\x00\x00\x00\x00\x00\x00\x00'
+p778
+tp779
+Rp780
+sVkeg
+p781
+g31
+(g35
+S'\xaf\x00\x00\x00\x00\x00\x00\x00'
+p782
+tp783
+Rp784
+sV6x500ml
+p785
+g31
+(g35
+S'\x11\x00\x00\x00\x00\x00\x00\x00'
+p786
+tp787
+Rp788
+sVpunk ipa
+p789
+g31
+(g35
+S'\xe4\x00\x00\x00\x00\x00\x00\x00'
+p790
+tp791
+Rp792
+sVspitfire
+p793
+g31
+(g35
+S'\x06\x01\x00\x00\x00\x00\x00\x00'
+p794
+tp795
+Rp796
+sVking goblin
+p797
+g31
+(g35
+S'\xb5\x00\x00\x00\x00\x00\x00\x00'
+p798
+tp799
+Rp800
+sVmixed pack
+p801
+g31
+(g35
+S'\xc4\x00\x00\x00\x00\x00\x00\x00'
+p802
+tp803
+Rp804
+sVdifference 500ml
+p805
+g31
+(g35
+S'b\x00\x00\x00\x00\x00\x00\x00'
+p806
+tp807
+Rp808
+sVoxford gold
+p809
+g31
+(g35
+S'\xd7\x00\x00\x00\x00\x00\x00\x00'
+p810
+tp811
+Rp812
+sV550ml
+p813
+g31
+(g35
+S'\x0f\x00\x00\x00\x00\x00\x00\x00'
+p814
+tp815
+Rp816
+sVblandford
+p817
+g31
+(g35
+S';\x00\x00\x00\x00\x00\x00\x00'
+p818
+tp819
+Rp820
+sVspitfire kentish
+p821
+g31
+(g35
+S'\x07\x01\x00\x00\x00\x00\x00\x00'
+p822
+tp823
+Rp824
+sVdraught 4x440ml
+p825
+g31
+(g35
+S'i\x00\x00\x00\x00\x00\x00\x00'
+p826
+tp827
+Rp828
+sVboddingtons draught
+p829
+g31
+(g35
+S'@\x00\x00\x00\x00\x00\x00\x00'
+p830
+tp831
+Rp832
+sVbitter 12x440ml
+p833
+g31
+(g35
+S'6\x00\x00\x00\x00\x00\x00\x00'
+p834
+tp835
+Rp836
+sVadnams
+p837
+g31
+(g35
+S'\x16\x00\x00\x00\x00\x00\x00\x00'
+p838
+tp839
+Rp840
+sVcrouch vale
+p841
+g31
+(g35
+S'^\x00\x00\x00\x00\x00\x00\x00'
+p842
+tp843
+Rp844
+sVbeer
+p845
+g31
+(g35
+S'2\x00\x00\x00\x00\x00\x00\x00'
+p846
+tp847
+Rp848
+sVking ipa
+p849
+g31
+(g35
+S'\xb6\x00\x00\x00\x00\x00\x00\x00'
+p850
+tp851
+Rp852
+sVchampion
+p853
+g31
+(g35
+S'P\x00\x00\x00\x00\x00\x00\x00'
+p854
+tp855
+Rp856
+sVbrains reverend
+p857
+g31
+(g35
+S'F\x00\x00\x00\x00\x00\x00\x00'
+p858
+tp859
+Rp860
+sVgolden ales
+p861
+g31
+(g35
+S'\x8b\x00\x00\x00\x00\x00\x00\x00'
+p862
+tp863
+Rp864
+sVcraft
+p865
+g31
+(g35
+S'Z\x00\x00\x00\x00\x00\x00\x00'
+p866
+tp867
+Rp868
+sVbitter 4x440ml
+p869
+g31
+(g35
+S'7\x00\x00\x00\x00\x00\x00\x00'
+p870
+tp871
+Rp872
+sVruddles county
+p873
+g31
+(g35
+S'\xef\x00\x00\x00\x00\x00\x00\x00'
+p874
+tp875
+Rp876
+sVbadger fursty
+p877
+g31
+(g35
+S')\x00\x00\x00\x00\x00\x00\x00'
+p878
+tp879
+Rp880
+sVbottle conditioned
+p881
+g31
+(g35
+S'D\x00\x00\x00\x00\x00\x00\x00'
+p882
+tp883
+Rp884
+sVbadger golden
+p885
+g31
+(g35
+S'*\x00\x00\x00\x00\x00\x00\x00'
+p886
+tp887
+Rp888
+sVpack
+p889
+g31
+(g35
+S'\xd8\x00\x00\x00\x00\x00\x00\x00'
+p890
+tp891
+Rp892
+sVbeer 500ml
+p893
+g31
+(g35
+S'4\x00\x00\x00\x00\x00\x00\x00'
+p894
+tp895
+Rp896
+sVpale ale
+p897
+g31
+(g35
+S'\xda\x00\x00\x00\x00\x00\x00\x00'
+p898
+tp899
+Rp900
+sVconditioned
+p901
+g31
+(g35
+S'S\x00\x00\x00\x00\x00\x00\x00'
+p902
+tp903
+Rp904
+sVfullers
+p905
+g31
+(g35
+S'{\x00\x00\x00\x00\x00\x00\x00'
+p906
+tp907
+Rp908
+sVcans
+p909
+g31
+(g35
+S'O\x00\x00\x00\x00\x00\x00\x00'
+p910
+tp911
+Rp912
+sVgunn
+p913
+g31
+(g35
+S'\x96\x00\x00\x00\x00\x00\x00\x00'
+p914
+tp915
+Rp916
+sVred 500ml
+p917
+g31
+(g35
+S'\xe7\x00\x00\x00\x00\x00\x00\x00'
+p918
+tp919
+Rp920
+sVcrabbies raspberry
+p921
+g31
+(g35
+S'Y\x00\x00\x00\x00\x00\x00\x00'
+p922
+tp923
+Rp924
+sVbadger hopping
+p925
+g31
+(g35
+S'+\x00\x00\x00\x00\x00\x00\x00'
+p926
+tp927
+Rp928
+sVbottle
+p929
+g31
+(g35
+S'C\x00\x00\x00\x00\x00\x00\x00'
+p930
+tp931
+Rp932
+sVmcewans
+p933
+g31
+(g35
+S'\xc0\x00\x00\x00\x00\x00\x00\x00'
+p934
+tp935
+Rp936
+sVstout
+p937
+g31
+(g35
+S'\x0b\x01\x00\x00\x00\x00\x00\x00'
+p938
+tp939
+Rp940
+sVsuffolk
+p941
+g31
+(g35
+S'\x0f\x01\x00\x00\x00\x00\x00\x00'
+p942
+tp943
+Rp944
+sVsmith
+p945
+g31
+(g35
+S'\xfa\x00\x00\x00\x00\x00\x00\x00'
+p946
+tp947
+Rp948
+sVsmooth 4x440ml
+p949
+g31
+(g35
+S'\x00\x01\x00\x00\x00\x00\x00\x00'
+p950
+tp951
+Rp952
+sVhopping
+p953
+g31
+(g35
+S'\xa1\x00\x00\x00\x00\x00\x00\x00'
+p954
+tp955
+Rp956
+sVfursty ferret
+p957
+g31
+(g35
+S'~\x00\x00\x00\x00\x00\x00\x00'
+p958
+tp959
+Rp960
+sVbadger seasonal
+p961
+g31
+(g35
+S',\x00\x00\x00\x00\x00\x00\x00'
+p962
+tp963
+Rp964
+sVthwaites wainwright
+p965
+g31
+(g35
+S'\x1b\x01\x00\x00\x00\x00\x00\x00'
+p966
+tp967
+Rp968
+sVnewcastle
+p969
+g31
+(g35
+S'\xca\x00\x00\x00\x00\x00\x00\x00'
+p970
+tp971
+Rp972
+sVold thumper
+p973
+g31
+(g35
+S'\xd1\x00\x00\x00\x00\x00\x00\x00'
+p974
+tp975
+Rp976
+sVsmoothflow
+p977
+g31
+(g35
+S'\x01\x01\x00\x00\x00\x00\x00\x00'
+p978
+tp979
+Rp980
+sVferret ale
+p981
+g31
+(g35
+S's\x00\x00\x00\x00\x00\x00\x00'
+p982
+tp983
+Rp984
+sVjohn smith
+p985
+g31
+(g35
+S'\xad\x00\x00\x00\x00\x00\x00\x00'
+p986
+tp987
+Rp988
+sVsharp
+p989
+g31
+(g35
+S'\xf4\x00\x00\x00\x00\x00\x00\x00'
+p990
+tp991
+Rp992
+sVking abbot
+p993
+g31
+(g35
+S'\xb4\x00\x00\x00\x00\x00\x00\x00'
+p994
+tp995
+Rp996
+sVold
+p997
+g31
+(g35
+S'\xcc\x00\x00\x00\x00\x00\x00\x00'
+p998
+tp999
+Rp1000
+sVempire
+p1001
+g31
+(g35
+S'k\x00\x00\x00\x00\x00\x00\x00'
+p1002
+tp1003
+Rp1004
+sVpeter
+p1005
+g31
+(g35
+S'\xdc\x00\x00\x00\x00\x00\x00\x00'
+p1006
+tp1007
+Rp1008
+sVpale
+p1009
+g31
+(g35
+S'\xd9\x00\x00\x00\x00\x00\x00\x00'
+p1010
+tp1011
+Rp1012
+sVblonde
+p1013
+g31
+(g35
+S'=\x00\x00\x00\x00\x00\x00\x00'
+p1014
+tp1015
+Rp1016
+sVmoon
+p1017
+g31
+(g35
+S'\xc6\x00\x00\x00\x00\x00\x00\x00'
+p1018
+tp1019
+Rp1020
+sVdraught
+p1021
+g31
+(g35
+S'g\x00\x00\x00\x00\x00\x00\x00'
+p1022
+tp1023
+Rp1024
+sVporter
+p1025
+g31
+(g35
+S'\xdd\x00\x00\x00\x00\x00\x00\x00'
+p1026
+tp1027
+Rp1028
+sVthwaites
+p1029
+g31
+(g35
+S'\x1a\x01\x00\x00\x00\x00\x00\x00'
+p1030
+tp1031
+Rp1032
+sVold speckled
+p1033
+g31
+(g35
+S'\xd0\x00\x00\x00\x00\x00\x00\x00'
+p1034
+tp1035
+Rp1036
+sVsmiths
+p1037
+g31
+(g35
+S'\xfc\x00\x00\x00\x00\x00\x00\x00'
+p1038
+tp1039
+Rp1040
+sVgolden champion
+p1041
+g31
+(g35
+S'\x8c\x00\x00\x00\x00\x00\x00\x00'
+p1042
+tp1043
+Rp1044
+sVbrown ale
+p1045
+g31
+(g35
+S'N\x00\x00\x00\x00\x00\x00\x00'
+p1046
+tp1047
+Rp1048
+sVale 330ml
+p1049
+g31
+(g35
+S'\x1c\x00\x00\x00\x00\x00\x00\x00'
+p1050
+tp1051
+Rp1052
+sVruddles
+p1053
+g31
+(g35
+S'\xee\x00\x00\x00\x00\x00\x00\x00'
+p1054
+tp1055
+Rp1056
+sVdifference 355ml
+p1057
+g31
+(g35
+S'a\x00\x00\x00\x00\x00\x00\x00'
+p1058
+tp1059
+Rp1060
+sVcourage directors
+p1061
+g31
+(g35
+S'V\x00\x00\x00\x00\x00\x00\x00'
+p1062
+tp1063
+Rp1064
+sValcoholic ginger
+p1065
+g31
+(g35
+S'\x1a\x00\x00\x00\x00\x00\x00\x00'
+p1066
+tp1067
+Rp1068
+sVengland 500ml
+p1069
+g31
+(g35
+S'm\x00\x00\x00\x00\x00\x00\x00'
+p1070
+tp1071
+Rp1072
+sVhen 500ml
+p1073
+g31
+(g35
+S'\x9a\x00\x00\x00\x00\x00\x00\x00'
+p1074
+tp1075
+Rp1076
+sVgolden ale
+p1077
+g31
+(g35
+S'\x8a\x00\x00\x00\x00\x00\x00\x00'
+p1078
+tp1079
+Rp1080
+sVmarstons
+p1081
+g31
+(g35
+S'\xbf\x00\x00\x00\x00\x00\x00\x00'
+p1082
+tp1083
+Rp1084
+sVhen
+p1085
+g31
+(g35
+S'\x99\x00\x00\x00\x00\x00\x00\x00'
+p1086
+tp1087
+Rp1088
+sVcrabbies alcoholic
+p1089
+g31
+(g35
+S'X\x00\x00\x00\x00\x00\x00\x00'
+p1090
+tp1091
+Rp1092
+sVselection
+p1093
+g31
+(g35
+S'\xf2\x00\x00\x00\x00\x00\x00\x00'
+p1094
+tp1095
+Rp1096
+sValcoholic
+p1097
+g31
+(g35
+S'\x19\x00\x00\x00\x00\x00\x00\x00'
+p1098
+tp1099
+Rp1100
+sVginger beer
+p1101
+g31
+(g35
+S'\x82\x00\x00\x00\x00\x00\x00\x00'
+p1102
+tp1103
+Rp1104
+sVshepherd neame
+p1105
+g31
+(g35
+S'\xf8\x00\x00\x00\x00\x00\x00\x00'
+p1106
+tp1107
+Rp1108
+sVporter 500ml
+p1109
+g31
+(g35
+S'\xde\x00\x00\x00\x00\x00\x00\x00'
+p1110
+tp1111
+Rp1112
+sVinnis gunn
+p1113
+g31
+(g35
+S'\xa4\x00\x00\x00\x00\x00\x00\x00'
+p1114
+tp1115
+Rp1116
+sVneame spitfire
+p1117
+g31
+(g35
+S'\xc9\x00\x00\x00\x00\x00\x00\x00'
+p1118
+tp1119
+Rp1120
+sVbadger tanglefoot
+p1121
+g31
+(g35
+S'-\x00\x00\x00\x00\x00\x00\x00'
+p1122
+tp1123
+Rp1124
+sVglory
+p1125
+g31
+(g35
+S'\x83\x00\x00\x00\x00\x00\x00\x00'
+p1126
+tp1127
+Rp1128
+sVold crafty
+p1129
+g31
+(g35
+S'\xcd\x00\x00\x00\x00\x00\x00\x00'
+p1130
+tp1131
+Rp1132
+sVblandford flyer
+p1133
+g31
+(g35
+S'<\x00\x00\x00\x00\x00\x00\x00'
+p1134
+tp1135
+Rp1136
+sVsmooth
+p1137
+g31
+(g35
+S'\xfe\x00\x00\x00\x00\x00\x00\x00'
+p1138
+tp1139
+Rp1140
+sV1845
+p1141
+g31
+(g35
+S'\x03\x00\x00\x00\x00\x00\x00\x00'
+p1142
+tp1143
+Rp1144
+sVoriginal bitter
+p1145
+g31
+(g35
+S'\xd4\x00\x00\x00\x00\x00\x00\x00'
+p1146
+tp1147
+Rp1148
+sV4x440ml cans
+p1149
+g31
+(g35
+S'\n\x00\x00\x00\x00\x00\x00\x00'
+p1150
+tp1151
+Rp1152
+sVtaste
+p1153
+g31
+(g35
+S'\x12\x01\x00\x00\x00\x00\x00\x00'
+p1154
+tp1155
+Rp1156
+sVship
+p1157
+g31
+(g35
+S'\xf9\x00\x00\x00\x00\x00\x00\x00'
+p1158
+tp1159
+Rp1160
+sVmini keg
+p1161
+g31
+(g35
+S'\xc2\x00\x00\x00\x00\x00\x00\x00'
+p1162
+tp1163
+Rp1164
+sVtesco
+p1165
+g31
+(g35
+S'\x14\x01\x00\x00\x00\x00\x00\x00'
+p1166
+tp1167
+Rp1168
+sVold empire
+p1169
+g31
+(g35
+S'\xce\x00\x00\x00\x00\x00\x00\x00'
+p1170
+tp1171
+Rp1172
+sVipa 500ml
+p1173
+g31
+(g35
+S'\xa8\x00\x00\x00\x00\x00\x00\x00'
+p1174
+tp1175
+Rp1176
+sVghost
+p1177
+g31
+(g35
+S'\x7f\x00\x00\x00\x00\x00\x00\x00'
+p1178
+tp1179
+Rp1180
+sVnewcastle brown
+p1181
+g31
+(g35
+S'\xcb\x00\x00\x00\x00\x00\x00\x00'
+p1182
+tp1183
+Rp1184
+sVdirectors
+p1185
+g31
+(g35
+S'c\x00\x00\x00\x00\x00\x00\x00'
+p1186
+tp1187
+Rp1188
+sVfullers london
+p1189
+g31
+(g35
+S'|\x00\x00\x00\x00\x00\x00\x00'
+p1190
+tp1191
+Rp1192
+sVgolden hen
+p1193
+g31
+(g35
+S'\x8e\x00\x00\x00\x00\x00\x00\x00'
+p1194
+tp1195
+Rp1196
+sVoriginal
+p1197
+g31
+(g35
+S'\xd3\x00\x00\x00\x00\x00\x00\x00'
+p1198
+tp1199
+Rp1200
+ssS'binary'
+p1201
+I01
+sS'ngram_range'
+p1202
+(I1
+I2
+tp1203
+sS'preprocessor'
+p1204
+NsS'min_df'
+p1205
+I2
+sS'max_features'
+p1206
+NsS'input'
+p1207
+Vcontent
+p1208
+sS'dtype'
+p1209
+cnumpy
+int64
+p1210
+sS'stop_words_'
+p1211
+c__builtin__
+set
+p1212
+((lp1213
+Vferret 500ml
+p1214
+aVhooky
+p1215
+aV1845 strong
+p1216
+aVmcewans export
+p1217
+aVglory 500ml
+p1218
+aVrevisionist craft
+p1219
+aVmackeson stout
+p1220
+aVgem bitter
+p1221
+aVbeer gift
+p1222
+aVthwaites crafty
+p1223
+aVginger grouse
+p1224
+aVspitfire premium
+p1225
+aVesb
+p1226
+aVadnams explorer
+p1227
+aVadmirals ale
+p1228
+aVmackeson
+p1229
+aVaustell korev
+p1230
+aVbrewdog dead
+p1231
+aVridgeway brewing
+p1232
+aVchoice
+p1233
+aVhoegaarden ale
+p1234
+aV8x330ml
+p1235
+aVeveryday value
+p1236
+aVbarnsey 500ml
+p1237
+aVguinness mid
+p1238
+aVbasics
+p1239
+aVpedigree bitter
+p1240
+aVsheep golden
+p1241
+aVgun
+p1242
+aVhogs traditional
+p1243
+aVraspberry 4x330ml
+p1244
+aVhen 10x440ml
+p1245
+aVchoice ale
+p1246
+aVoriginal 500ml
+p1247
+aVburning gold
+p1248
+aVbock
+p1249
+aVstout 4x440ml
+p1250
+aVautumn ale
+p1251
+aVhopped
+p1252
+aVbeer selection
+p1253
+aVblue
+p1254
+aVbanks bitter
+p1255
+aVtheakston xb
+p1256
+aVipa 10x440
+p1257
+aVhen mini
+p1258
+aVmarston old
+p1259
+aVbitter basics
+p1260
+aVbuntingford
+p1261
+aVguinness golden
+p1262
+aVjennings
+p1263
+aVbrewer selection
+p1264
+aVfinger ale
+p1265
+aVsainsbury yorkshire
+p1266
+aVfuller golden
+p1267
+aVbasics 4x440ml
+p1268
+aVgreat
+p1269
+aVraspberry 500ml
+p1270
+aVbrilliant
+p1271
+aVyorkshire bitter
+p1272
+aVorganic honey
+p1273
+aV436
+p1274
+aVbrewers gold
+p1275
+aVdouble ipa
+p1276
+aVlandlord ale
+p1277
+aVstout 330ml
+p1278
+aVmarston pedigree
+p1279
+aVhogs
+p1280
+aVsainsbury india
+p1281
+aVpedigree ale
+p1282
+aVship 500ml
+p1283
+aViron maiden
+p1284
+aVsainsbury westmorland
+p1285
+aVhooky 500ml
+p1286
+aVbelgian
+p1287
+aVhelp heroes
+p1288
+aVclub
+p1289
+aVholt
+p1290
+aVglass
+p1291
+aVtetley smooth
+p1292
+aV92
+p1293
+aVlandlord pale
+p1294
+aVyoungs hummingbird
+p1295
+aVspringer
+p1296
+aVroom
+p1297
+aVbrakspear bitter
+p1298
+aVorganic ale
+p1299
+aVhobgoblin mini
+p1300
+aVgift pack
+p1301
+aVpony
+p1302
+aVindia
+p1303
+aVautumn
+p1304
+aVindies
+p1305
+aVbrewing bad
+p1306
+aV10x440 ml
+p1307
+aV5am saint
+p1308
+aV4x440
+p1309
+aVtap room
+p1310
+aVrye
+p1311
+aVsainsbury kentish
+p1312
+aVking head
+p1313
+aVhoegaarden
+p1314
+aVamerican double
+p1315
+aVgreen premium
+p1316
+aVpure
+p1317
+aVfirkin fox
+p1318
+aVtaylors
+p1319
+aVthumper 500ml
+p1320
+aV1698
+p1321
+aVmid strength
+p1322
+aVwychwood king
+p1323
+aVexplorer
+p1324
+aVcollection 6x500ml
+p1325
+aVales barnsey
+p1326
+aVvale amarillo
+p1327
+aVcollection
+p1328
+aVold hooky
+p1329
+aVheroes
+p1330
+aVnumber 500ml
+p1331
+aVale 50cl
+p1332
+aVale gluten
+p1333
+aVbros caesar
+p1334
+aVspitfire 4x440ml
+p1335
+aVimperial red
+p1336
+aVselection 8x500ml
+p1337
+aVbanks
+p1338
+aVsa
+p1339
+aVsingle hopped
+p1340
+aVblue moon
+p1341
+aVhoneydew 500ml
+p1342
+aVwainwright ale
+p1343
+aVhelp
+p1344
+aVbrewery golden
+p1345
+aV10x440ml abv
+p1346
+aVjack beer
+p1347
+aVfinger strong
+p1348
+aVwaggledance 500ml
+p1349
+aVraspberry 8x330ml
+p1350
+aVsuffolk springer
+p1351
+aVsharp atlantic
+p1352
+aVyorkshire
+p1353
+aVmeantime
+p1354
+aVseasonal 6x500ml
+p1355
+aV350ml
+p1356
+aVbeer 355ml
+p1357
+aVwheat beer
+p1358
+aVales golden
+p1359
+aVdan
+p1360
+aVamerican pale
+p1361
+aVbass trademark
+p1362
+aVgoblin 500ml
+p1363
+aVfoot
+p1364
+aVmocha
+p1365
+aVduvel
+p1366
+aVstar ale
+p1367
+aVpeculier
+p1368
+aVcounty 500ml
+p1369
+aVbacchus
+p1370
+aVsa gold
+p1371
+aVlees manchester
+p1372
+aVchocolate 500ml
+p1373
+aVfinish ipa
+p1374
+aVgrouse
+p1375
+aVbrewery old
+p1376
+aVrye pale
+p1377
+aVmarstons old
+p1378
+aVgoblin ale
+p1379
+aVmurphys 4x440ml
+p1380
+aVjohn 500ml
+p1381
+aVsainsbury london
+p1382
+aVking golden
+p1383
+aVtangle
+p1384
+aVpoachers
+p1385
+aVtrooper
+p1386
+aVgladness ale
+p1387
+aVhill
+p1388
+aVcounty premium
+p1389
+aVcaesar augustus
+p1390
+aVbrains 500ml
+p1391
+aVwolf rock
+p1392
+aVhobgoblin 500ml
+p1393
+aVseasonal ale
+p1394
+aVadnams gun
+p1395
+aVadnams lighthouse
+p1396
+aV500mlcans
+p1397
+aVforeign extra
+p1398
+aV330ml abv
+p1399
+aVbuntingford 92
+p1400
+aVsainsbury bitter
+p1401
+aVexport ale
+p1402
+aVdead pony
+p1403
+aVbritish
+p1404
+aVlitre keg
+p1405
+aVbeer 375ml
+p1406
+aVboondoggle
+p1407
+aVesb 500ml
+p1408
+aVharbour ipa
+p1409
+aVduvel belgian
+p1410
+aVmocha chocolate
+p1411
+aVxb
+p1412
+aVringwood brewery
+p1413
+aVnumber
+p1414
+aVthumper ale
+p1415
+aVhook
+p1416
+aVtaylors landlord
+p1417
+aVenglish ale
+p1418
+aVyoungs double
+p1419
+aVrum finish
+p1420
+aVmaple
+p1421
+aVipa taste
+p1422
+aVbitter 4x500ml
+p1423
+aVship 4x440ml
+p1424
+aVvale brewers
+p1425
+aVclassic ales
+p1426
+aVdew 500ml
+p1427
+aVmaster
+p1428
+aVsaint
+p1429
+aVtom
+p1430
+aVnorton
+p1431
+aVred autumn
+p1432
+aVwest
+p1433
+aVwilliams
+p1434
+aVamerican craft
+p1435
+aVpoachers choice
+p1436
+aVmurphys
+p1437
+aVchocolate stout
+p1438
+aVx6
+p1439
+aVmeantime london
+p1440
+aVtangle foot
+p1441
+aVgunn original
+p1442
+aV1698 500ml
+p1443
+aViron
+p1444
+aVoyster stout
+p1445
+aVaustell admirals
+p1446
+aVfruity
+p1447
+aVempire ale
+p1448
+aVbitter taste
+p1449
+aVgunn rum
+p1450
+aVmaiden trooper
+p1451
+aVtanglefoot 4x500ml
+p1452
+aVpeter organic
+p1453
+aVbar 500ml
+p1454
+aVoriginal 4x440ml
+p1455
+aVconditioned 500ml
+p1456
+aVale 8x500ml
+p1457
+aVclub beer
+p1458
+aVbrilliant ale
+p1459
+aV1845 bottle
+p1460
+aV375ml
+p1461
+aVsharps
+p1462
+aVstrength
+p1463
+aVfox 500ml
+p1464
+aVmarston pale
+p1465
+aVwychwood dr
+p1466
+aVmid
+p1467
+aVtesco single
+p1468
+aVcaesar
+p1469
+aVsainsbury suffolk
+p1470
+aVtraditional english
+p1471
+aVhare england
+p1472
+aVpride premium
+p1473
+aV12x440ml cans
+p1474
+aVmaiden
+p1475
+aVfullers esb
+p1476
+aVjames ale
+p1477
+aVfuller honey
+p1478
+aVbrains sa
+p1479
+aV4x440 ml
+p1480
+aVubu ale
+p1481
+aVtaylor landlord
+p1482
+aVpremium pils
+p1483
+aVrock red
+p1484
+aVflow
+p1485
+aVsaint 330ml
+p1486
+aVbroadside ale
+p1487
+aVbitter 18x440ml
+p1488
+aVking great
+p1489
+aVfullers 1845
+p1490
+aVmoon 500ml
+p1491
+aVextra stout
+p1492
+aVgolden beer
+p1493
+aVsierra nevada
+p1494
+aVhen 500mlcans
+p1495
+aVmarstons oyster
+p1496
+aVwychwood imperial
+p1497
+aVsmooth flow
+p1498
+aVtraditional draught
+p1499
+aVmanchester
+p1500
+aVnethergate
+p1501
+aVbarry island
+p1502
+aVwadworth
+p1503
+aVtheakston
+p1504
+aVnevada
+p1505
+aVold tom
+p1506
+aVale 6x500ml
+p1507
+aVcumberland
+p1508
+aVtesco finest
+p1509
+aVlager 500ml
+p1510
+aV92 squadron
+p1511
+aVjames 500ml
+p1512
+aVsquadron 500ml
+p1513
+aVsierra
+p1514
+aVred ipa
+p1515
+aVdirectors 4x500ml
+p1516
+aVbar 436
+p1517
+aVpure ubu
+p1518
+aVcoast
+p1519
+aVyoungs special
+p1520
+aVwestmorland
+p1521
+aVdr
+p1522
+aVgem
+p1523
+aVbadger tangle
+p1524
+aVhen 4x500ml
+p1525
+aVglass included
+p1526
+aVchampion 500ml
+p1527
+aVbadger brewery
+p1528
+aVbad
+p1529
+aVlondon pale
+p1530
+aVcraft lager
+p1531
+aVmaple moon
+p1532
+aVsquadron
+p1533
+aVflow 15x440
+p1534
+aVking suffolk
+p1535
+aVrevisionist rye
+p1536
+aVisland ipa
+p1537
+aVbrewery original
+p1538
+aVgladness
+p1539
+aVtanglefoot 500ml
+p1540
+aVpony club
+p1541
+aVtetley
+p1542
+aVbest
+p1543
+aVpride 4x500ml
+p1544
+aVhoneydew
+p1545
+aVbombardier burning
+p1546
+aVxb 500ml
+p1547
+aVboondoggle 500ml
+p1548
+aVporter taste
+p1549
+aVenglish bock
+p1550
+aVframboise raspberry
+p1551
+aVraspberry beer
+p1552
+aVfoot england
+p1553
+aVstrength 4x440
+p1554
+aVbrewing
+p1555
+aVkorev
+p1556
+aVadmirals
+p1557
+aVwilliams bros
+p1558
+aVexplorer 500ml
+p1559
+aVdirectors ale
+p1560
+aVadnams broadside
+p1561
+aVbroadside
+p1562
+aVyoungs waggledance
+p1563
+aVeast coast
+p1564
+aVcumberland ale
+p1565
+aVjack
+p1566
+aVbrewer
+p1567
+aVindies porter
+p1568
+aVsharp doom
+p1569
+aVharbour
+p1570
+aVwainwright golden
+p1571
+aVorganic beer
+p1572
+aVsimply
+p1573
+aVwaggledance
+p1574
+aVroom ipa
+p1575
+aVneame 1698
+p1576
+aVbitter litre
+p1577
+aVpale 500ml
+p1578
+aVlighthouse
+p1579
+aVipa selection
+p1580
+aVbarry
+p1581
+aVtrademark
+p1582
+aVindia pale
+p1583
+aVcoast ipa
+p1584
+aVsmith bitter
+p1585
+aVhobgoblin ale
+p1586
+aVpeculier 500ml
+p1587
+aVtesco bitter
+p1588
+aVhook norton
+p1589
+aVtap
+p1590
+aVnevada pale
+p1591
+aVnorton old
+p1592
+aVdouble chocolate
+p1593
+aV355ml abv
+p1594
+aVruby
+p1595
+aVblonde 500ml
+p1596
+aVsharp wolf
+p1597
+aVabbot reserve
+p1598
+aVringwood
+p1599
+aVsuffolk blonde
+p1600
+aVsingle
+p1601
+aVvalue
+p1602
+aVking john
+p1603
+aVwest indies
+p1604
+aVdr thirstys
+p1605
+aVflyer ale
+p1606
+aVbros
+p1607
+aVlees
+p1608
+aVforeign
+p1609
+aVeveryday
+p1610
+aVipa 660ml
+p1611
+aVhummingbird 500ml
+p1612
+aVipa 300ml
+p1613
+aVjennings cumberland
+p1614
+aVold growler
+p1615
+aVbelgian golden
+p1616
+aVbeer 4x330ml
+p1617
+aVmanchester star
+p1618
+aVfinish
+p1619
+aVbutcombe brewery
+p1620
+aVtheakstons old
+p1621
+aVgolden hare
+p1622
+aVdan fruity
+p1623
+aVbishops finger
+p1624
+aVx6 500ml
+p1625
+aVruby red
+p1626
+aVhummingbird
+p1627
+aVadnams jack
+p1628
+aVridgeway
+p1629
+aVglory ale
+p1630
+aVamarillo ale
+p1631
+aV436 ale
+p1632
+aVvalue bitter
+p1633
+aVdraught 15x440ml
+p1634
+aVgreen supreme
+p1635
+aVale ipa
+p1636
+aVipa smooth
+p1637
+aVthirstys blonde
+p1638
+aVgrowler
+p1639
+aVsheep finest
+p1640
+aVpack 6x500ml
+p1641
+aVoriginal 4x330ml
+p1642
+aVbatemans
+p1643
+aVtimothy taylor
+p1644
+aVpils
+p1645
+aVfirkin
+p1646
+aVpils gluten
+p1647
+aVstout 4x330ml
+p1648
+aVjoseph holt
+p1649
+aVwadworth beer
+p1650
+aV750ml
+p1651
+aVsmiths bitter
+p1652
+aVrobinsons old
+p1653
+aVhopped kentish
+p1654
+aVeast
+p1655
+aVheroes blonde
+p1656
+aVbrewers collection
+p1657
+aVale 350ml
+p1658
+aVamarillo
+p1659
+aV5am
+p1660
+aVbad king
+p1661
+aVferret 4x500ml
+p1662
+aVale 750ml
+p1663
+aVlondon ale
+p1664
+aVgun hill
+p1665
+aVdraught pedigree
+p1666
+aVgift
+p1667
+aVframboise
+p1668
+aVbeer 330ml
+p1669
+aVspecial london
+p1670
+aVdraught ale
+p1671
+aVfuller organic
+p1672
+aVlager
+p1673
+aVfullers organic
+p1674
+aVnethergate old
+p1675
+aVfinest ale
+p1676
+aV350ml abv
+p1677
+aVdead
+p1678
+aVfinest american
+p1679
+aVexport
+p1680
+aVmarstons draught
+p1681
+aVsharps doom
+p1682
+aVgolden pride
+p1683
+aVcraft beer
+p1684
+aV15x440
+p1685
+aVbass traditional
+p1686
+aVbest bitter
+p1687
+aVfox
+p1688
+aVpeter best
+p1689
+aVking east
+p1690
+aVthirstys
+p1691
+aVlighthouse 500ml
+p1692
+aVkorev 500ml
+p1693
+aVbadger poachers
+p1694
+aVsmoothflow 15x440ml
+p1695
+aVbatemans mocha
+p1696
+aVwheat
+p1697
+aVrum
+p1698
+aVtesco everyday
+p1699
+aVsupreme golden
+p1700
+aVrock
+p1701
+aVgold 4x500ml
+p1702
+aVmcewans champion
+p1703
+aVfruity pale
+p1704
+aVorganic honeydew
+p1705
+aVtimothy taylors
+p1706
+aVhill 500ml
+p1707
+aVtom ale
+p1708
+aVsainsbury american
+p1709
+aV330ml glass
+p1710
+aVguinness west
+p1711
+aVred ale
+p1712
+aVpack 330ml
+p1713
+aVisland
+p1714
+aVwolf
+p1715
+aVbarnsey
+p1716
+aVflyer premium
+p1717
+aV300ml abv
+p1718
+aVbadgers
+p1719
+aVmaster brewers
+p1720
+aVtheakstons
+p1721
+aVburning
+p1722
+aVsainsbury tap
+p1723
+aVaugustus
+p1724
+aV500ml cans
+p1725
+aVrobinsons iron
+p1726
+aVrevisionist wheat
+p1727
+aVtrooper ale
+p1728
+aVgrowler 500ml
+p1729
+aVimperial
+p1730
+aVdew golden
+p1731
+aVjoseph
+p1732
+aVoyster
+p1733
+aVbock beer
+p1734
+aVsmooth 18x440ml
+p1735
+aVhead
+p1736
+aV660ml abv
+p1737
+aVfranziskaner 500ml
+p1738
+aV300ml
+p1739
+aVatlantic
+p1740
+aVhead brewer
+p1741
+aVbishops
+p1742
+aVbutcombe
+p1743
+aVwestmorland ale
+p1744
+aVpeter ruby
+p1745
+aVoriginal 660ml
+p1746
+aVtrademark number
+p1747
+aVbishop finger
+p1748
+aVbadgers tanglefoot
+p1749
+aVbombardier 4x500ml
+p1750
+aVsupreme
+p1751
+aVtaylor
+p1752
+aVbadger firkin
+p1753
+aVclassic
+p1754
+aVaugustus 500ml
+p1755
+aVbritish ales
+p1756
+aVboddingtons 12x440ml
+p1757
+aVmoon american
+p1758
+aVsmoothflow 4x440ml
+p1759
+aVbrewdog 5am
+p1760
+aV10x440
+p1761
+aVbishop
+p1762
+aV50cl
+p1763
+aVold peculier
+p1764
+aVgrouse alcoholic
+p1765
+aVbrakspear bottle
+p1766
+aV4x440ml abv
+p1767
+aVfranziskaner
+p1768
+aVspecial
+p1769
+aVempire 500ml
+p1770
+aVubu
+p1771
+aVbacchus framboise
+p1772
+aVgreat british
+p1773
+aVstar
+p1774
+aVcrafty dan
+p1775
+aVale 4x440ml
+p1776
+aVholt maple
+p1777
+aVpack x6
+p1778
+aVconditioned ale
+p1779
+aVincluded
+p1780
+aVales gem
+p1781
+aVatlantic pale
+p1782
+aVfuller 1845
+p1783
+aVsimply golden
+p1784
+aVspringer ale
+p1785
+aVguinness foreign
+p1786
+aVgolden organic
+p1787
+atp1788
+Rp1789
+sS'strip_accents'
+p1790
+Nsbtp1791
+a(S'svc'
+p1792
+g0
+(csklearn.svm.classes
+SVC
+p1793
+g2
+Ntp1794
+Rp1795
+(dp1796
+S'_impl'
+p1797
+S'c_svc'
+p1798
+sS'kernel'
+p1799
+S'rbf'
+p1800
+sS'verbose'
+p1801
+I00
+sS'probability'
+p1802
+I00
+sS'classes_'
+p1803
+cnumpy.core.multiarray
+_reconstruct
+p1804
+(cnumpy
+ndarray
+p1805
+(I0
+tp1806
+S'b'
+p1807
+tp1808
+Rp1809
+(I1
+(I2
+tp1810
+g35
+I00
+S'\x00\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00'
+p1811
+tp1812
+bsS'support_'
+p1813
+g1804
+(g1805
+(I0
+tp1814
+g1807
+tp1815
+Rp1816
+(I1
+(I6
+tp1817
+g32
+(S'i4'
+p1818
+I0
+I1
+tp1819
+Rp1820
+(I3
+S'<'
+p1821
+NNNI-1
+I-1
+I0
+tp1822
+bI00
+S"\xb6\x00\x00\x00\xba\x00\x00\x00'\x00\x00\x00.\x00\x00\x00b\x00\x00\x00\xc9\x00\x00\x00"
+p1823
+tp1824
+bsS'dual_coef_'
+p1825
+g0
+(cscipy.sparse.csr
+csr_matrix
+p1826
+g2
+Ntp1827
+Rp1828
+(dp1829
+S'format'
+p1830
+S'csr'
+p1831
+sS'_shape'
+p1832
+(I1
+I6
+tp1833
+sS'indptr'
+p1834
+g1804
+(g1805
+(I0
+tp1835
+g1807
+tp1836
+Rp1837
+(I1
+(I2
+tp1838
+g1820
+I00
+S'\x00\x00\x00\x00\x06\x00\x00\x00'
+p1839
+tp1840
+bsS'indices'
+p1841
+g1804
+(g1805
+(I0
+tp1842
+g1807
+tp1843
+Rp1844
+(I1
+(I6
+tp1845
+g1820
+I00
+S'\x00\x00\x00\x00\x01\x00\x00\x00\x02\x00\x00\x00\x03\x00\x00\x00\x04\x00\x00\x00\x05\x00\x00\x00'
+p1846
+tp1847
+bsS'maxprint'
+p1848
+I50
+sS'data'
+p1849
+g1804
+(g1805
+(I0
+tp1850
+g1807
+tp1851
+Rp1852
+(I1
+(I6
+tp1853
+g32
+(S'f8'
+p1854
+I0
+I1
+tp1855
+Rp1856
+(I3
+S'<'
+p1857
+NNNI-1
+I-1
+I0
+tp1858
+bI00
+S'\x9a\x99\x99\x99\x99\x99\xb9\xbf\x9a\x99\x99\x99\x99\x99\xb9\xbf\xc38\x8eL\xc8\xfc\xae?\x80\x95?\xac6-\xae?J\xcf\x99\x9fq\x98\x83?)\x12\xd9\x82%+\xb2?'
+p1859
+tp1860
+bsbsS'shrinking'
+p1861
+I01
+sS'class_weight'
+p1862
+NsS'_gamma'
+p1863
+g31
+(g1856
+S'{\x14\xaeG\xe1z\x84?'
+p1864
+tp1865
+Rp1866
+sS'probA_'
+p1867
+g1804
+(g1805
+(I0
+tp1868
+g1807
+tp1869
+Rp1870
+(I1
+(I0
+tp1871
+g1856
+I00
+S''
+p1872
+tp1873
+bsS'_sparse'
+p1874
+I01
+sS'class_weight_'
+p1875
+g1804
+(g1805
+(I0
+tp1876
+g1807
+tp1877
+Rp1878
+(I1
+(I2
+tp1879
+g1856
+I00
+S'\x00\x00\x00\x00\x00\x00\xf0?\x00\x00\x00\x00\x00\x00\xf0?'
+p1880
+tp1881
+bsS'random_state'
+p1882
+NsS'tol'
+p1883
+F0.001
+sS'coef0'
+p1884
+F0.0
+sS'nu'
+p1885
+F0.0
+sS'n_support_'
+p1886
+g1804
+(g1805
+(I0
+tp1887
+g1807
+tp1888
+Rp1889
+(I1
+(I2
+tp1890
+g1820
+I00
+S'\x02\x00\x00\x00\x04\x00\x00\x00'
+p1891
+tp1892
+bsS'shape_fit_'
+p1893
+(I254
+I291
+tp1894
+sS'C'
+p1895
+g31
+(g1856
+S'\x9a\x99\x99\x99\x99\x99\xb9?'
+p1896
+tp1897
+Rp1898
+sS'support_vectors_'
+p1899
+g0
+(g1826
+g2
+Ntp1900
+Rp1901
+(dp1902
+g1830
+S'csr'
+p1903
+sg1832
+(I6
+I291
+tp1904
+sg1834
+g1804
+(g1805
+(I0
+tp1905
+g1807
+tp1906
+Rp1907
+(I1
+(I7
+tp1908
+g1820
+I00
+S'\x00\x00\x00\x00\x04\x00\x00\x00\t\x00\x00\x00\r\x00\x00\x00\x13\x00\x00\x00\x1b\x00\x00\x00\x1c\x00\x00\x00'
+p1909
+tp1910
+bsg1841
+g1804
+(g1805
+(I0
+tp1911
+g1807
+tp1912
+Rp1913
+(I1
+(I28
+tp1914
+g1820
+I00
+S'\r\x00\x00\x00%\x00\x00\x00\x08\x01\x00\x00\t\x01\x00\x00\r\x00\x00\x00Z\x00\x00\x00\xec\x00\x00\x00\x14\x01\x00\x00\x15\x01\x00\x00\x1b\x00\x00\x00%\x00\x00\x00\x08\x01\x00\x00\t\x01\x00\x00\r\x00\x00\x002\x00\x00\x004\x00\x00\x00\xec\x00\x00\x00\x14\x01\x00\x00\x15\x01\x00\x00\r\x00\x00\x00\x1b\x00\x00\x00\x1e\x00\x00\x00\xd9\x00\x00\x00\xda\x00\x00\x00\xec\x00\x00\x00\x14\x01\x00\x00\x15\x01\x00\x00\r\x00\x00\x00'
+p1915
+tp1916
+bsg1848
+I50
+sg1849
+g1804
+(g1805
+(I0
+tp1917
+g1807
+tp1918
+Rp1919
+(I1
+(I28
+tp1920
+g1856
+I00
+S'\x00\x00\x00\x00\x00\x00\xf0?\x00\x00\x00\x00\x00\x00\xf0?\x00\x00\x00\x00\x00\x00\xf0?\x00\x00\x00\x00\x00\x00\xf0?\x00\x00\x00\x00\x00\x00\xf0?\x00\x00\x00\x00\x00\x00\xf0?\x00\x00\x00\x00\x00\x00\xf0?\x00\x00\x00\x00\x00\x00\xf0?\x00\x00\x00\x00\x00\x00\xf0?\x00\x00\x00\x00\x00\x00\xf0?\x00\x00\x00\x00\x00\x00\xf0?\x00\x00\x00\x00\x00\x00\xf0?\x00\x00\x00\x00\x00\x00\xf0?\x00\x00\x00\x00\x00\x00\xf0?\x00\x00\x00\x00\x00\x00\xf0?\x00\x00\x00\x00\x00\x00\xf0?\x00\x00\x00\x00\x00\x00\xf0?\x00\x00\x00\x00\x00\x00\xf0?\x00\x00\x00\x00\x00\x00\xf0?\x00\x00\x00\x00\x00\x00\xf0?\x00\x00\x00\x00\x00\x00\xf0?\x00\x00\x00\x00\x00\x00\xf0?\x00\x00\x00\x00\x00\x00\xf0?\x00\x00\x00\x00\x00\x00\xf0?\x00\x00\x00\x00\x00\x00\xf0?\x00\x00\x00\x00\x00\x00\xf0?\x00\x00\x00\x00\x00\x00\xf0?\x00\x00\x00\x00\x00\x00\xf0?'
+p1921
+tp1922
+bsbsS'_dual_coef_'
+p1923
+g0
+(g1826
+g2
+Ntp1924
+Rp1925
+(dp1926
+g1830
+S'csr'
+p1927
+sg1832
+(I1
+I6
+tp1928
+sg1834
+g1804
+(g1805
+(I0
+tp1929
+g1807
+tp1930
+Rp1931
+(I1
+(I2
+tp1932
+g1820
+I00
+S'\x00\x00\x00\x00\x06\x00\x00\x00'
+p1933
+tp1934
+bsg1841
+g1804
+(g1805
+(I0
+tp1935
+g1807
+tp1936
+Rp1937
+(I1
+(I6
+tp1938
+g1820
+I00
+S'\x00\x00\x00\x00\x01\x00\x00\x00\x02\x00\x00\x00\x03\x00\x00\x00\x04\x00\x00\x00\x05\x00\x00\x00'
+p1939
+tp1940
+bsg1848
+I50
+sg1849
+g1804
+(g1805
+(I0
+tp1941
+g1807
+tp1942
+Rp1943
+(I1
+(I6
+tp1944
+g1856
+I00
+S'\x9a\x99\x99\x99\x99\x99\xb9?\x9a\x99\x99\x99\x99\x99\xb9?\xc38\x8eL\xc8\xfc\xae\xbf\x80\x95?\xac6-\xae\xbfJ\xcf\x99\x9fq\x98\x83\xbf)\x12\xd9\x82%+\xb2\xbf'
+p1945
+tp1946
+bsbsS'degree'
+p1947
+I3
+sS'epsilon'
+p1948
+F0.0
+sS'max_iter'
+p1949
+I-1
+sS'fit_status_'
+p1950
+I0
+sS'_intercept_'
+p1951
+g1804
+(g1805
+(I0
+tp1952
+g1807
+tp1953
+Rp1954
+(I1
+(I1
+tp1955
+g1856
+I00
+S'\x08\x91\x08\x07U\xfb\xef\xbf'
+p1956
+tp1957
+bsS'intercept_'
+p1958
+g1804
+(g1805
+(I0
+tp1959
+g1807
+tp1960
+Rp1961
+(I1
+(I1
+tp1962
+g1856
+I00
+S'\x08\x91\x08\x07U\xfb\xef?'
+p1963
+tp1964
+bsS'probB_'
+p1965
+g1804
+(g1805
+(I0
+tp1966
+g1807
+tp1967
+Rp1968
+(I1
+(I0
+tp1969
+g1856
+I00
+g1872
+tp1970
+bsS'cache_size'
+p1971
+I200
+sS'gamma'
+p1972
+g1866
+sbtp1973
+asS'named_steps'
+p1974
+(dp1975
+g8
+g11
+sg1792
+g1795
+ssb.
