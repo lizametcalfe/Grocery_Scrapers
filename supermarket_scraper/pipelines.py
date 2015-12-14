@@ -2,11 +2,14 @@
 #
 # Don't forget to add your pipeline to the ITEM_PIPELINES setting
 # See: http://doc.scrapy.org/en/latest/topics/item-pipeline.html
-
+# incorporating a machine learning pipeline 
 
 from scrapy import signals
 from scrapy.contrib.exporter import CsvItemExporter
 import datetime, re
+import pickle
+import pandas as pd 
+import search_loader 
 
 class PostProcessingPipeline(object):
     """PostProcessingPipeline
@@ -139,7 +142,29 @@ class PostProcessingPipeline(object):
 
     def common_process_item(self, item, spider):
         """Apply any common post-processing to product line items"""
-        #Remove pound sign from price entry and convert to float
+        #Machine learning flag across items 
+        if item['product_name']:
+        	#pre estimated SVM machine learning classifier 
+        	#item_model_dump = "/home/mint/my-data/testing/supermarket_scraper/supermarket_scraper/ml_model/apple cider, bottle, 4.5%-5.5% abv_dump_model1"
+        	#pkl_file = open(item_model_dump, 'rb')
+        	try:
+        		pkl_file = search_loader.SearchLoader().generic_opener(item['ons_item_name'].lower())
+        		stored_model = pickle.load(pkl_file)
+        		pkl_file.close()
+        		#pre processing of product name 
+        		item['product_name'] = item['product_name'].lower()
+        		#applying the machine SVM classifier (item by item)
+        		item['ml_prediction'] = stored_model.predict([item['product_name']])[0]
+        		item['single_class'] = 0
+
+        	except:
+        		item['ml_prediction'] = 1
+        		item['single_class'] = 1 
+		    #Check how many search terms match the product name
+			#item['search_matches'] = self.get_search_matches(item['search_string'], item['product_name'])
+
+		#standard processing: Remove pound sign from price entry and convert to float
+
         if item['item_price_str']:
             # Allow for e.g. "85p":
             if 'p' in item['item_price_str']:
@@ -158,11 +183,9 @@ class PostProcessingPipeline(object):
                                                     vpx.get('price'), 
                                                     vpx.get('no_units'), 
                                                     vpx.get('units'))
-        #Check how many search terms match the product name
-        item['search_matches'] = self.get_search_matches(
-                                    item['search_string'],  
-                                    item['product_name'])
-            
+        
+                                    
+
         return item
 
 
@@ -177,9 +200,30 @@ class PostProcessingPipeline(object):
         return self.common_process_item(item, spider)
 
 
-    def process_sainsbury_item(self, item, spider):
-        """Sainsbury data come sthrough in different format so need to process
-           product line items differently here."""
+    def process_sainsbury_item(self, item, spider): 
+    	if item['product_name']:
+    		#pre estimated SVM machine learning classifier 
+    		#item_model_dump = "/home/mint/my-data/testing/supermarket_scraper/supermarket_scraper/ml_model/apple cider, bottle, 4.5%-5.5% abv_dump_model1"
+    		#pkl_file = open(item_model_dump, 'rb')
+    		try:
+    			pkl_file = search_loader.SearchLoader().generic_opener(item['ons_item_name'].lower())
+    			stored_model = pickle.load(pkl_file)
+    			pkl_file.close()
+    			#pre processing of product name 
+    			item['product_name'] = item['product_name'].lower()
+    			#applying the machine SVM classifier (item by item)
+    			item['ml_prediction'] = stored_model.predict([item['product_name']])[0]
+    			item['single_class'] = 0
+    			#Check how many search terms match the product name
+    	
+    		except:
+    			item['ml_prediction'] = 1
+    			item['single_class'] = 1 
+			
+				#item['search_matches'] = self.get_search_matches(
+			                            #item['search_string'],  
+			                            #item['product_name'])
+
         #Remove pound sign from price entry and convert to float
         if item['item_price_str']:
             # Allow for e.g. "85p":
@@ -200,11 +244,6 @@ class PostProcessingPipeline(object):
                                                     vpx.get('price'), 
                                                     vpx.get('no_units'), 
                                                     vpx.get('units'))
-        #Check how many search terms match the product name
-        item['search_matches'] = self.get_search_matches(
-                                    item['search_string'],  
-                                    item['product_name'])
-
         return item
 
     #
@@ -244,10 +283,10 @@ class CsvExportPipeline(object):
         self.files = {}
         self.fields_to_export = ['timestamp','store',
         'ons_item_no','ons_item_name','product_type',
-        'search_string','search_matches','product_name',
+        'search_string','product_name',
         'item_price_str','item_price_num',
         'volume_price','unit_price','no_units','units','std_price','std_unit',
-        'promo','offer']          
+        'promo','offer','ml_prediction','single_class']          
 
     @classmethod
     def from_crawler(cls, crawler):

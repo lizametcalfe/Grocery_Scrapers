@@ -18,7 +18,10 @@ class ProductItem(Item):
     volume_price = Field()
     search_string = Field()
     units = Field()    
-    std_unit = Field()    
+    std_unit = Field() 
+    #creating a new field for the classification predictor 1 correct 0 incorrect 
+    #populated in pipeline  
+    #ml_prediction = Field()  
     # Need to supply a serializer for non-string fields
     search_matches = Field(serializer=str)
     item_price_num = Field(serializer=str)
@@ -26,3 +29,5 @@ class ProductItem(Item):
     std_price = Field(serializer=str)
     no_units = Field(serializer=str)
     timestamp = Field(serializer=str)
+    ml_prediction = Field(serializer=str)
+    single_class = Field(serializer=str)

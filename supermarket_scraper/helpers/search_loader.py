@@ -11,10 +11,12 @@ import os
 class SearchLoader():
     name = "SearchLoader"
     data_path = ""
+    ml_path = ""
 
     def __init__(self, *args, **kwargs):
         thisloc = os.path.dirname(__file__)
         self.data_path =  os.path.join(thisloc,"..","..","input")
+        self.ml_path = os.path.join(thisloc,"..","ml_model")
 
 
     def get_file_reader(self,fname):
@@ -28,5 +30,12 @@ class SearchLoader():
         for row in rdr:
             queries.append(row)
         return queries
+
+    #to access the machine learning parameter estimates (RB)
+    def generic_opener(self,fname):
+        floc = os.path.join(self.ml_path,fname)
+        fp = open(floc,'rb')
+        return fp 
+
         
         
