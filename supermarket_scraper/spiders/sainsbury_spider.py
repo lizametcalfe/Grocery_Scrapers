@@ -168,12 +168,20 @@ class SainsburySpider(CrawlSpider):
                     #default std quantity to 1
                     vol_price = vol_price +' / 1 '
                 #Get the volume units as well    
-                vol_unit = product.xpath(self.settings.vol_unit)[2]
+
+                #exception added as the last two unit_vol's were not collecting, this adds an NA in when this is the case and parses to the next product
+                try:
+                    vol_unit = product.xpath(self.settings.vol_unit)[2]
+                    vol_price = vol_price + vol_unit.extract().strip()
+                except:
+                    #default std quantity to 1
+                    vol_unit = "NA"
+                    vol_price = vol_price + vol_unit
+                #Get the volume units as well    
                 #print('vol_unit', vol_unit)
                 #print('vol _nunit', vol_unit)
                 #vol_price_block.xpath("*/span[@class='pricePerMeasureMeasure']/text()")  
                 #Construct the vol price in known format and save it to the item
-                vol_price = vol_price + vol_unit.extract().strip()  
                 item['volume_price'] = vol_price
                 #print('vol _nunit',  item['volume_price'])
                 # Add timestamp
