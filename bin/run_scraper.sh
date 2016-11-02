@@ -1,5 +1,5 @@
 #!/bin/bash          
-PATH=/home/mint/my-apps/anaconda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
+PATH=/home/mint/anaconda2/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
 echo "$(date) Started Running Scrapy to crawl Tesco Web Site"
 
 scrapy crawl tesco 

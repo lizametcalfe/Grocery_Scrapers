@@ -7,7 +7,21 @@ Created on Mon Feb  3 13:15:41 2014
 # Standard Python classes
 import datetime
 import os
+########## Fix for infinite scrolling #############
+import sys
 
+
+from selenium import webdriver
+import time
+import traceback
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.by import By
+from selenium.common.exceptions import NoSuchElementException	
+from scrapy import signals
+from scrapy.xlib.pydispatch import dispatcher
+from pyvirtualdisplay import Display
+########## Fix for infinite scrolling #############
 # Scrapy-based classes
 from scrapy import log
 from scrapy.contrib.spiders import CrawlSpider
@@ -50,7 +64,17 @@ class WaitroseSpider(CrawlSpider):
            Output directory MUST EXIST!
         """
         super(WaitroseSpider, self).__init__(*args, **kwargs)   
-        
+        ########## Fix for infinite scrolling #############
+	self.display = Display(visible=0, size=(1920, 1080))
+	self.display.start()
+	self.driver = webdriver.Firefox()
+	self.driver.wait = WebDriverWait(self.driver, 5)
+	#self.driver.maximize_window()
+	self.driver.set_window_size(1920, 1080)
+	time.sleep(3)
+	self.tb = 'tb none'
+	dispatcher.connect(self.spider_closed, signals.spider_closed)
+	########## Fix for infinite scrolling #############
         if csv_file:
             self.csv_file = csv_file
         else:
@@ -78,109 +102,156 @@ class WaitroseSpider(CrawlSpider):
 
     def start_requests(self):
         """Generates crawler requests for given base URL and parses results."""
-        search_list = self.get_searches()
+        #search_list = self.get_searches()
         # Build URLs based on base URL + sub-categories
-        for s in search_list:
-            search_meta = {}
-            product_url = ''
-            search_meta = s.get_meta_map()
-            product_url = '/'.join([self.settings.base_url,
-                                    s.store_sub1,
-                                    s.store_sub2,
-                                    s.store_sub3])+'/'
-            log.msg("Spider: start_requests() yielding URL: "+product_url, level=log.DEBUG)
-            yield Request(url = product_url, meta=search_meta)
+        #for s in search_list:
+        #    search_meta = {}
+        #    product_url = ''
+        #    search_meta = s.get_meta_map()
+        product1_url = "http://www.waitrose.com/shop/Browse/Groceries/"
+        log.msg("Spider: start_requests() yielding URL: "+product1_url, level=log.DEBUG)
+        yield Request(url = product1_url)
 
     def parse_start_url(self, response):
         """Default function to parse responses from base URL:
            Waitrose serves products in a single list, but we cannot scroll
            through them and there is no 'Next page' link, so we just extract
            the first set of up to 24 product items and yield them for processing."""
-           
-        # Get details of current search (passed in via response meta data)
-        metadata = response.meta
-        #Find product lines
-        sel = Selector(response)
-        products = sel.xpath(self.settings.products_xpath) 
-        #Process each product line
-        log.msg("Spider: parsing response for URL: " +
-                response.url + 
-                " for ONS item " + 
-                metadata['ons_item_name'], level=log.DEBUG)
-        for product in products:
-            # Create an item for each entry
-            item = ProductItem()
-            #UPPER case product name for storage to make searching easier
-            try:
-                item['product_name'] = (product.xpath(self.settings.product_name_xpath).extract()[0]).upper()
-            except:
-                continue
+        ########## Fix for infinite scrolling  #############   
+  	search_list = self.get_searches()
+     	for s in search_list:
+		search_meta = {}
+		product_url = ''
+		metadata = s.get_meta_map()
+		product_url = '/'.join([self.settings.base_url,
+                                    s.store_sub1,
+                                    s.store_sub2,
+                                    s.store_sub3])+'/'
+		self.driver.maximize_window()
+		time.sleep(1)
+		self.driver.get(product_url)
+		time.sleep(2)
+		log.msg("Spider: parse_start_url :: "+product_url, level=log.DEBUG)
+		sel = Selector(text=self.driver.page_source)
+		#i=0
+		while True:
+			try:	
+				#i = i + 1
+            			next_element = self.driver.find_element_by_xpath(self.settings.next_page_xpath)
+				debug_text_class = next_element.get_attribute('href')
+				#log.msg("Spider: parse_start_url :: Inside while :: next element"+str(debug_text_class), level=log.DEBUG)
+				self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+				try:
+					button = self.driver.wait.until(EC.element_to_be_clickable((By.XPATH,self.settings.next_page_xpath)))
+               				button.click()
+				except:
+					self.tb = traceback.format_exc()
+					#print '------------------inside button click exception i count--------------' ,i
+					#print 'ERROR TRACE ::: ',self.tb
+					#log.msg("Spider: parse_start_url :: Inside Exception handling :: Load more button Click "+str(self.tb), level=log.DEBUG)
+					break
 
-            log.msg("Spider: Response for URL: " +
-                response.url + 
-                " found " + item['product_name'].encode('utf-16') 
-                , level=log.DEBUG)
-            try: 
-                item['store'] = self.store
-                item['ons_item_no'] =  metadata['ons_item_no']
-                item['ons_item_name'] =  metadata['ons_item_name']
-                item['product_type'] =  metadata['store_sub3']
-                item['search_string'] = metadata['search_terms']
+				time.sleep(2)
+			except NoSuchElementException:
+				self.tb = traceback.format_exc()
+				#print '------------------ End of infinite scrolling/NoSuchElementException :: i count --------------' ,i
+				#print 'ERROR TRACE ::: ',self.tb
+				#log.msg("Spider: parse_start_url :: End of infinite scrolling/NoSuchElementException "+str(self.tb), level=log.DEBUG)
+				break
+			except:
+				self.tb = traceback.format_exc()
+				#print '------------------inside Exception handling:: i count --------------' ,i
+				#print 'ERROR TRACE ::: ',self.tb
+				#log.msg("Spider: parse_start_url :: inside infinite scrolling exception handling "+ str(self.tb), level=log.DEBUG)
+				break	
+		sel = Selector(text=self.driver.page_source) 
+        	products = sel.xpath(self.settings.products_xpath) 
+        	log.msg("Spider: parsing response for URL: " +
+                		response.url + 
+                		" for ONS item " + 
+                		metadata['ons_item_name'], level=log.DEBUG)
+		product_counter = len(products)
+		#print 'Spider: parsing response for URL: total no. of products:: ',product_counter
+		log.msg("Spider: parse_start_url :: total no. of products:: " + str(product_counter),level=log.DEBUG)
+        	for product in products:
+            		# Create an item for each entry
+	    
+          		item = ProductItem()
+            		#UPPER case product name for storage to make searching easier
+            		try:
+                		item['product_name'] = (product.xpath(self.settings.product_name_xpath).extract()[0]).upper()
+            		except:
+                		continue
 
-            except:
-                continue
-            #Default matches to 1.0 and modify later    
+            		log.msg("Spider: Response for URL: " +
+                		response.url + 
+                		" found " + item['product_name'].encode('utf-8') 
+                		, level=log.DEBUG)
 
-            try:        
-                item['search_matches'] = 1.0
-            # Save price string and convert it to number later
-            	item['item_price_str'] = product.xpath(self.settings.raw_price_xpath).extract()[0].strip()
-            	x = item['item_price_str'][0] 
-            	#print('test', x)
-                #pos = item['item_price_str'].index('\xc2')
-                	#item['item_price_str'] = item['item_price_str'][:].strip()
-                	#print(item['item_price_str'][4])
-                if item['item_price_str'][0] == 'N':
-                	item['item_price_str'] = item['item_price_str'][3:].strip()
-                else:
-                	item['item_price_str'] = item['item_price_str'][:].strip()            
+           		try: 
+                		item['store'] = self.store
+                		item['ons_item_no'] =  metadata['ons_item_no']
+                		item['ons_item_name'] =  metadata['ons_item_name']
+                		item['product_type'] =  metadata['store_sub3']
+                		item['search_string'] = metadata['search_terms']
 
-            # Try getting the volume and putting it on the end of the product name
-                volume = product.xpath(self.settings.volume_xpath).extract()
-                if volume:
-                    item['product_name'] = item['product_name'] + " " + volume[0].strip().upper()
-            except:
-                continue
+            		except:
+                		continue
+            				#Default matches to 1.0 and modify later    
+
+            		try:        
+                		item['search_matches'] = 1.0
+            			# Save price string and convert it to number later
+            			item['item_price_str'] = product.xpath(self.settings.raw_price_xpath).extract()[0].strip()
+            			x = item['item_price_str'][0] 
+            			#print('test', x)
+                		#pos = item['item_price_str'].index('\xc2')
+                		#item['item_price_str'] = item['item_price_str'][:].strip()
+                		#print(item['item_price_str'][4])
+                		if item['item_price_str'][0] == 'N':
+                			item['item_price_str'] = item['item_price_str'][3:].strip()
+                		else:
+                			item['item_price_str'] = item['item_price_str'][:].strip()            
+
+            			# Try getting the volume and putting it on the end of the product name
+                		volume = product.xpath(self.settings.volume_xpath).extract()
+                		if volume:
+                    			item['product_name'] = item['product_name'] + " " + volume[0].strip().upper()
+           		except:
+               			continue
                 
-            # Waitrose volume price not always provided, so if it is not there, 
-            # we try using volume and item price instead. 
-            try:
-                item['volume_price'] = ''                       
-                vol_price = product.xpath(self.settings.vol_price_xpath).extract()
-                if vol_price:
-                    #Allow for e.g. "1.25 per litre" instead of "1.25/litre"
-                    item['volume_price'] = (vol_price[0].strip()).replace("per","/")
-                else:
-                    item['volume_price'] = item['item_price_str'] + "/" + volume[0].strip()
+           		# Waitrose volume price not always provided, so if it is not there, 
+            		# we try using volume and item price instead. 
+           		try:
+              			item['volume_price'] = ''                       
+                		vol_price = product.xpath(self.settings.vol_price_xpath).extract()
+                		if vol_price:
+                    			#Allow for e.g. "1.25 per litre" instead of "1.25/litre"
+                    			item['volume_price'] = (vol_price[0].strip()).replace("per","/")
+                		else:
+                    			item['volume_price'] = item['item_price_str'] + "/" + volume[0].strip()
 
-                # Add timestamp
-                item['timestamp'] = datetime.datetime.now()
-                # Get promotion text (if any) NOT YET IMPLEMENTED
-                item['promo'] = ''
-                if self.settings.promo_xpath:
-                    promo = product.xpath(self.settings.promo_xpath).extract() #TODO
-                    if promo:
-                        item['promo'] = promo[0]
-                # Get short term offer (if any) NOT YET IMPLEMENTED
-                item['offer'] = ''
-                if self.settings.offer_xpath:
-                    offer = product.xpath(self.settings.offer_xpath).extract() #TODO
-                    if offer:
-                        item['offer'] = offer[0]
-            except:
-                continue
-            #Pass the item back
-            yield item
+                		# Add timestamp
+                		item['timestamp'] = datetime.datetime.now()
+                		# Get promotion text (if any) NOT YET IMPLEMENTED
+                		item['promo'] = ''
+                		if self.settings.promo_xpath:
+                    			promo = product.xpath(self.settings.promo_xpath).extract() #TODO
+                    			if promo:
+                        			item['promo'] = promo[0]
+                			# Get short term offer (if any) NOT YET IMPLEMENTED
+                			item['offer'] = ''
+                			if self.settings.offer_xpath:
+                    				offer = product.xpath(self.settings.offer_xpath).extract() #TODO
+                    				if offer:
+                        				item['offer'] = offer[0]
+           		except:
+                		continue
+            				#Pass the item back
+	    		product_counter = product_counter - 1
+            		yield item	
+			
 
-
-
+    def spider_closed(self, spider):
+	self.display.stop()
+        self.driver.quit()

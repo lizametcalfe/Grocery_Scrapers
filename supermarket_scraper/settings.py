@@ -20,10 +20,10 @@ USER_AGENT = 'ons_supermarket_scraper (+http://www.ons.gov.uk)'
 
 # OUR CUSTOM SETTINGS:
 
-LOG_LEVEL = 'ERROR'  # use 'ERROR' to suppress non-error log messages
+LOG_LEVEL = 'DEBUG'  # use 'ERROR' to suppress non-error log messages
 # Use this option if you want to include the timestamp in the log file name
-#logfile = BOT_NAME + datetime.datetime.now().strftime("%Y%m%d%H%M%S") + ".log"
-logfile = BOT_NAME + ".log"
+logfile = BOT_NAME + datetime.datetime.now().strftime("%Y%m%d%H%M%S") + ".log"
+#logfile = BOT_NAME + ".log"
 LOG_FILE = logfile
 
 # Switch off DNS caching because we get mixed up request/response data.

@@ -8,6 +8,18 @@ Created on Mon Feb  3 13:15:41 2014
 # Standard Python classes
 import datetime
 import os
+import sys
+## selenium
+from selenium import webdriver
+import time
+import traceback
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.by import By
+from selenium.common.exceptions import NoSuchElementException	
+from scrapy import signals
+from scrapy.xlib.pydispatch import dispatcher
+from pyvirtualdisplay import Display
 
 # Scrapy-based classes
 from scrapy import log
@@ -15,6 +27,7 @@ from scrapy.contrib.spiders import CrawlSpider
 from scrapy.selector import Selector
 from scrapy.http import Request
 from supermarket_scraper.items import ProductItem
+
 
 # Custom classes outside the standard Scrapy stuff
 from supermarket_scraper.helpers.store_tree_search import SearchTreeFactory
@@ -51,7 +64,17 @@ class SainsburySpider(CrawlSpider):
            Output directory MUST EXIST!
         """
         super(SainsburySpider, self).__init__(*args, **kwargs)   
-        
+        ## selenium
+	self.display = Display(visible=0, size=(1920, 1080))
+	self.display.start()
+	self.driver = webdriver.Firefox()
+	self.driver.wait = WebDriverWait(self.driver, 5)
+	#self.driver.maximize_window()
+	self.driver.set_window_size(1920, 1080)
+	time.sleep(20)
+	self.tb = 'tb none'
+	dispatcher.connect(self.spider_closed, signals.spider_closed)
+	#i=0
         if csv_file:
             self.csv_file = csv_file
         else:
@@ -79,119 +102,127 @@ class SainsburySpider(CrawlSpider):
 
     def start_requests(self):
         """Generates crawler requests for given base URL and parses results."""
-        search_list = self.get_searches()
-        a = str(search_list)
-        #print('gets urls and parses the repsonse objects to form a list: ', a)
+       
         sb_cookies = self.settings.cookies
-        # Build URLs based on base URL + sub-categories
-        for s in search_list:
-            search_meta = {}
-            product_url = ''
-            search_meta = s.get_meta_map()
-            search_meta['cookiejar'] = 1
-            product_url = s.store_sub3
-            # print urls 
-            #print('product:' ,product_url)
-            log.msg("Spider: start_requests() yielding URL: "+product_url, level=log.DEBUG)
-            yield Request(url = product_url, cookies=sb_cookies, meta=search_meta, callback=self.parse_base)                            
+        product_url = "http://www.sainsburys.co.uk"
+        log.msg("Spider: start_requests() yielding URL: "+product_url, level=log.DEBUG)
+        yield Request(url = product_url, cookies=sb_cookies,callback=self.parse_base)                            
 
     def parse_base(self, response):
+        
         """Default function to parse responses from base URL:
            Waitrose serves products in a single list, but we cannot scroll
-           through them and there is no 'Next page' link, so we just extract
+           thro ugh them and there is no 'Next page' link, so we just extract
            the first set of up to 24 product items and yield them for processing."""
-           
-        # Get details of current search (passed in via response meta data)
-        metadata = response.meta
-        #Find product lines
-        sel = Selector(response) 
-        # rb test, only collecting three item (object) responses 
-        #print('test reponse objects from spider: ',sel)       
-        sb_cookies = self.settings.cookies
-        #Find any "next" links for paging and yield Request to next page
-        next_page = sel.xpath(self.settings.next_page_xpath)
-        for page in next_page:
-            #Check each nav link for the required sub-category
-            next_link_ref = page.xpath('@href').extract()[0]
-            log.msg("Spider: found NEXT page link: " + next_link_ref, level=log.DEBUG)
-            yield Request(next_link_ref, cookies=sb_cookies, meta=response.meta, callback=self.parse_base)
-        
-        #Process each product line
-        log.msg("Spider: parsing response for URL: " +
-                response.url + 
-                " for ONS item " + 
-                metadata['ons_item_name'], level=log.DEBUG)
-        products = sel.xpath(self.settings.products_xpath) 
-        
-        for product in products:
-            # Create an item for each entry
-            item = ProductItem()
-            item['store'] = self.store
-            #print('store field of item object', item['store'])
-            item['ons_item_no'] =  metadata['ons_item_no']
-            item['ons_item_name'] =  metadata['ons_item_name']
-            item['product_type'] =  metadata['store_sub3']
-            item['search_string'] = metadata['search_terms']
+      	search_list = self.get_searches()
+     	for s in search_list:
+		search_meta = {}
+		product_url = ''
+		search_meta = s.get_meta_map()
+		product_url = s.store_sub3
+	
+		
+		
+		self.driver.get(product_url)
+		sel = Selector(text=self.driver.page_source) 
+		first_page_parse_finished = None
+		log.msg("Spider: start_requests() yielding URL:"+product_url, level=log.DEBUG)
+		while True:
+	    		try:
+				
+				if first_page_parse_finished:
+					#Find any "next" links for paging 
+            				next_element = self.driver.find_element_by_xpath(self.settings.next_page_xpath)
+					debug_text_class = next_element.get_attribute('href')
+					button = self.driver.wait.until(EC.element_to_be_clickable((By.XPATH,self.settings.next_page_xpath)))
+                			button.click()
+					time.sleep(3)
 
-            #Default matches to 1.0 and modify later            
-            #item['search_matches'] = 1.0
-            #UPPER case product name for storage to make searching easier
-            prodname = product.xpath(self.settings.product_name_xpath).extract()
-            if len(prodname)>0:
-                item['product_name'] = prodname[0].upper().strip()
-                #print('individual item product names: ', item['product_name'])
-                # WARNING:  Prices format is much more complicated on Sainsburys
-                # pages, so we have to do multiple layers of extraction here to
-                # get the prices while we still have access to the XPaths etc.
-    
-                price_block = product.xpath(self.settings.raw_price_xpath)
-                raw_price_block = price_block[0]
-                vol_price_block = price_block[1]
-                #price_block[0]
-                #price_block[1]
-                #print('individual item prices ', raw_price_block)
-                #print('individual volume item prices ', vol_price_block)
-                #Extract a raw price
-                ppu_price = raw_price_block.xpath('text()')[0]
-                ppu_unit = raw_price_block.xpath('*/span[@class="pricePerUnitUnit"]/text()')[0]
-                item['item_price_str'] = ppu_price.extract().strip() + '/' + ppu_unit.extract().strip()
-                #print('individual item prices processed', item['item_price_str'])
-                #Extract the components of the volume price e.g. 1.50 per 100g
-                #THIS WILL BREAK IF PRICE FORMAT ON PAGE CHANGES!
-                vol_abbr = vol_price_block.xpath('text()').extract()
-                #print('volume_unit_raw', vol_abbr )
-                if vol_abbr[0].strip():
-                    vol_price = vol_abbr[0].strip()
-                if vol_abbr[1].strip():
-                    vol_price = vol_price +' / '+ vol_abbr[1]
-                else:
-                    #default std quantity to 1
-                    vol_price = vol_price +' / 1 '
-                #Get the volume units as well    
+				first_page_parse_finished = True
+				sel = Selector(text=self.driver.page_source) 
+        			products = sel.xpath(self.settings.products_xpath)
+        			for product in products:
+            				# Create an item for each entry
+            				item = ProductItem()
+            				item['store'] = self.store
+					#print('store field of item object', item['store'])
+            				item['ons_item_no'] =  search_meta['ons_item_no']
+            				item['ons_item_name'] =  search_meta['ons_item_name']
+            				item['product_type'] =  search_meta['store_sub3']
+            				item['search_string'] = search_meta['search_terms']
 
-                #exception added as the last two unit_vol's were not collecting, this adds an NA in when this is the case and parses to the next product
-                try:
-                    vol_unit = product.xpath(self.settings.vol_unit)[2]
-                    vol_price = vol_price + vol_unit.extract().strip()
-                except:
-                    #default std quantity to 1
-                    vol_unit = "NA"
-                    vol_price = vol_price + vol_unit
-                #Get the volume units as well    
-                #print('vol_unit', vol_unit)
-                #print('vol _nunit', vol_unit)
-                #vol_price_block.xpath("*/span[@class='pricePerMeasureMeasure']/text()")  
-                #Construct the vol price in known format and save it to the item
-                item['volume_price'] = vol_price
-                #print('vol _nunit',  item['volume_price'])
-                # Add timestamp
-                item['timestamp'] = datetime.datetime.now()
+            				#Default matches to 1.0 and modify later            
+            				#item['search_matches'] = 1.0
+            				#UPPER case product name for storage to make searching easier
+           				prodname = product.xpath(self.settings.product_name_xpath).extract()
+            				if len(prodname)>0:
+                				item['product_name'] = prodname[0].upper().strip()
+						#print 'SPIDER :: sainsbury :: product_name',format(item['product_name'].encode('utf-8'))
+                				# WARNING:  Prices format is much more complicated on Sainsburys
+                				# pages, so we have to do multiple layers of extraction here to
+                				# get the prices while we still have access to the XPaths etc.
     
-                #Ignore promos/offers
-                item['promo'] = product.xpath(self.settings.promo_xpath).extract()
-                item['offer'] = product.xpath(self.settings.offer_xpath).extract()
+                				price_block = product.xpath(self.settings.raw_price_xpath)
+                				raw_price_block = price_block[0]
+                				vol_price_block = price_block[1]
+                				#price_block[0]
+                				#price_block[1]
+                				#print('individual item prices ', raw_price_block)
+                				#print('individual volume item prices ', vol_price_block)
+                				#Extract a raw price
+                				ppu_price = raw_price_block.xpath('text()')[0]
+                				ppu_unit = raw_price_block.xpath('*/span[@class="pricePerUnitUnit"]/text()')[0]
+                				item['item_price_str'] = ppu_price.extract().strip() + '/' + ppu_unit.extract().strip()
+                				#print('individual item prices processed', item['item_price_str'])
+                				#Extract the components of the volume price e.g. 1.50 per 100g
+                				#THIS WILL BREAK IF PRICE FORMAT ON PAGE CHANGES!
+                				vol_abbr = vol_price_block.xpath('text()').extract()
+                				#print('volume_unit_raw', vol_abbr )
+                				if vol_abbr[0].strip():
+                    					vol_price = vol_abbr[0].strip()
+                				if vol_abbr[1].strip():
+                    					vol_price = vol_price +' / '+ vol_abbr[1]
+               					else:
+                    				#default std quantity to 1
+                    		 			vol_price = vol_price +' / 1 '
+                				#Get the volume units as well    
+
+                				#exception added as the last two unit_vol's were not collecting, this adds an NA in when this is the case and parses to the next product
+                				try:
+                    					vol_unit = product.xpath(self.settings.vol_unit)[2]
+                    					vol_price = vol_price + vol_unit.extract().strip()
+               					except:
+                    					#default std quantity to 1
+                    					vol_unit = "NA"
+                    					vol_price = vol_price + vol_unit
+                				#Get the volume units as well    
+               					#print('vol_unit', vol_unit)
+                				#print('vol _nunit', vol_unit)
+                				#vol_price_block.xpath("*/span[@class='pricePerMeasureMeasure']/text()")  
+                				#Construct the vol price in known format and save it to the item
+                				item['volume_price'] = vol_price
+                				#print('vol _nunit',  item['volume_price'])
+                				# Add timestamp
+                				item['timestamp'] = datetime.datetime.now()
+    
+                				#Ignore promos/offers
+                				item['promo'] = product.xpath(self.settings.promo_xpath).extract()
+                				item['offer'] = product.xpath(self.settings.offer_xpath).extract()
                 
-                #Pass the item back
-                yield item
+                				#Pass the item back
+            	    				yield item
+			except NoSuchElementException:
+				#print 'Inside NoSuchElementException handling::: '
+				break
+			except:
+				self.tb = traceback.format_exc()
+				log.msg("Spider: parse request :Inside Exception handling:::"+self.tb , level=log.DEBUG)
+				#print 'Inside Exception handling::: ',self.tb
+				break
+
+    def spider_closed(self, spider):
+	#print "--- %s seconds ---" % (time.time() - start_time))
+	self.display.stop()
+        self.driver.quit()
 
 

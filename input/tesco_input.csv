@@ -1,11 +1,11 @@
-,store,ons_item_no,ons_item_name,base_url,base_cat,store_sub1,store_sub2,store_sub3,search_terms
+﻿,store,ons_item_no,ons_item_name,base_url,base_cat,store_sub1,store_sub2,store_sub3,search_terms
 0,TESCO,310218,"Apple Cider, bottle, 4.5%-5.5% ABV",http://www.tesco.com/groceries,Groceries,Drinks,Beer & Cider,Cider,apple cider
 1,TESCO,212717,"Apples, dessert, per kg",http://www.tesco.com/groceries,Groceries,Fresh Food,Fresh Fruit,"Apples, Pears & Rhubarb",apples
 2,TESCO,212719,"Bananas, per kg",http://www.tesco.com/groceries,Groceries,Fresh Food,Fresh Fruit,Bananas,bananas
 3,TESCO,310207,"Bitter, 4 cans, 3.4%-7.5% ABV",http://www.tesco.com/groceries,Groceries,Drinks,Beer & Cider,"Beer - Ale & Bitter",bitter
 4,TESCO,310405,"Brandy, bottle",http://www.tesco.com/groceries,Groceries,Drinks,Spirits,Brandy & Cognac,brandy
-5,TESCO,210213,"Breakfast Cereal 1, sugar/chocolate coated",http://www.tesco.com/groceries,Groceries,Food Cupboard,Cereals,Childrens Cereals,nan
-6,TESCO,210214,"Breakfast Cereal 2, NOT sugar/chocolate coated",http://www.tesco.com/groceries,Groceries,Food Cupboard,Cereals,Healthier Cereal,nan
+5,TESCO,210213,"Breakfast Cereal 1, sugar/chocolate coated",http://www.tesco.com/groceries,Groceries,Food Cupboard,Cereals,Family Cereal,nan
+6,TESCO,210214,"Breakfast Cereal 2, NOT sugar/chocolate coated",http://www.tesco.com/groceries,Groceries,Food Cupboard,Cereals,Healthy Lifestyle Cereal,nan
 7,TESCO,211501,"Cheese Cheddar, home produced, per kg",http://www.tesco.com/groceries,Groceries,Fresh Food,Cheese,Cheddar Cheese,british cheddar
 8,TESCO,212011,"Cola Flavoured Drink, bottle",http://www.tesco.com/groceries,Groceries,Drinks,Fizzy Drinks & Cola,Cola,nan
 9,TESCO,210204,"Dry Spaghetti or pasta, 500g",http://www.tesco.com/groceries,Groceries,Food Cupboard,"Dried Pasta, Rice, Noodles & Cous Cous",Pasta & Spaghetti,500g
@@ -15,7 +15,7 @@
 13,TESCO,212722,"Grapes, per kg",http://www.tesco.com/groceries,Groceries,Fresh Food,Fresh Fruit,Grapes,grapes
 14,TESCO,310215,"Lager, 4 bottles, 4.3%-7.5% ABV",http://www.tesco.com/groceries,Groceries,Drinks,Beer & Cider,Beer - Lager,lager bottles
 15,TESCO,210302,Plain Biscuits (eg. Digestive),http://www.tesco.com/groceries,Groceries,Food Cupboard,Biscuits & Cereal Bars,Everyday Biscuits,digestives
-16,TESCO,212360,"Potatoes, old, white     ",http://www.tesco.com/groceries,Groceries,Fresh Food,Fresh Vegetables,Potatoes,old white potatoes
+16,TESCO,212360,"Potatoes, old, white",http://www.tesco.com/groceries,Groceries,Fresh Food,Fresh Vegetables,Potatoes,old white potatoes
 17,TESCO,310421,"Red Wine, European, bottle",http://www.tesco.com/groceries,Groceries,Drinks,Wine,Red Wine,red wine
 18,TESCO,310427,"RUM, WHITE, BOTTLE",http://www.tesco.com/groceries,Groceries,Drinks,Spirits,Rum,white rum
 19,TESCO,211709,"Shop Milk, whole milk",http://www.tesco.com/groceries,Groceries,Fresh Food,"Milk, Butter & Eggs",Fresh Milk,whole
@@ -25,9 +25,9 @@
 23,TESCO,211901,"Tea bags, per packet of 80, 250g",http://www.tesco.com/groceries,Groceries,Drinks,Tea,Everyday Tea,80 250g
 24,TESCO,310403,"Vodka, bottle",http://www.tesco.com/groceries,Groceries,Drinks,Spirits,Vodka,vodka
 25,TESCO,310401,"Whisky, bottle",http://www.tesco.com/groceries,Groceries,Drinks,Spirits,Whisky,whisky
-26,TESCO,210111,"White Sliced Loaf, branded",http://www.tesco.com/groceries,Groceries,Bakery,Bread,White Bread,sliced
+26,TESCO,210111,"White Sliced Loaf, branded",http://www.tesco.com/groceries,Groceries,Bakery,Bread & Rolls,White Bread
 27,TESCO,310419,"White Wine, European, bottle",http://www.tesco.com/groceries,Groceries,Drinks,Wine,White Wine,white wine
-28,TESCO,210113,"Wholemeal Sliced Loaf, branded",http://www.tesco.com/groceries,Groceries,Bakery,Bread,Brown Bread,
+28,TESCO,210113,"Wholemeal Sliced Loaf, branded",http://www.tesco.com/groceries,Groceries,Bakery,Bread & Rolls,Brown & Wholemeal Bread,
 29,TESCO,211814,"Yoghurt, small individual",http://www.tesco.com/groceries,Groceries,Fresh Food,Yoghurts,"Yoghurt Drinks",yogurt single
 29,TESCO,211814,"Yoghurt, small individual",http://www.tesco.com/groceries,Groceries,Fresh Food,Yoghurts,"Fat Free & Low Fat Yoghurt",yogurt single
 29,TESCO,211814,"Yoghurt, small individual",http://www.tesco.com/groceries,Groceries,Fresh Food,Yoghurts,"Corner Yoghurt",yogurt single
@@ -39,7 +39,6 @@
 29,TESCO,211814,"Yoghurt, small individual",http://www.tesco.com/groceries,Groceries,Fresh Food,Yoghurts,"Indulgent Yoghurts & Dairy Desserts",yogurt single
 30,TESCO,211807,"Yoghurt/Fromage Frais" ,http://www.tesco.com/groceries,Groceries,Fresh Food,Yoghurts,Organic Yoghurt,fromage frais
 30,TESCO,211807,"Yoghurt/Fromage Frais" ,http://www.tesco.com/groceries,Groceries,Fresh Food,Yoghurts,Flavoured Big Pot Yoghurt,fromage frais
-30,TESCO,211807,"Yoghurt/Fromage Frais" ,http://www.tesco.com/groceries,Groceries,Fresh Food,Yoghurts,Multipack Yoghurts,fromage frais
 30,TESCO,211807,"Yoghurt/Fromage Frais" ,http://www.tesco.com/groceries,Groceries,Fresh Food,Yoghurts,Natural & Greek Yoghurt,fromage frais
 31,TESCO,212006,"Fruit Juice, not orange, eg. apple",http://www.tesco.com/groceries,Groceries,Drinks,Juices & Smoothies,Chilled Juice,apple juice
 32,TESCO,212017,"Fizzy bottled drink",http://www.tesco.com/groceries,Groceries,Drinks,Fizzy Drinks & Cola,Fizzy Drinks,bottle

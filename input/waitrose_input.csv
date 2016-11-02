@@ -1,35 +1,37 @@
-store,ons_item_no,ons_item_name,base_url,base_cat,store_sub1,store_sub2,store_sub3,search_terms
-WAITROSE,310218,"Apple Cider, bottle, 4.5%-5.5% ABV",http://www.waitrose.com/shop/Browse/Groceries/,Groceries,Wine_and_Drinks,Beer_and_Cider,Cider,apple cider 
-WAITROSE,212717,"Apples, dessert, per kg",http://www.waitrose.com/shop/Browse/Groceries/,Groceries,Fruit_and_Veg,Fresh_Fruit,Apples,apples 
-WAITROSE,212719,"Bananas, per kg",http://www.waitrose.com/shop/Browse/Groceries/,Groceries,Fruit_and_Veg,Fresh_Fruit,Bananas,bananas 
-WAITROSE,310207,"Bitter, 4 cans, 3.4%-7.5% ABV",http://www.waitrose.com/shop/Browse/Groceries/,Groceries,Wine_and_Drinks,Beer_and_Cider,Ale_and_Stout,bitter
-WAITROSE,310405,"Brandy, bottle",http://www.waitrose.com/shop/Browse/Groceries/,Groceries,Wine_and_Drinks,Spirits_and_Liqueurs,Brandy_and_Cognac,brandy 
-WAITROSE,210213,"Breakfast Cereal 1, sugar/chocolate coated",http://www.waitrose.com/shop/Browse/Groceries/,Groceries,Food_Cupboard,Breakfast_Cereals,Family_Cereals,
-WAITROSE,210214,"Breakfast Cereal 2, NOT sugar/chocolate coated",http://www.waitrose.com/shop/Browse/Groceries/,Groceries,Food_Cupboard,Breakfast_Cereals,Healthier_Cereals,
-WAITROSE,211501,"Cheese Cheddar, home produced, per kg",http://www.waitrose.com/shop/Browse/Groceries/,Groceries,Dairy_and_Eggs,Cheese,Cheddar,british cheddar 
-WAITROSE,212011,"Cola Flavoured Drink, bottle",http://www.waitrose.com/shop/Browse/Groceries/,Groceries,Wine_and_Drinks,Soft_Drinks,Cola,cola
-WAITROSE,210204,"Dry Spaghetti or pasta, 500g",http://www.waitrose.com/shop/Browse/Groceries/,Groceries,Food_Cupboard,Rice_Pasta_and_Noodles,Pasta,Dried 500g
-WAITROSE,212519,"Fresh Veg, Onions, per kg",http://www.waitrose.com/shop/Browse/Groceries/,Groceries,Fruit_and_Veg,Fresh_Vegetables,Onions_and_Leeks/Onions,onions 
-WAITROSE,212515,"Fresh Veg, Tomatoes, per kg",http://www.waitrose.com/shop/Browse/Groceries/,Groceries,Fruit_and_Veg,Fresh_Salad,Tomatoes,tomatoes 
-WAITROSE,212016,"Fresh/Chilled Orange Juice, eg. Tropicana",http://www.waitrose.com/shop/Browse/Groceries/,Groceries,Wine_and_Drinks,Fruit_Juice,Fresh_Juice,Juice_Drinks,fresh orange juice 
-WAITROSE,212722,"Grapes, per kg",http://www.waitrose.com/shop/Browse/Groceries/,Groceries,Fruit_and_Veg,Fresh_Fruit,Grapes,grapes 
-WAITROSE,310215,"Lager, 4 bottles, 4.3%-7.5% ABV",http://www.waitrose.com/shop/Browse/Groceries/,Groceries,Wine_and_Drinks,Beer_and_Cider,Lager,lager bottles 
-WAITROSE,210302,Plain Biscuits (eg. Digestive),http://www.waitrose.com/shop/Browse/Groceries/,Groceries,Food_Cupboard,Biscuits_and_Crackers,Family_Biscuits/Digestives_and_Hobnobs,digestives
-WAITROSE,212360,"Potatoes, old, white",http://www.waitrose.com/shop/Browse/Groceries/,Groceries,Fruit_and_Veg,Fresh_Vegetables,Potatoes_and_Squash/Main_Crop_Potatoes,old white potatoes 
-WAITROSE,212319,"Potatoes, new",http://www.waitrose.com/shop/Browse/Groceries/,Groceries,Fruit_and_Veg,Fresh_Vegetables,Potatoes_and_Squash/New_Potatoes,new potatoes
-WAITROSE,310421,"Red Wine, European, bottle",http://www.waitrose.com/shop/Browse/Groceries/,Groceries,Wine_and_Drinks,Red_Wines,,red wine 
-WAITROSE,310427,"RUM, WHITE, BOTTLE",http://www.waitrose.com/shop/Browse/Groceries/,Groceries,Wine_and_Drinks,Spirits_and_Liqueurs,Rum,white rum 
-WAITROSE,211709,"Shop Milk, whole milk",http://www.waitrose.com/shop/Browse/Groceries/,Groceries,Dairy_and_Eggs,Fresh_Milk,Whole_Milk,whole
-WAITROSE,211710,"Shop Milk,semi-skimmed, per 2 pints/1.136 litre",http://www.waitrose.com/shop/Browse/Groceries/,Groceries,Dairy_and_Eggs,Fresh_Milk,Semi-Skimmed_Milk,semi skimmed 
-WAITROSE,211305,"Spreadable butter, 500g, 40-70% butter content",http://www.waitrose.com/shop/Browse/Groceries/,Groceries,Dairy_and_Eggs,Butter_Spreads_and_Pastry,Butter,spreadable butter 500g
-WAITROSE,212720,"Strawberries, per kg or per punnet",http://www.waitrose.com/shop/Browse/Groceries/,Groceries,Fruit_and_Veg,Fresh_Fruit,Strawberries_Cherries_and_assorted_Berries/Strawberries,strawberries 
-WAITROSE,211901,"Tea bags, per packet of 80, 250g",http://www.waitrose.com/shop/Browse/Groceries/,Groceries,Wine_and_Drinks,Tea_Coffee_Hot_Drinks,Tea/Standard_Tea_Bags,80 250g
-WAITROSE,310403,"Vodka, bottle",http://www.waitrose.com/shop/Browse/Groceries/,Groceries,Wine_and_Drinks,Spirits_and_Liqueurs,Vodka,vodka 
-WAITROSE,310401,"Whisky, bottle",http://www.waitrose.com/shop/Browse/Groceries/,Groceries,Wine_and_Drinks,Spirits_and_Liqueurs,Whisky_and_Bourbon/Malt_Whisky,malt whisky
-WAITROSE,210111,"White Sliced Loaf, branded",http://www.waitrose.com/shop/Browse/Groceries/,Groceries,Bread_and_Cakes,Bread_Rolls_and_Wraps,White_Bread,sliced 
-WAITROSE,310419,"White Wine, European, bottle",http://www.waitrose.com/shop/Browse/Groceries/,Groceries,Wine_and_Drinks,White_Wines,,white wine 
-WAITROSE,210113,"Wholemeal Sliced Loaf, branded",http://www.waitrose.com/shop/Browse/Groceries/,Groceries,Bread_and_Cakes,Bread_Rolls_and_Wraps,Brown_and_Wholemeal_Bread,wholemeal sliced
-WAITROSE,211814,"Yoghurt, small individual",http://www.waitrose.com/shop/Browse/Groceries/,Groceries,Dairy_and_Eggs,Yogurts,Indulgent_Singles,yoghurt 
-WAITROSE,211807,Yoghurt/Fromage Frais,http://www.waitrose.com/shop/Browse/Groceries/,Groceries,Dairy_and_Eggs,Yogurts,Childrens,fromage frais 
-WAITROSE,212006,"Fruit Juice, not orange, eg. apple",http://www.waitrose.com/shop/Browse/Groceries/,Groceries,Wine_and_Drinks,Fruit_Juice,Fresh_Juice/Apple_Juice,apple juice
-WAITROSE,212017,Fizzy bottled drink,http://www.waitrose.com/shop/Browse/Groceries/,Groceries,Wine_and_Drinks,Soft_Drinks,Lemonade_and_Fruit_Flavoured_Fizzy_Drinks,bottle
+store,ons_item_no,ons_item_name,base_url,base_cat,store_sub1,store_sub2,store_sub3,search_terms,
+WAITROSE,310218,"Apple Cider, bottle, 4.5%-5.5% ABV",http://www.waitrose.com/shop/Browse/Groceries/,Groceries,Beer_Wine_and_Spirits,Cider,Traditional_Ciders,apple cider ,
+WAITROSE,212717,"Apples, dessert, per kg",http://www.waitrose.com/shop/Browse/Groceries/,Groceries,Fresh_and_Chilled,Fresh_Fruit,Apples,apples ,
+WAITROSE,212719,"Bananas, per kg",http://www.waitrose.com/shop/Browse/Groceries/,Groceries,Fresh_and_Chilled,Fresh_Fruit,Bananas,bananas ,
+WAITROSE,310207,"Bitter, 4 cans, 3.4%-7.5% ABV",http://www.waitrose.com/shop/Browse/Groceries/,Groceries,Beer_Wine_and_Spirits,Beer,,bitter,
+WAITROSE,310405,"Brandy, bottle",http://www.waitrose.com/shop/Browse/Groceries/,Groceries,Beer_Wine_and_Spirits,Spirits_and_Liqueurs,Brandy,brandy ,
+WAITROSE,310405,"Brandy, bottle",http://www.waitrose.com/shop/Browse/Groceries/,Groceries,Beer_Wine_and_Spirits,Spirits_and_Liqueurs,Cognac,brandy ,
+WAITROSE,210213,"Breakfast Cereal 1, sugar/chocolate coated",http://www.waitrose.com/shop/Browse/Groceries/,Groceries,Food_Cupboard,Breakfast_Cereal,Childrens_Breakfast_Cereal,,
+WAITROSE,210214,"Breakfast Cereal 2, NOT sugar/chocolate coated",http://www.waitrose.com/shop/Browse/Groceries/,Groceries,Food_Cupboard,Breakfast_Cereal,Healthy_Breakfast_Cereal,,
+WAITROSE,211501,"Cheese Cheddar, home produced, per kg",http://www.waitrose.com/shop/Browse/Groceries/,Groceries,Fresh_and_Chilled,Cheese,Cheddar,british cheddar ,
+WAITROSE,212011,"Cola Flavoured Drink, bottle",http://www.waitrose.com/shop/Browse/Groceries/,Groceries,Tea_Coffee_and_Soft_Drinks,Soft_Drinks,Cola,cola,
+WAITROSE,210204,"Dry Spaghetti or pasta, 500g",http://www.waitrose.com/shop/Browse/Groceries/,Groceries,Food_Cupboard,Rice_Pasta_and_Pulses,Pasta,Dried 500g,
+WAITROSE,212519,"Fresh Veg, Onions, per kg",http://www.waitrose.com/shop/Browse/Groceries/,Groceries,Fresh_and_Chilled,Fresh_Vegetables,Onions_and_Garlic/Onions,onions ,
+WAITROSE,212515,"Fresh Veg, Tomatoes, per kg",http://www.waitrose.com/shop/Browse/Groceries/,Groceries,Fresh_and_Chilled,Fresh_Salad_and_Herbs,Tomatoes,tomatoes ,
+WAITROSE,212016,"Fresh/Chilled Orange Juice, eg. Tropicana",http://www.waitrose.com/shop/Browse/Groceries/,Groceries,Tea_Coffee_and_Soft_Drinks,Juices,Fresh_Juice/Orange_Juice,Juice_Drinks,fresh orange juice 
+WAITROSE,212722,"Grapes, per kg",http://www.waitrose.com/shop/Browse/Groceries/,Groceries,Fresh_and_Chilled,Fresh_Fruit,Grapes,grapes ,
+WAITROSE,310215,"Lager, 4 bottles, 4.3%-7.5% ABV",http://www.waitrose.com/shop/Browse/Groceries/,Groceries,Beer_Wine_and_Spirits,Beer,Lager,lager bottles ,
+WAITROSE,210302,Plain Biscuits (eg. Digestive),http://www.waitrose.com/shop/Browse/Groceries/,Groceries,Food_Cupboard,Biscuits_and_Crackers,Everyday_Biscuits,digestives,
+WAITROSE,212360,"Potatoes, old, white",http://www.waitrose.com/shop/Browse/Groceries/,Groceries,Fresh_and_Chilled,Fresh_Vegetables,Potatoes_and_Sweet_Potatoes/White_and_Red_Potatoes,old white potatoes ,
+WAITROSE,212319,"Potatoes, new",http://www.waitrose.com/shop/Browse/Groceries/,Groceries,Fresh_and_Chilled,Fresh_Vegetables,Potatoes_and_Sweet_Potatoes/New_Potatoes,new potatoes,
+WAITROSE,310421,"Red Wine, European, bottle",http://www.waitrose.com/shop/Browse/Groceries/,Groceries,Beer_Wine_and_Spirits,Wine,Red_Wine,red wine ,
+WAITROSE,310427,"RUM, WHITE, BOTTLE",http://www.waitrose.com/shop/Browse/Groceries/,Groceries,Beer_Wine_and_Spirits,Spirits_and_Liqueurs,Rum/White_Rum,white rum ,
+WAITROSE,211709,"Shop Milk, whole milk",http://www.waitrose.com/shop/Browse/Groceries/,Groceries,Fresh_and_Chilled,Milk_Butter_and_Eggs,Milk/Whole_Milk,whole,
+WAITROSE,211710,"Shop Milk,semi-skimmed, per 2 pints/1.136 litre",http://www.waitrose.com/shop/Browse/Groceries/,Groceries,Fresh_and_Chilled,Milk_Butter_and_Eggs,Milk/Semi-Skimmed_Milk,semi skimmed ,
+WAITROSE,211305,"Spreadable butter, 500g, 40-70% butter content",http://www.waitrose.com/shop/Browse/Groceries/,Groceries,Fresh_and_Chilled,Milk_Butter_and_Eggs,Butter_Spreads_and_Pastry/Spreads,spreadable butter 500g,
+WAITROSE,212720,"Strawberries, per kg or per punnet",http://www.waitrose.com/shop/Browse/Groceries/,Groceries,Fresh_and_Chilled,Fresh_Fruit,Berries/Strawberries,strawberries ,
+WAITROSE,211901,"Tea bags, per packet of 80, 250g",http://www.waitrose.com/shop/Browse/Groceries/,Groceries,Tea_Coffee_and_Soft_Drinks,Tea,Traditional_Everyday_Tea,80 250g,
+WAITROSE,310403,"Vodka, bottle",http://www.waitrose.com/shop/Browse/Groceries/,Groceries,Beer_Wine_and_Spirits,Spirits_and_Liqueurs,Vodka,vodka ,
+WAITROSE,310401,"Whisky, bottle",http://www.waitrose.com/shop/Browse/Groceries/,Groceries,Beer_Wine_and_Spirits,Spirits_and_Liqueurs,Whisky/Scottish_Whisky/Malt_Whisky,malt whisky,
+WAITROSE,210111,"White Sliced Loaf, branded",http://www.waitrose.com/shop/Browse/Groceries/,Groceries,Bakery,Bread,White_Bread,sliced ,
+WAITROSE,310419,"White Wine, European, bottle",http://www.waitrose.com/shop/Browse/Groceries/,Groceries,Beer_Wine_and_Spirits,Wine,White_Wine,white wine ,
+WAITROSE,210113,"Wholemeal Sliced Loaf, branded",http://www.waitrose.com/shop/Browse/Groceries/,Groceries,Bakery,Bread,Wholemeal_Bread,wholemeal sliced,
+WAITROSE,211814,"Yoghurt, small individual",http://www.waitrose.com/shop/Browse/Groceries/,Groceries,Fresh_and_Chilled,Yogurts,Indulgent_Yogurts,yoghurt ,
+WAITROSE,211807,Yoghurt/Fromage Frais,http://www.waitrose.com/shop/Browse/Groceries/,Groceries,Fresh_and_Chilled,Yogurts,Childrens_Yogurt,fromage frais ,
+WAITROSE,212006,"Fruit Juice, not orange, eg. apple",http://www.waitrose.com/shop/Browse/Groceries/,Groceries,Tea_Coffee_and_Soft_Drinks,Juices,Fresh_Juice/Apple_Juice,apple juice,
+WAITROSE,212017,Fizzy bottled drink,http://www.waitrose.com/shop/Browse/Groceries/,Groceries,Tea_Coffee_and_Soft_Drinks,Soft_Drinks,Lemonade,bottle,
+WAITROSE,212017,Fizzy bottled drink,http://www.waitrose.com/shop/Browse/Groceries/,Groceries,Tea_Coffee_and_Soft_Drinks,Soft_Drinks,Fruit_Flavoured_Drinks,bottle,

@@ -1,0 +1,576 @@
+------------------inside button click exception i count-------------- 1
+ERROR TRACE :::  Traceback (most recent call last):
+  File "/home/mint/my-data/supermarket_scraper/supermarket_scraper/spiders/waitrose_spider.py", line 145, in parse_start_url
+    button = self.driver.wait.until(EC.element_to_be_clickable((By.XPATH,self.settings.next_page_xpath)))
+  File "/usr/local/lib/python2.7/dist-packages/selenium/webdriver/support/wait.py", line 80, in until
+    raise TimeoutException(message, screen, stacktrace)
+TimeoutException: Message: 
+Stacktrace:
+    at FirefoxDriver.prototype.findElementInternal_ (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/driver-component.js:10770)
+    at FirefoxDriver.prototype.findElement (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/driver-component.js:10779)
+    at DelayedCommand.prototype.executeInternal_/h (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/command-processor.js:12661)
+    at DelayedCommand.prototype.executeInternal_ (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/command-processor.js:12666)
+    at DelayedCommand.prototype.execute/< (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/command-processor.js:12608)
+
+Spider: parsing response for URL: total no. of products::  31
+------------------inside button click exception i count-------------- 1
+ERROR TRACE :::  Traceback (most recent call last):
+  File "/home/mint/my-data/supermarket_scraper/supermarket_scraper/spiders/waitrose_spider.py", line 145, in parse_start_url
+    button = self.driver.wait.until(EC.element_to_be_clickable((By.XPATH,self.settings.next_page_xpath)))
+  File "/usr/local/lib/python2.7/dist-packages/selenium/webdriver/support/wait.py", line 80, in until
+    raise TimeoutException(message, screen, stacktrace)
+TimeoutException: Message: 
+Stacktrace:
+    at FirefoxDriver.prototype.findElementInternal_ (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/driver-component.js:10770)
+    at FirefoxDriver.prototype.findElement (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/driver-component.js:10779)
+    at DelayedCommand.prototype.executeInternal_/h (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/command-processor.js:12661)
+    at DelayedCommand.prototype.executeInternal_ (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/command-processor.js:12666)
+    at DelayedCommand.prototype.execute/< (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/command-processor.js:12608)
+
+Spider: parsing response for URL: total no. of products::  32
+------------------ End of infinite scrolling/NoSuchElementException :: i count -------------- 1
+ERROR TRACE :::  Traceback (most recent call last):
+  File "/home/mint/my-data/supermarket_scraper/supermarket_scraper/spiders/waitrose_spider.py", line 140, in parse_start_url
+    next_element = self.driver.find_element_by_xpath(self.settings.next_page_xpath)
+  File "/usr/local/lib/python2.7/dist-packages/selenium/webdriver/remote/webdriver.py", line 290, in find_element_by_xpath
+    return self.find_element(by=By.XPATH, value=xpath)
+  File "/usr/local/lib/python2.7/dist-packages/selenium/webdriver/remote/webdriver.py", line 744, in find_element
+    {'using': by, 'value': value})['value']
+  File "/usr/local/lib/python2.7/dist-packages/selenium/webdriver/remote/webdriver.py", line 233, in execute
+    self.error_handler.check_response(response)
+  File "/usr/local/lib/python2.7/dist-packages/selenium/webdriver/remote/errorhandler.py", line 194, in check_response
+    raise exception_class(message, screen, stacktrace)
+NoSuchElementException: Message: Unable to locate element: {"method":"xpath","selector":"//div[@class='load-more-button']/div[@class='view-all-results']//a"}
+Stacktrace:
+    at FirefoxDriver.prototype.findElementInternal_ (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/driver-component.js:10770)
+    at FirefoxDriver.prototype.findElement (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/driver-component.js:10779)
+    at DelayedCommand.prototype.executeInternal_/h (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/command-processor.js:12661)
+    at DelayedCommand.prototype.executeInternal_ (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/command-processor.js:12666)
+    at DelayedCommand.prototype.execute/< (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/command-processor.js:12608)
+
+Spider: parsing response for URL: total no. of products::  5
+------------------ End of infinite scrolling/NoSuchElementException :: i count -------------- 9
+ERROR TRACE :::  Traceback (most recent call last):
+  File "/home/mint/my-data/supermarket_scraper/supermarket_scraper/spiders/waitrose_spider.py", line 140, in parse_start_url
+    next_element = self.driver.find_element_by_xpath(self.settings.next_page_xpath)
+  File "/usr/local/lib/python2.7/dist-packages/selenium/webdriver/remote/webdriver.py", line 290, in find_element_by_xpath
+    return self.find_element(by=By.XPATH, value=xpath)
+  File "/usr/local/lib/python2.7/dist-packages/selenium/webdriver/remote/webdriver.py", line 744, in find_element
+    {'using': by, 'value': value})['value']
+  File "/usr/local/lib/python2.7/dist-packages/selenium/webdriver/remote/webdriver.py", line 233, in execute
+    self.error_handler.check_response(response)
+  File "/usr/local/lib/python2.7/dist-packages/selenium/webdriver/remote/errorhandler.py", line 194, in check_response
+    raise exception_class(message, screen, stacktrace)
+NoSuchElementException: Message: Unable to locate element: {"method":"xpath","selector":"//div[@class='load-more-button']/div[@class='view-all-results']//a"}
+Stacktrace:
+    at FirefoxDriver.prototype.findElementInternal_ (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/driver-component.js:10770)
+    at FirefoxDriver.prototype.findElement (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/driver-component.js:10779)
+    at DelayedCommand.prototype.executeInternal_/h (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/command-processor.js:12661)
+    at DelayedCommand.prototype.executeInternal_ (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/command-processor.js:12666)
+    at DelayedCommand.prototype.execute/< (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/command-processor.js:12608)
+
+Spider: parsing response for URL: total no. of products::  280
+------------------ End of infinite scrolling/NoSuchElementException :: i count -------------- 1
+ERROR TRACE :::  Traceback (most recent call last):
+  File "/home/mint/my-data/supermarket_scraper/supermarket_scraper/spiders/waitrose_spider.py", line 140, in parse_start_url
+    next_element = self.driver.find_element_by_xpath(self.settings.next_page_xpath)
+  File "/usr/local/lib/python2.7/dist-packages/selenium/webdriver/remote/webdriver.py", line 290, in find_element_by_xpath
+    return self.find_element(by=By.XPATH, value=xpath)
+  File "/usr/local/lib/python2.7/dist-packages/selenium/webdriver/remote/webdriver.py", line 744, in find_element
+    {'using': by, 'value': value})['value']
+  File "/usr/local/lib/python2.7/dist-packages/selenium/webdriver/remote/webdriver.py", line 233, in execute
+    self.error_handler.check_response(response)
+  File "/usr/local/lib/python2.7/dist-packages/selenium/webdriver/remote/errorhandler.py", line 194, in check_response
+    raise exception_class(message, screen, stacktrace)
+NoSuchElementException: Message: Unable to locate element: {"method":"xpath","selector":"//div[@class='load-more-button']/div[@class='view-all-results']//a"}
+Stacktrace:
+    at FirefoxDriver.prototype.findElementInternal_ (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/driver-component.js:10770)
+    at FirefoxDriver.prototype.findElement (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/driver-component.js:10779)
+    at DelayedCommand.prototype.executeInternal_/h (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/command-processor.js:12661)
+    at DelayedCommand.prototype.executeInternal_ (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/command-processor.js:12666)
+    at DelayedCommand.prototype.execute/< (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/command-processor.js:12608)
+
+Spider: parsing response for URL: total no. of products::  8
+------------------ End of infinite scrolling/NoSuchElementException :: i count -------------- 1
+ERROR TRACE :::  Traceback (most recent call last):
+  File "/home/mint/my-data/supermarket_scraper/supermarket_scraper/spiders/waitrose_spider.py", line 140, in parse_start_url
+    next_element = self.driver.find_element_by_xpath(self.settings.next_page_xpath)
+  File "/usr/local/lib/python2.7/dist-packages/selenium/webdriver/remote/webdriver.py", line 290, in find_element_by_xpath
+    return self.find_element(by=By.XPATH, value=xpath)
+  File "/usr/local/lib/python2.7/dist-packages/selenium/webdriver/remote/webdriver.py", line 744, in find_element
+    {'using': by, 'value': value})['value']
+  File "/usr/local/lib/python2.7/dist-packages/selenium/webdriver/remote/webdriver.py", line 233, in execute
+    self.error_handler.check_response(response)
+  File "/usr/local/lib/python2.7/dist-packages/selenium/webdriver/remote/errorhandler.py", line 194, in check_response
+    raise exception_class(message, screen, stacktrace)
+NoSuchElementException: Message: Unable to locate element: {"method":"xpath","selector":"//div[@class='load-more-button']/div[@class='view-all-results']//a"}
+Stacktrace:
+    at FirefoxDriver.prototype.findElementInternal_ (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/driver-component.js:10770)
+    at FirefoxDriver.prototype.findElement (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/driver-component.js:10779)
+    at DelayedCommand.prototype.executeInternal_/h (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/command-processor.js:12661)
+    at DelayedCommand.prototype.executeInternal_ (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/command-processor.js:12666)
+    at DelayedCommand.prototype.execute/< (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/command-processor.js:12608)
+
+Spider: parsing response for URL: total no. of products::  13
+------------------inside button click exception i count-------------- 1
+ERROR TRACE :::  Traceback (most recent call last):
+  File "/home/mint/my-data/supermarket_scraper/supermarket_scraper/spiders/waitrose_spider.py", line 145, in parse_start_url
+    button = self.driver.wait.until(EC.element_to_be_clickable((By.XPATH,self.settings.next_page_xpath)))
+  File "/usr/local/lib/python2.7/dist-packages/selenium/webdriver/support/wait.py", line 80, in until
+    raise TimeoutException(message, screen, stacktrace)
+TimeoutException: Message: 
+Stacktrace:
+    at FirefoxDriver.prototype.findElementInternal_ (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/driver-component.js:10770)
+    at FirefoxDriver.prototype.findElement (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/driver-component.js:10779)
+    at DelayedCommand.prototype.executeInternal_/h (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/command-processor.js:12661)
+    at DelayedCommand.prototype.executeInternal_ (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/command-processor.js:12666)
+    at DelayedCommand.prototype.execute/< (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/command-processor.js:12608)
+
+Spider: parsing response for URL: total no. of products::  39
+------------------inside button click exception i count-------------- 1
+ERROR TRACE :::  Traceback (most recent call last):
+  File "/home/mint/my-data/supermarket_scraper/supermarket_scraper/spiders/waitrose_spider.py", line 145, in parse_start_url
+    button = self.driver.wait.until(EC.element_to_be_clickable((By.XPATH,self.settings.next_page_xpath)))
+  File "/usr/local/lib/python2.7/dist-packages/selenium/webdriver/support/wait.py", line 80, in until
+    raise TimeoutException(message, screen, stacktrace)
+TimeoutException: Message: 
+Stacktrace:
+    at FirefoxDriver.prototype.findElementInternal_ (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/driver-component.js:10770)
+    at FirefoxDriver.prototype.findElement (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/driver-component.js:10779)
+    at DelayedCommand.prototype.executeInternal_/h (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/command-processor.js:12661)
+    at DelayedCommand.prototype.executeInternal_ (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/command-processor.js:12666)
+    at DelayedCommand.prototype.execute/< (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/command-processor.js:12608)
+
+Spider: parsing response for URL: total no. of products::  38
+------------------inside button click exception i count-------------- 2
+ERROR TRACE :::  Traceback (most recent call last):
+  File "/home/mint/my-data/supermarket_scraper/supermarket_scraper/spiders/waitrose_spider.py", line 145, in parse_start_url
+    button = self.driver.wait.until(EC.element_to_be_clickable((By.XPATH,self.settings.next_page_xpath)))
+  File "/usr/local/lib/python2.7/dist-packages/selenium/webdriver/support/wait.py", line 80, in until
+    raise TimeoutException(message, screen, stacktrace)
+TimeoutException: Message: 
+Stacktrace:
+    at FirefoxDriver.prototype.findElementInternal_ (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/driver-component.js:10770)
+    at FirefoxDriver.prototype.findElement (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/driver-component.js:10779)
+    at DelayedCommand.prototype.executeInternal_/h (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/command-processor.js:12661)
+    at DelayedCommand.prototype.executeInternal_ (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/command-processor.js:12666)
+    at DelayedCommand.prototype.execute/< (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/command-processor.js:12608)
+
+Spider: parsing response for URL: total no. of products::  90
+------------------ End of infinite scrolling/NoSuchElementException :: i count -------------- 2
+ERROR TRACE :::  Traceback (most recent call last):
+  File "/home/mint/my-data/supermarket_scraper/supermarket_scraper/spiders/waitrose_spider.py", line 140, in parse_start_url
+    next_element = self.driver.find_element_by_xpath(self.settings.next_page_xpath)
+  File "/usr/local/lib/python2.7/dist-packages/selenium/webdriver/remote/webdriver.py", line 290, in find_element_by_xpath
+    return self.find_element(by=By.XPATH, value=xpath)
+  File "/usr/local/lib/python2.7/dist-packages/selenium/webdriver/remote/webdriver.py", line 744, in find_element
+    {'using': by, 'value': value})['value']
+  File "/usr/local/lib/python2.7/dist-packages/selenium/webdriver/remote/webdriver.py", line 233, in execute
+    self.error_handler.check_response(response)
+  File "/usr/local/lib/python2.7/dist-packages/selenium/webdriver/remote/errorhandler.py", line 194, in check_response
+    raise exception_class(message, screen, stacktrace)
+NoSuchElementException: Message: Unable to locate element: {"method":"xpath","selector":"//div[@class='load-more-button']/div[@class='view-all-results']//a"}
+Stacktrace:
+    at FirefoxDriver.prototype.findElementInternal_ (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/driver-component.js:10770)
+    at FirefoxDriver.prototype.findElement (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/driver-component.js:10779)
+    at DelayedCommand.prototype.executeInternal_/h (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/command-processor.js:12661)
+    at DelayedCommand.prototype.executeInternal_ (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/command-processor.js:12666)
+    at DelayedCommand.prototype.execute/< (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/command-processor.js:12608)
+
+Spider: parsing response for URL: total no. of products::  61
+------------------ End of infinite scrolling/NoSuchElementException :: i count -------------- 2
+ERROR TRACE :::  Traceback (most recent call last):
+  File "/home/mint/my-data/supermarket_scraper/supermarket_scraper/spiders/waitrose_spider.py", line 140, in parse_start_url
+    next_element = self.driver.find_element_by_xpath(self.settings.next_page_xpath)
+  File "/usr/local/lib/python2.7/dist-packages/selenium/webdriver/remote/webdriver.py", line 290, in find_element_by_xpath
+    return self.find_element(by=By.XPATH, value=xpath)
+  File "/usr/local/lib/python2.7/dist-packages/selenium/webdriver/remote/webdriver.py", line 744, in find_element
+    {'using': by, 'value': value})['value']
+  File "/usr/local/lib/python2.7/dist-packages/selenium/webdriver/remote/webdriver.py", line 233, in execute
+    self.error_handler.check_response(response)
+  File "/usr/local/lib/python2.7/dist-packages/selenium/webdriver/remote/errorhandler.py", line 194, in check_response
+    raise exception_class(message, screen, stacktrace)
+NoSuchElementException: Message: Unable to locate element: {"method":"xpath","selector":"//div[@class='load-more-button']/div[@class='view-all-results']//a"}
+Stacktrace:
+    at FirefoxDriver.prototype.findElementInternal_ (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/driver-component.js:10770)
+    at FirefoxDriver.prototype.findElement (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/driver-component.js:10779)
+    at DelayedCommand.prototype.executeInternal_/h (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/command-processor.js:12661)
+    at DelayedCommand.prototype.executeInternal_ (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/command-processor.js:12666)
+    at DelayedCommand.prototype.execute/< (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/command-processor.js:12608)
+
+Spider: parsing response for URL: total no. of products::  65
+------------------ End of infinite scrolling/NoSuchElementException :: i count -------------- 1
+ERROR TRACE :::  Traceback (most recent call last):
+  File "/home/mint/my-data/supermarket_scraper/supermarket_scraper/spiders/waitrose_spider.py", line 140, in parse_start_url
+    next_element = self.driver.find_element_by_xpath(self.settings.next_page_xpath)
+  File "/usr/local/lib/python2.7/dist-packages/selenium/webdriver/remote/webdriver.py", line 290, in find_element_by_xpath
+    return self.find_element(by=By.XPATH, value=xpath)
+  File "/usr/local/lib/python2.7/dist-packages/selenium/webdriver/remote/webdriver.py", line 744, in find_element
+    {'using': by, 'value': value})['value']
+  File "/usr/local/lib/python2.7/dist-packages/selenium/webdriver/remote/webdriver.py", line 233, in execute
+    self.error_handler.check_response(response)
+  File "/usr/local/lib/python2.7/dist-packages/selenium/webdriver/remote/errorhandler.py", line 194, in check_response
+    raise exception_class(message, screen, stacktrace)
+NoSuchElementException: Message: Unable to locate element: {"method":"xpath","selector":"//div[@class='load-more-button']/div[@class='view-all-results']//a"}
+Stacktrace:
+    at FirefoxDriver.prototype.findElementInternal_ (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/driver-component.js:10770)
+    at FirefoxDriver.prototype.findElement (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/driver-component.js:10779)
+    at DelayedCommand.prototype.executeInternal_/h (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/command-processor.js:12661)
+    at DelayedCommand.prototype.executeInternal_ (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/command-processor.js:12666)
+    at DelayedCommand.prototype.execute/< (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/command-processor.js:12608)
+
+Spider: parsing response for URL: total no. of products::  12
+------------------inside button click exception i count-------------- 1
+ERROR TRACE :::  Traceback (most recent call last):
+  File "/home/mint/my-data/supermarket_scraper/supermarket_scraper/spiders/waitrose_spider.py", line 145, in parse_start_url
+    button = self.driver.wait.until(EC.element_to_be_clickable((By.XPATH,self.settings.next_page_xpath)))
+  File "/usr/local/lib/python2.7/dist-packages/selenium/webdriver/support/wait.py", line 80, in until
+    raise TimeoutException(message, screen, stacktrace)
+TimeoutException: Message: 
+Stacktrace:
+    at FirefoxDriver.prototype.findElementInternal_ (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/driver-component.js:10770)
+    at FirefoxDriver.prototype.findElement (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/driver-component.js:10779)
+    at DelayedCommand.prototype.executeInternal_/h (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/command-processor.js:12661)
+    at DelayedCommand.prototype.executeInternal_ (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/command-processor.js:12666)
+    at DelayedCommand.prototype.execute/< (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/command-processor.js:12608)
+
+Spider: parsing response for URL: total no. of products::  28
+------------------inside button click exception i count-------------- 1
+ERROR TRACE :::  Traceback (most recent call last):
+  File "/home/mint/my-data/supermarket_scraper/supermarket_scraper/spiders/waitrose_spider.py", line 145, in parse_start_url
+    button = self.driver.wait.until(EC.element_to_be_clickable((By.XPATH,self.settings.next_page_xpath)))
+  File "/usr/local/lib/python2.7/dist-packages/selenium/webdriver/support/wait.py", line 80, in until
+    raise TimeoutException(message, screen, stacktrace)
+TimeoutException: Message: 
+Stacktrace:
+    at FirefoxDriver.prototype.findElementInternal_ (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/driver-component.js:10770)
+    at FirefoxDriver.prototype.findElement (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/driver-component.js:10779)
+    at DelayedCommand.prototype.executeInternal_/h (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/command-processor.js:12661)
+    at DelayedCommand.prototype.executeInternal_ (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/command-processor.js:12666)
+    at DelayedCommand.prototype.execute/< (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/command-processor.js:12608)
+
+Spider: parsing response for URL: total no. of products::  32
+------------------ End of infinite scrolling/NoSuchElementException :: i count -------------- 1
+ERROR TRACE :::  Traceback (most recent call last):
+  File "/home/mint/my-data/supermarket_scraper/supermarket_scraper/spiders/waitrose_spider.py", line 140, in parse_start_url
+    next_element = self.driver.find_element_by_xpath(self.settings.next_page_xpath)
+  File "/usr/local/lib/python2.7/dist-packages/selenium/webdriver/remote/webdriver.py", line 290, in find_element_by_xpath
+    return self.find_element(by=By.XPATH, value=xpath)
+  File "/usr/local/lib/python2.7/dist-packages/selenium/webdriver/remote/webdriver.py", line 744, in find_element
+    {'using': by, 'value': value})['value']
+  File "/usr/local/lib/python2.7/dist-packages/selenium/webdriver/remote/webdriver.py", line 233, in execute
+    self.error_handler.check_response(response)
+  File "/usr/local/lib/python2.7/dist-packages/selenium/webdriver/remote/errorhandler.py", line 194, in check_response
+    raise exception_class(message, screen, stacktrace)
+NoSuchElementException: Message: Unable to locate element: {"method":"xpath","selector":"//div[@class='load-more-button']/div[@class='view-all-results']//a"}
+Stacktrace:
+    at FirefoxDriver.prototype.findElementInternal_ (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/driver-component.js:10770)
+    at FirefoxDriver.prototype.findElement (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/driver-component.js:10779)
+    at DelayedCommand.prototype.executeInternal_/h (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/command-processor.js:12661)
+    at DelayedCommand.prototype.executeInternal_ (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/command-processor.js:12666)
+    at DelayedCommand.prototype.execute/< (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/command-processor.js:12608)
+
+Spider: parsing response for URL: total no. of products::  10
+------------------ End of infinite scrolling/NoSuchElementException :: i count -------------- 3
+ERROR TRACE :::  Traceback (most recent call last):
+  File "/home/mint/my-data/supermarket_scraper/supermarket_scraper/spiders/waitrose_spider.py", line 140, in parse_start_url
+    next_element = self.driver.find_element_by_xpath(self.settings.next_page_xpath)
+  File "/usr/local/lib/python2.7/dist-packages/selenium/webdriver/remote/webdriver.py", line 290, in find_element_by_xpath
+    return self.find_element(by=By.XPATH, value=xpath)
+  File "/usr/local/lib/python2.7/dist-packages/selenium/webdriver/remote/webdriver.py", line 744, in find_element
+    {'using': by, 'value': value})['value']
+  File "/usr/local/lib/python2.7/dist-packages/selenium/webdriver/remote/webdriver.py", line 233, in execute
+    self.error_handler.check_response(response)
+  File "/usr/local/lib/python2.7/dist-packages/selenium/webdriver/remote/errorhandler.py", line 194, in check_response
+    raise exception_class(message, screen, stacktrace)
+NoSuchElementException: Message: Unable to locate element: {"method":"xpath","selector":"//div[@class='load-more-button']/div[@class='view-all-results']//a"}
+Stacktrace:
+    at FirefoxDriver.prototype.findElementInternal_ (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/driver-component.js:10770)
+    at FirefoxDriver.prototype.findElement (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/driver-component.js:10779)
+    at DelayedCommand.prototype.executeInternal_/h (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/command-processor.js:12661)
+    at DelayedCommand.prototype.executeInternal_ (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/command-processor.js:12666)
+    at DelayedCommand.prototype.execute/< (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/command-processor.js:12608)
+
+Spider: parsing response for URL: total no. of products::  113
+------------------inside button click exception i count-------------- 1
+ERROR TRACE :::  Traceback (most recent call last):
+  File "/home/mint/my-data/supermarket_scraper/supermarket_scraper/spiders/waitrose_spider.py", line 145, in parse_start_url
+    button = self.driver.wait.until(EC.element_to_be_clickable((By.XPATH,self.settings.next_page_xpath)))
+  File "/usr/local/lib/python2.7/dist-packages/selenium/webdriver/support/wait.py", line 80, in until
+    raise TimeoutException(message, screen, stacktrace)
+TimeoutException: Message: 
+Stacktrace:
+    at FirefoxDriver.prototype.findElementInternal_ (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/driver-component.js:10770)
+    at FirefoxDriver.prototype.findElement (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/driver-component.js:10779)
+    at DelayedCommand.prototype.executeInternal_/h (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/command-processor.js:12661)
+    at DelayedCommand.prototype.executeInternal_ (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/command-processor.js:12666)
+    at DelayedCommand.prototype.execute/< (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/command-processor.js:12608)
+
+Spider: parsing response for URL: total no. of products::  31
+------------------ End of infinite scrolling/NoSuchElementException :: i count -------------- 1
+ERROR TRACE :::  Traceback (most recent call last):
+  File "/home/mint/my-data/supermarket_scraper/supermarket_scraper/spiders/waitrose_spider.py", line 140, in parse_start_url
+    next_element = self.driver.find_element_by_xpath(self.settings.next_page_xpath)
+  File "/usr/local/lib/python2.7/dist-packages/selenium/webdriver/remote/webdriver.py", line 290, in find_element_by_xpath
+    return self.find_element(by=By.XPATH, value=xpath)
+  File "/usr/local/lib/python2.7/dist-packages/selenium/webdriver/remote/webdriver.py", line 744, in find_element
+    {'using': by, 'value': value})['value']
+  File "/usr/local/lib/python2.7/dist-packages/selenium/webdriver/remote/webdriver.py", line 233, in execute
+    self.error_handler.check_response(response)
+  File "/usr/local/lib/python2.7/dist-packages/selenium/webdriver/remote/errorhandler.py", line 194, in check_response
+    raise exception_class(message, screen, stacktrace)
+NoSuchElementException: Message: Unable to locate element: {"method":"xpath","selector":"//div[@class='load-more-button']/div[@class='view-all-results']//a"}
+Stacktrace:
+    at FirefoxDriver.prototype.findElementInternal_ (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/driver-component.js:10770)
+    at FirefoxDriver.prototype.findElement (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/driver-component.js:10779)
+    at DelayedCommand.prototype.executeInternal_/h (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/command-processor.js:12661)
+    at DelayedCommand.prototype.executeInternal_ (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/command-processor.js:12666)
+    at DelayedCommand.prototype.execute/< (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/command-processor.js:12608)
+
+Spider: parsing response for URL: total no. of products::  13
+------------------ End of infinite scrolling/NoSuchElementException :: i count -------------- 1
+ERROR TRACE :::  Traceback (most recent call last):
+  File "/home/mint/my-data/supermarket_scraper/supermarket_scraper/spiders/waitrose_spider.py", line 140, in parse_start_url
+    next_element = self.driver.find_element_by_xpath(self.settings.next_page_xpath)
+  File "/usr/local/lib/python2.7/dist-packages/selenium/webdriver/remote/webdriver.py", line 290, in find_element_by_xpath
+    return self.find_element(by=By.XPATH, value=xpath)
+  File "/usr/local/lib/python2.7/dist-packages/selenium/webdriver/remote/webdriver.py", line 744, in find_element
+    {'using': by, 'value': value})['value']
+  File "/usr/local/lib/python2.7/dist-packages/selenium/webdriver/remote/webdriver.py", line 233, in execute
+    self.error_handler.check_response(response)
+  File "/usr/local/lib/python2.7/dist-packages/selenium/webdriver/remote/errorhandler.py", line 194, in check_response
+    raise exception_class(message, screen, stacktrace)
+NoSuchElementException: Message: Unable to locate element: {"method":"xpath","selector":"//div[@class='load-more-button']/div[@class='view-all-results']//a"}
+Stacktrace:
+    at FirefoxDriver.prototype.findElementInternal_ (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/driver-component.js:10770)
+    at FirefoxDriver.prototype.findElement (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/driver-component.js:10779)
+    at DelayedCommand.prototype.executeInternal_/h (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/command-processor.js:12661)
+    at DelayedCommand.prototype.executeInternal_ (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/command-processor.js:12666)
+    at DelayedCommand.prototype.execute/< (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/command-processor.js:12608)
+
+Spider: parsing response for URL: total no. of products::  9
+------------------ End of infinite scrolling/NoSuchElementException :: i count -------------- 9
+ERROR TRACE :::  Traceback (most recent call last):
+  File "/home/mint/my-data/supermarket_scraper/supermarket_scraper/spiders/waitrose_spider.py", line 140, in parse_start_url
+    next_element = self.driver.find_element_by_xpath(self.settings.next_page_xpath)
+  File "/usr/local/lib/python2.7/dist-packages/selenium/webdriver/remote/webdriver.py", line 290, in find_element_by_xpath
+    return self.find_element(by=By.XPATH, value=xpath)
+  File "/usr/local/lib/python2.7/dist-packages/selenium/webdriver/remote/webdriver.py", line 744, in find_element
+    {'using': by, 'value': value})['value']
+  File "/usr/local/lib/python2.7/dist-packages/selenium/webdriver/remote/webdriver.py", line 233, in execute
+    self.error_handler.check_response(response)
+  File "/usr/local/lib/python2.7/dist-packages/selenium/webdriver/remote/errorhandler.py", line 194, in check_response
+    raise exception_class(message, screen, stacktrace)
+NoSuchElementException: Message: Unable to locate element: {"method":"xpath","selector":"//div[@class='load-more-button']/div[@class='view-all-results']//a"}
+Stacktrace:
+    at FirefoxDriver.prototype.findElementInternal_ (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/driver-component.js:10770)
+    at FirefoxDriver.prototype.findElement (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/driver-component.js:10779)
+    at DelayedCommand.prototype.executeInternal_/h (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/command-processor.js:12661)
+    at DelayedCommand.prototype.executeInternal_ (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/command-processor.js:12666)
+    at DelayedCommand.prototype.execute/< (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/command-processor.js:12608)
+
+Spider: parsing response for URL: total no. of products::  280
+------------------ End of infinite scrolling/NoSuchElementException :: i count -------------- 1
+ERROR TRACE :::  Traceback (most recent call last):
+  File "/home/mint/my-data/supermarket_scraper/supermarket_scraper/spiders/waitrose_spider.py", line 140, in parse_start_url
+    next_element = self.driver.find_element_by_xpath(self.settings.next_page_xpath)
+  File "/usr/local/lib/python2.7/dist-packages/selenium/webdriver/remote/webdriver.py", line 290, in find_element_by_xpath
+    return self.find_element(by=By.XPATH, value=xpath)
+  File "/usr/local/lib/python2.7/dist-packages/selenium/webdriver/remote/webdriver.py", line 744, in find_element
+    {'using': by, 'value': value})['value']
+  File "/usr/local/lib/python2.7/dist-packages/selenium/webdriver/remote/webdriver.py", line 233, in execute
+    self.error_handler.check_response(response)
+  File "/usr/local/lib/python2.7/dist-packages/selenium/webdriver/remote/errorhandler.py", line 194, in check_response
+    raise exception_class(message, screen, stacktrace)
+NoSuchElementException: Message: Unable to locate element: {"method":"xpath","selector":"//div[@class='load-more-button']/div[@class='view-all-results']//a"}
+Stacktrace:
+    at FirefoxDriver.prototype.findElementInternal_ (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/driver-component.js:10770)
+    at FirefoxDriver.prototype.findElement (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/driver-component.js:10779)
+    at DelayedCommand.prototype.executeInternal_/h (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/command-processor.js:12661)
+    at DelayedCommand.prototype.executeInternal_ (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/command-processor.js:12666)
+    at DelayedCommand.prototype.execute/< (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/command-processor.js:12608)
+
+Spider: parsing response for URL: total no. of products::  5
+------------------ End of infinite scrolling/NoSuchElementException :: i count -------------- 1
+ERROR TRACE :::  Traceback (most recent call last):
+  File "/home/mint/my-data/supermarket_scraper/supermarket_scraper/spiders/waitrose_spider.py", line 140, in parse_start_url
+    next_element = self.driver.find_element_by_xpath(self.settings.next_page_xpath)
+  File "/usr/local/lib/python2.7/dist-packages/selenium/webdriver/remote/webdriver.py", line 290, in find_element_by_xpath
+    return self.find_element(by=By.XPATH, value=xpath)
+  File "/usr/local/lib/python2.7/dist-packages/selenium/webdriver/remote/webdriver.py", line 744, in find_element
+    {'using': by, 'value': value})['value']
+  File "/usr/local/lib/python2.7/dist-packages/selenium/webdriver/remote/webdriver.py", line 233, in execute
+    self.error_handler.check_response(response)
+  File "/usr/local/lib/python2.7/dist-packages/selenium/webdriver/remote/errorhandler.py", line 194, in check_response
+    raise exception_class(message, screen, stacktrace)
+NoSuchElementException: Message: Unable to locate element: {"method":"xpath","selector":"//div[@class='load-more-button']/div[@class='view-all-results']//a"}
+Stacktrace:
+    at FirefoxDriver.prototype.findElementInternal_ (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/driver-component.js:10770)
+    at FirefoxDriver.prototype.findElement (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/driver-component.js:10779)
+    at DelayedCommand.prototype.executeInternal_/h (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/command-processor.js:12661)
+    at DelayedCommand.prototype.executeInternal_ (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/command-processor.js:12666)
+    at DelayedCommand.prototype.execute/< (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/command-processor.js:12608)
+
+Spider: parsing response for URL: total no. of products::  17
+------------------ End of infinite scrolling/NoSuchElementException :: i count -------------- 1
+ERROR TRACE :::  Traceback (most recent call last):
+  File "/home/mint/my-data/supermarket_scraper/supermarket_scraper/spiders/waitrose_spider.py", line 140, in parse_start_url
+    next_element = self.driver.find_element_by_xpath(self.settings.next_page_xpath)
+  File "/usr/local/lib/python2.7/dist-packages/selenium/webdriver/remote/webdriver.py", line 290, in find_element_by_xpath
+    return self.find_element(by=By.XPATH, value=xpath)
+  File "/usr/local/lib/python2.7/dist-packages/selenium/webdriver/remote/webdriver.py", line 744, in find_element
+    {'using': by, 'value': value})['value']
+  File "/usr/local/lib/python2.7/dist-packages/selenium/webdriver/remote/webdriver.py", line 233, in execute
+    self.error_handler.check_response(response)
+  File "/usr/local/lib/python2.7/dist-packages/selenium/webdriver/remote/errorhandler.py", line 194, in check_response
+    raise exception_class(message, screen, stacktrace)
+NoSuchElementException: Message: Unable to locate element: {"method":"xpath","selector":"//div[@class='load-more-button']/div[@class='view-all-results']//a"}
+Stacktrace:
+    at FirefoxDriver.prototype.findElementInternal_ (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/driver-component.js:10770)
+    at FirefoxDriver.prototype.findElement (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/driver-component.js:10779)
+    at DelayedCommand.prototype.executeInternal_/h (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/command-processor.js:12661)
+    at DelayedCommand.prototype.executeInternal_ (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/command-processor.js:12666)
+    at DelayedCommand.prototype.execute/< (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/command-processor.js:12608)
+
+Spider: parsing response for URL: total no. of products::  13
+------------------ End of infinite scrolling/NoSuchElementException :: i count -------------- 2
+ERROR TRACE :::  Traceback (most recent call last):
+  File "/home/mint/my-data/supermarket_scraper/supermarket_scraper/spiders/waitrose_spider.py", line 140, in parse_start_url
+    next_element = self.driver.find_element_by_xpath(self.settings.next_page_xpath)
+  File "/usr/local/lib/python2.7/dist-packages/selenium/webdriver/remote/webdriver.py", line 290, in find_element_by_xpath
+    return self.find_element(by=By.XPATH, value=xpath)
+  File "/usr/local/lib/python2.7/dist-packages/selenium/webdriver/remote/webdriver.py", line 744, in find_element
+    {'using': by, 'value': value})['value']
+  File "/usr/local/lib/python2.7/dist-packages/selenium/webdriver/remote/webdriver.py", line 233, in execute
+    self.error_handler.check_response(response)
+  File "/usr/local/lib/python2.7/dist-packages/selenium/webdriver/remote/errorhandler.py", line 194, in check_response
+    raise exception_class(message, screen, stacktrace)
+NoSuchElementException: Message: Unable to locate element: {"method":"xpath","selector":"//div[@class='load-more-button']/div[@class='view-all-results']//a"}
+Stacktrace:
+    at FirefoxDriver.prototype.findElementInternal_ (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/driver-component.js:10770)
+    at FirefoxDriver.prototype.findElement (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/driver-component.js:10779)
+    at DelayedCommand.prototype.executeInternal_/h (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/command-processor.js:12661)
+    at DelayedCommand.prototype.executeInternal_ (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/command-processor.js:12666)
+    at DelayedCommand.prototype.execute/< (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/command-processor.js:12608)
+
+Spider: parsing response for URL: total no. of products::  50
+------------------ End of infinite scrolling/NoSuchElementException :: i count -------------- 1
+ERROR TRACE :::  Traceback (most recent call last):
+  File "/home/mint/my-data/supermarket_scraper/supermarket_scraper/spiders/waitrose_spider.py", line 140, in parse_start_url
+    next_element = self.driver.find_element_by_xpath(self.settings.next_page_xpath)
+  File "/usr/local/lib/python2.7/dist-packages/selenium/webdriver/remote/webdriver.py", line 290, in find_element_by_xpath
+    return self.find_element(by=By.XPATH, value=xpath)
+  File "/usr/local/lib/python2.7/dist-packages/selenium/webdriver/remote/webdriver.py", line 744, in find_element
+    {'using': by, 'value': value})['value']
+  File "/usr/local/lib/python2.7/dist-packages/selenium/webdriver/remote/webdriver.py", line 233, in execute
+    self.error_handler.check_response(response)
+  File "/usr/local/lib/python2.7/dist-packages/selenium/webdriver/remote/errorhandler.py", line 194, in check_response
+    raise exception_class(message, screen, stacktrace)
+NoSuchElementException: Message: Unable to locate element: {"method":"xpath","selector":"//div[@class='load-more-button']/div[@class='view-all-results']//a"}
+Stacktrace:
+    at FirefoxDriver.prototype.findElementInternal_ (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/driver-component.js:10770)
+    at FirefoxDriver.prototype.findElement (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/driver-component.js:10779)
+    at DelayedCommand.prototype.executeInternal_/h (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/command-processor.js:12661)
+    at DelayedCommand.prototype.executeInternal_ (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/command-processor.js:12666)
+    at DelayedCommand.prototype.execute/< (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/command-processor.js:12608)
+
+Spider: parsing response for URL: total no. of products::  2
+------------------inside button click exception i count-------------- 1
+ERROR TRACE :::  Traceback (most recent call last):
+  File "/home/mint/my-data/supermarket_scraper/supermarket_scraper/spiders/waitrose_spider.py", line 145, in parse_start_url
+    button = self.driver.wait.until(EC.element_to_be_clickable((By.XPATH,self.settings.next_page_xpath)))
+  File "/usr/local/lib/python2.7/dist-packages/selenium/webdriver/support/wait.py", line 80, in until
+    raise TimeoutException(message, screen, stacktrace)
+TimeoutException: Message: 
+Stacktrace:
+    at FirefoxDriver.prototype.findElementInternal_ (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/driver-component.js:10770)
+    at FirefoxDriver.prototype.findElement (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/driver-component.js:10779)
+    at DelayedCommand.prototype.executeInternal_/h (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/command-processor.js:12661)
+    at DelayedCommand.prototype.executeInternal_ (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/command-processor.js:12666)
+    at DelayedCommand.prototype.execute/< (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/command-processor.js:12608)
+
+Spider: parsing response for URL: total no. of products::  48
+------------------inside button click exception i count-------------- 1
+ERROR TRACE :::  Traceback (most recent call last):
+  File "/home/mint/my-data/supermarket_scraper/supermarket_scraper/spiders/waitrose_spider.py", line 145, in parse_start_url
+    button = self.driver.wait.until(EC.element_to_be_clickable((By.XPATH,self.settings.next_page_xpath)))
+  File "/usr/local/lib/python2.7/dist-packages/selenium/webdriver/support/wait.py", line 80, in until
+    raise TimeoutException(message, screen, stacktrace)
+TimeoutException: Message: 
+Stacktrace:
+    at FirefoxDriver.prototype.findElementInternal_ (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/driver-component.js:10770)
+    at FirefoxDriver.prototype.findElement (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/driver-component.js:10779)
+    at DelayedCommand.prototype.executeInternal_/h (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/command-processor.js:12661)
+    at DelayedCommand.prototype.executeInternal_ (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/command-processor.js:12666)
+    at DelayedCommand.prototype.execute/< (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/command-processor.js:12608)
+
+Spider: parsing response for URL: total no. of products::  28
+------------------inside button click exception i count-------------- 1
+ERROR TRACE :::  Traceback (most recent call last):
+  File "/home/mint/my-data/supermarket_scraper/supermarket_scraper/spiders/waitrose_spider.py", line 145, in parse_start_url
+    button = self.driver.wait.until(EC.element_to_be_clickable((By.XPATH,self.settings.next_page_xpath)))
+  File "/usr/local/lib/python2.7/dist-packages/selenium/webdriver/support/wait.py", line 80, in until
+    raise TimeoutException(message, screen, stacktrace)
+TimeoutException: Message: 
+Stacktrace:
+    at FirefoxDriver.prototype.findElementInternal_ (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/driver-component.js:10770)
+    at FirefoxDriver.prototype.findElement (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/driver-component.js:10779)
+    at DelayedCommand.prototype.executeInternal_/h (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/command-processor.js:12661)
+    at DelayedCommand.prototype.executeInternal_ (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/command-processor.js:12666)
+    at DelayedCommand.prototype.execute/< (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/command-processor.js:12608)
+
+Spider: parsing response for URL: total no. of products::  29
+------------------ End of infinite scrolling/NoSuchElementException :: i count -------------- 1
+ERROR TRACE :::  Traceback (most recent call last):
+  File "/home/mint/my-data/supermarket_scraper/supermarket_scraper/spiders/waitrose_spider.py", line 140, in parse_start_url
+    next_element = self.driver.find_element_by_xpath(self.settings.next_page_xpath)
+  File "/usr/local/lib/python2.7/dist-packages/selenium/webdriver/remote/webdriver.py", line 290, in find_element_by_xpath
+    return self.find_element(by=By.XPATH, value=xpath)
+  File "/usr/local/lib/python2.7/dist-packages/selenium/webdriver/remote/webdriver.py", line 744, in find_element
+    {'using': by, 'value': value})['value']
+  File "/usr/local/lib/python2.7/dist-packages/selenium/webdriver/remote/webdriver.py", line 233, in execute
+    self.error_handler.check_response(response)
+  File "/usr/local/lib/python2.7/dist-packages/selenium/webdriver/remote/errorhandler.py", line 194, in check_response
+    raise exception_class(message, screen, stacktrace)
+NoSuchElementException: Message: Unable to locate element: {"method":"xpath","selector":"//div[@class='load-more-button']/div[@class='view-all-results']//a"}
+Stacktrace:
+    at FirefoxDriver.prototype.findElementInternal_ (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/driver-component.js:10770)
+    at FirefoxDriver.prototype.findElement (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/driver-component.js:10779)
+    at DelayedCommand.prototype.executeInternal_/h (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/command-processor.js:12661)
+    at DelayedCommand.prototype.executeInternal_ (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/command-processor.js:12666)
+    at DelayedCommand.prototype.execute/< (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/command-processor.js:12608)
+
+Spider: parsing response for URL: total no. of products::  14
+------------------ End of infinite scrolling/NoSuchElementException :: i count -------------- 8
+ERROR TRACE :::  Traceback (most recent call last):
+  File "/home/mint/my-data/supermarket_scraper/supermarket_scraper/spiders/waitrose_spider.py", line 140, in parse_start_url
+    next_element = self.driver.find_element_by_xpath(self.settings.next_page_xpath)
+  File "/usr/local/lib/python2.7/dist-packages/selenium/webdriver/remote/webdriver.py", line 290, in find_element_by_xpath
+    return self.find_element(by=By.XPATH, value=xpath)
+  File "/usr/local/lib/python2.7/dist-packages/selenium/webdriver/remote/webdriver.py", line 744, in find_element
+    {'using': by, 'value': value})['value']
+  File "/usr/local/lib/python2.7/dist-packages/selenium/webdriver/remote/webdriver.py", line 233, in execute
+    self.error_handler.check_response(response)
+  File "/usr/local/lib/python2.7/dist-packages/selenium/webdriver/remote/errorhandler.py", line 194, in check_response
+    raise exception_class(message, screen, stacktrace)
+NoSuchElementException: Message: Unable to locate element: {"method":"xpath","selector":"//div[@class='load-more-button']/div[@class='view-all-results']//a"}
+Stacktrace:
+    at FirefoxDriver.prototype.findElementInternal_ (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/driver-component.js:10770)
+    at FirefoxDriver.prototype.findElement (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/driver-component.js:10779)
+    at DelayedCommand.prototype.executeInternal_/h (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/command-processor.js:12661)
+    at DelayedCommand.prototype.executeInternal_ (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/command-processor.js:12666)
+    at DelayedCommand.prototype.execute/< (file:///tmp/tmpq71V1F/extensions/fxdriver@googlecode.com/components/command-processor.js:12608)
+
+Spider: parsing response for URL: total no. of products::  255
+------------------ End of infinite scrolling/NoSuchElementException :: i count -------------- 1
+ERROR TRACE :::  Traceback (most recent call last):
+  File "/home/mint/my-data/supermarket_scraper/supermarket_scraper/spiders/waitrose_spider.py", line 140, in parse_start_url
+    next_element = self.driver.find_element_by_xpath(self.settings.next_page_xpath)
+  File "/usr/local/lib/python2.7/dist-packages/selenium/webdriver/remote/webdriver.py", line 290, in find_element_by_xpath
+    return self.find_element(by=By.XPATH, value=xpath)
+  File "/usr/local/lib/python2.7/dist-packages/selenium/webdriver/remote/webdriver.py", line 744, in find_element
+    {'using': by, 'value': value})['value']
+  File "/usr/local/lib/python2.7/dist-packages/selenium/webdriver/remote/webdriver.py", line 233, in execute
+    self.error_handler.check_response(response)
+  File "/usr/local/lib/python2.7/dist-packages/selenium/webdriver/remote/errorhandler.py", line 194, in check_response
+    raise exception_c

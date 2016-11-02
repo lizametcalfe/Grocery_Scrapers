@@ -1,0 +1,42 @@
+timestamp,store,ons_item_no,ons_item_name,product_type,search_string,product_name,item_price_str,item_price_num,volume_price,unit_price,no_units,units,std_price,std_unit,promo,offer,ml_prediction,single_class
+2016-09-21 09:52:08.760397,WAITROSE,310218,"Apple Cider, bottle, 4.5%-5.5% ABV",Traditional_Ciders,apple cider ,THE ORCHARD PIG TRUFFLER DRY SPARKLING CIDER,£1.99,1.99,(£3.98 / litre),3.98,1.0,litre,3.98,l,Add 3 for £5,Add 3 for £5,1,1
+2016-09-21 09:52:08.764501,WAITROSE,310218,"Apple Cider, bottle, 4.5%-5.5% ABV",Traditional_Ciders,apple cider ,HENRY WESTON'S VINTAGE CIDER,£1.99,1.99,(£3.98 / litre),3.98,1.0,litre,3.98,l,Add 3 for £5,Add 3 for £5,1,1
+2016-09-21 09:52:08.766915,WAITROSE,310218,"Apple Cider, bottle, 4.5%-5.5% ABV",Traditional_Ciders,apple cider ,ASPALL DRY SUFFOLK CYDER PREMIER CRU,£1.99,1.99,(£3.98 / litre),3.98,1.0,litre,3.98,l,Add 3 for £5,Add 3 for £5,1,1
+2016-09-21 09:52:08.769300,WAITROSE,310218,"Apple Cider, bottle, 4.5%-5.5% ABV",Traditional_Ciders,apple cider ,WESTONS ORGANIC PREMIUM CIDER,£1.99,1.99,(£3.98 / litre),3.98,1.0,litre,3.98,l,Add 3 for £5,Add 3 for £5,1,1
+2016-09-21 09:52:08.771698,WAITROSE,310218,"Apple Cider, bottle, 4.5%-5.5% ABV",Traditional_Ciders,apple cider ,WAITROSE VINTAGE ENGLISH CIDER,£1.67,1.67,,,,,,,20% Off,20% Off,1,1
+2016-09-21 09:52:08.773939,WAITROSE,310218,"Apple Cider, bottle, 4.5%-5.5% ABV",Traditional_Ciders,apple cider ,FROME VALLEY DRY CIDER,£1.99,1.99,(£3.98 / litre),3.98,1.0,litre,3.98,l,Add 3 for £5,Add 3 for £5,1,1
+2016-09-21 09:52:08.776361,WAITROSE,310218,"Apple Cider, bottle, 4.5%-5.5% ABV",Traditional_Ciders,apple cider ,WAITROSE DUCHY ORGANIC HEREFORDSHIRE VINTAGE CIDER,£1.67,1.67,,,,,,,20% Off,20% Off,1,1
+2016-09-21 09:52:08.778552,WAITROSE,310218,"Apple Cider, bottle, 4.5%-5.5% ABV",Traditional_Ciders,apple cider ,CORNISH ORCHARDS CORNISH GOLD CIDER ENGLAND,£1.67,1.67,,,,,,,20% Off,20% Off,1,1
+2016-09-21 09:52:08.780721,WAITROSE,310218,"Apple Cider, bottle, 4.5%-5.5% ABV",Traditional_Ciders,apple cider ,WAITROSE APPLE CIDER,£1.20,1.2,,,,,,,20% Off,20% Off,1,1
+2016-09-21 09:52:08.782825,WAITROSE,310218,"Apple Cider, bottle, 4.5%-5.5% ABV",Traditional_Ciders,apple cider ,WAITROSE VINTAGE ENGLISH PERRY,£1.67,1.67,,,,,,,20% Off,20% Off,1,1
+2016-09-21 09:52:08.785074,WAITROSE,310218,"Apple Cider, bottle, 4.5%-5.5% ABV",Traditional_Ciders,apple cider ,THATCHERS KATY CIDER,£1.59,1.59,(£3.18 / litre),3.18,1.0,litre,3.18,l,20% Off,20% Off,1,1
+2016-09-21 09:52:08.787423,WAITROSE,310218,"Apple Cider, bottle, 4.5%-5.5% ABV",Traditional_Ciders,apple cider ,THATCHERS GOLD,£1.59,1.59,,,,,,,20% Off,20% Off,1,1
+2016-09-21 09:52:08.789597,WAITROSE,310218,"Apple Cider, bottle, 4.5%-5.5% ABV",Traditional_Ciders,apple cider ,HENRY WESTONS VINTAGE PERRY,£1.68,1.68,(£3.36 / litre),3.36,1.0,litre,3.36,l,20% Off,20% Off,1,1
+2016-09-21 09:52:08.791973,WAITROSE,310218,"Apple Cider, bottle, 4.5%-5.5% ABV",Traditional_Ciders,apple cider ,ASPALL DRAUGHT SUFFOLK CYDER,£1.99,1.99,(£3.98 / litre),3.98,1.0,litre,3.98,l,,,1,1
+2016-09-21 09:52:08.794289,WAITROSE,310218,"Apple Cider, bottle, 4.5%-5.5% ABV",Traditional_Ciders,apple cider ,ASPALL ORGANIC SUFFOLK CYDER,£1.99,1.99,(£3.98 / litre),3.98,1.0,litre,3.98,l,,,1,1
+2016-09-21 09:52:08.796645,WAITROSE,310218,"Apple Cider, bottle, 4.5%-5.5% ABV",Traditional_Ciders,apple cider ,WAITROSE LECKFORD COX'S APPLE VINTAGE CIDER,£2.29,2.29,(£4.58 / litre),4.58,1.0,litre,4.58,l,,,1,1
+2016-09-21 09:52:08.798948,WAITROSE,310218,"Apple Cider, bottle, 4.5%-5.5% ABV",Traditional_Ciders,apple cider ,STELLA ARTOIS CIDRE,£1.50,1.5,(£2.65 / litre),2.65,1.0,litre,2.65,l,,,1,1
+2016-09-21 09:52:08.801346,WAITROSE,310218,"Apple Cider, bottle, 4.5%-5.5% ABV",Traditional_Ciders,apple cider ,MAGNERS ORIGINAL IRISH CIDER,£1.99,1.99,(£3.51 / litre),3.51,1.0,litre,3.51,l,,,1,1
+2016-09-21 09:52:08.803743,WAITROSE,310218,"Apple Cider, bottle, 4.5%-5.5% ABV",Traditional_Ciders,apple cider ,ORCHARD PIG CHARMER MEDIUM SPARKLING CIDER,£1.99,1.99,(£3.98 / litre),3.98,1.0,litre,3.98,l,,,1,1
+2016-09-21 09:52:08.806152,WAITROSE,310218,"Apple Cider, bottle, 4.5%-5.5% ABV",Traditional_Ciders,apple cider ,BULMERS ORIGINAL CIDER,£1.99,1.99,(£3.98 / litre),3.98,1.0,litre,3.98,l,,,1,1
+2016-09-21 09:52:08.809789,WAITROSE,310218,"Apple Cider, bottle, 4.5%-5.5% ABV",Traditional_Ciders,apple cider ,ASPALL PERRONELLE'S BLUSH SUFFOLK CYDER,£2.69,2.69,(£5.38 / litre),5.38,1.0,litre,5.38,l,,,1,1
+2016-09-21 09:52:08.812108,WAITROSE,310218,"Apple Cider, bottle, 4.5%-5.5% ABV",Traditional_Ciders,apple cider ,STOWFORD PRESS DRAUGHT CIDER,£1.50,1.5,(£3 / litre),3.0,1.0,litre,3.0,l,,,1,1
+2016-09-21 09:52:08.814420,WAITROSE,310218,"Apple Cider, bottle, 4.5%-5.5% ABV",Traditional_Ciders,apple cider ,WESTONS OLD ROSIE CLOUDY SCRUMPY,£1.99,1.99,(£3.98 / litre),3.98,1.0,litre,3.98,l,,,1,1
+2016-09-21 09:52:08.816813,WAITROSE,310218,"Apple Cider, bottle, 4.5%-5.5% ABV",Traditional_Ciders,apple cider ,DUNKERTON'S BLACK FOX ORGANIC SPARKLING CIDER HEREFORD...,£2.29,2.29,(£4.58 / litre),4.58,1.0,litre,4.58,l,,,1,1
+2016-09-21 09:52:08.819075,WAITROSE,310218,"Apple Cider, bottle, 4.5%-5.5% ABV",Traditional_Ciders,apple cider ,WESTONS OLD ROSIE CLOUDY SCRUMPY,£1.99,1.99,(£3.98 / litre),3.98,1.0,litre,3.98,l,,,1,1
+2016-09-21 09:52:08.821478,WAITROSE,310218,"Apple Cider, bottle, 4.5%-5.5% ABV",Traditional_Ciders,apple cider ,ADDLESTONES CLOUDY CIDER,£1.99,1.99,(£3.98 / litre),3.98,1.0,litre,3.98,l,,,1,1
+2016-09-21 09:52:08.823801,WAITROSE,310218,"Apple Cider, bottle, 4.5%-5.5% ABV",Traditional_Ciders,apple cider ,CHAPLIN & CORK'S SOMERSET RESERVE CIDER,£1.99,1.99,(£3.98 / litre),3.98,1.0,litre,3.98,l,,,1,1
+2016-09-21 09:52:08.826129,WAITROSE,310218,"Apple Cider, bottle, 4.5%-5.5% ABV",Traditional_Ciders,apple cider ,ASPALL PERRONELLE'S BLUSH SUFFOLK CYDER,£2.69,2.69,(£5.38 / litre),5.38,1.0,litre,5.38,l,,,1,1
+2016-09-21 09:52:08.828620,WAITROSE,310218,"Apple Cider, bottle, 4.5%-5.5% ABV",Traditional_Ciders,apple cider ,PÈRE MAGLOIRE VSOP CALVADOS,£22.49,22.49,(£44.98 / litre),44.98,1.0,litre,44.98,l,,,1,1
+2016-09-21 09:52:08.830881,WAITROSE,310218,"Apple Cider, bottle, 4.5%-5.5% ABV",Traditional_Ciders,apple cider ,MAELOC SIDRA SECA,£1.79,1.79,(£5.43 / litre),5.43,1.0,litre,5.43,l,,,1,1
+2016-09-21 09:52:08.833264,WAITROSE,310218,"Apple Cider, bottle, 4.5%-5.5% ABV",Traditional_Ciders,apple cider ,SHEPPY'S DABINETT APPLE CIDER,£1.99,1.99,(£3.98 / litre),3.98,1.0,litre,3.98,l,,,1,1
+2016-09-21 09:52:22.071899,WAITROSE,212717,"Apples, dessert, per kg",Apples,apples ,SEASONAL APPLE SELECTION,£1.50,1.5,,,,,,,save 60p,save 60p,1,1
+2016-09-21 09:52:22.074320,WAITROSE,212717,"Apples, dessert, per kg",Apples,apples ,WAITROSE PINK LADY APPLES,£2.50,2.5,(62.5p each),0.625,1.0,each,0.625,each,,,1,1
+2016-09-21 09:52:22.076671,WAITROSE,212717,"Apples, dessert, per kg",Apples,apples ,WAITROSE DUCHY ORGANIC BEST OF BRITISH APPLES,£1.87,1.87,(46.8p each),0.468,1.0,each,0.468,each,25% Off,25% Off,1,1
+2016-09-21 09:52:22.078985,WAITROSE,212717,"Apples, dessert, per kg",Apples,apples ,WAITROSE BEST OF BRITISH APPLES,£1.87,1.87,,,,,,,25% Off,25% Off,1,1
+2016-09-21 09:52:22.081151,WAITROSE,212717,"Apples, dessert, per kg",Apples,apples ,ESSENTIAL WAITROSE BRAEBURN APPLES,£2.10,2.1,(30p each),0.3,1.0,each,0.3,each,,,1,1
+2016-09-21 09:52:22.083363,WAITROSE,212717,"Apples, dessert, per kg",Apples,apples ,ESSENTIAL WAITROSE GALA APPLES,£2.10,2.1,(30p each),0.3,1.0,each,0.3,each,,,1,1
+2016-09-21 09:52:22.085801,WAITROSE,212717,"Apples, dessert, per kg",Apples,apples ,ESSENTIAL WAITROSE JAZZ APPLES,£2.22,2.22,(31.7p each),0.317,1.0,each,0.317,each,,,1,1
+2016-09-21 09:52:22.088097,WAITROSE,212717,"Apples, dessert, per kg",Apples,apples ,ESSENTIAL WAITROSE PINK LADY APPLES,£2.70,2.7,(45p each),0.45,1.0,each,0.45,each,,,1,1
+2016-09-21 09:52:22.090377,WAITROSE,212717,"Apples, dessert, per kg",Apples,apples ,ESSENTIAL WAITROSE MINI APPLES,£1.00,1.0,(16.7p each),0.167,1.0,each,0.167,each,,,1,1
+2016-09-21 09:52:22.092740,WAITROSE,212717,"Apples, dessert, per kg",Apples,apples ,WAITROSE DUCHY ORGANIC GALA APPLES,£2.30,2.3,(46p each),0.46,
